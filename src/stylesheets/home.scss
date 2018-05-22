@@ -1,0 +1,142 @@
+.topbar {
+  display: none;
+}
+
+.navbar {
+  height: 20%;
+  background-color: $white;
+}
+
+.navbar-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/logo.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.navigation {
+  display: none;
+}
+
+.home-content {
+  width: 100%;
+  height: 80%;
+  background-color: $violet-light;
+  background: url("../images/main-background.png") no-repeat 0 0;
+  background-size: cover;
+}
+
+.headline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 40%;
+  margin: 0 auto;
+  padding-top: 0;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.subheadline {
+  width: 90%;
+  height: 30%;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.proposition {
+  width: 90%;
+  height: 10%;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-button-holder {
+  width: 80%;
+  height: 10%;
+  margin: 1% auto 0 auto;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: auto;
+  padding-bottom: auto;
+  border: 1px solid #ac730b;
+  border-radius: 8px;
+  background: #ffbd12;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffbd12), to(#ac730b));
+  background: -moz-linear-gradient(top, #ffbd12, #ac730b);
+  background: linear-gradient(to bottom, #ffbd12, #ac730b);
+  text-shadow: #7b5208 1px 1px 1px;
+  font: normal normal bold 1.3rem "Playfair Display SC", serif;
+  color: $white;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover, &:focus {
+    border: 1px solid #f6a410;
+    background: #ffe316;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffe316), to(#ce8a0d));
+    background: -moz-linear-gradient(top, #ffe316, #ce8a0d);
+    background: linear-gradient(to bottom, #ffe316, #ce8a0d);
+    color: $white;
+    text-decoration: none;
+  }
+
+  &:active {
+    background: #ac730b;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ac730b), to(#ac730b));
+    background: -moz-linear-gradient(top, #ac730b, #ac730b);
+    background: linear-gradient(to bottom, #ac730b, #ac730b);
+  }
+}
+
+@media (min-width: $tablet) {
+  .topbar {
+    display: block;
+    width: 100%;
+    height: 4%;
+    background-color: $violet-blue;
+  }
+
+  .navbar {
+    height: 16%;
+  }
+
+  .logo {
+
+  }
+
+  .navigation {
+
+  }
+}
+
+@media (min-width: $desktop) {
+
+}
+
+@media (min-width: $large-desktop) {
+
+}

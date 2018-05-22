@@ -1,0 +1,69 @@
+.page {
+  height: 100%;
+  min-height: 100%;
+  background-color: $violet-light;
+  font-family: "Cormorant Infant", serif;
+  font-size: 16px;
+  color: $black;
+}
+
+.full-screen {
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.row {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 700;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  color: $white;
+  margin: 0;
+}
+
+h2 {
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: $white;
+  margin: 0;
+}
+
+h3 {
+  font-family: "Cormorant Infant", serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: $white;
+  margin: 0;
+}
+
+p {
+  font-family: "Cormorant Infant", serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: $white;
+  margin: 0;
+}
+
+a {
+  &:hover, &:focus {
+    color: $green;
+    text-decoration: none;
+    outline: 0;
+  }
+}
+
+:active, :hover, :focus {
+  outline: 0;
+  outline-offset: 0;
+  -webkit-tap-highlight-color: transparent;
+}

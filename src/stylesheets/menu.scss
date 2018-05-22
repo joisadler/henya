@@ -1,0 +1,100 @@
+/* 3.1. Hamburger menu */
+
+.hidden-menu {
+  display: block;
+  list-style: none;
+  padding: 10px;
+  overflow-y: auto;
+  margin: 0;
+  box-sizing: border-box;
+  width: 50%;
+  background-color: $violet-dark;
+  opacity: 0.9;
+  height: 150%;
+  position: fixed;
+  top: 0;
+  right: -50%;
+  transition: right 0.2s;
+  z-index: 2;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+.hidden-menu-ticker {
+  display: none;
+}
+
+.btn-menu {
+  color: $white;
+  background-color: $violet-blue;
+  padding: 5px;
+  position: fixed;
+  top: 5vw;
+  right: 5vw;
+  cursor: pointer;
+  transition: right 0.23s;
+  z-index: 3;
+  width: 25px;
+  border-radius: 5px;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+
+  span {
+    display: block;
+    height: 5px;
+    background-color: $white;
+    margin: 5px 0 0;
+    transition: all 0.1s linear 0.23s;
+    position: relative;
+
+    &.first {
+      margin-top: 0;
+    }
+  }
+}
+
+.hidden-menu-ticker:checked ~ {
+  .btn-menu {
+    right: calc(50% - 45px);
+  }
+
+  .hidden-menu {
+    right: 0;
+  }
+
+  .btn-menu span {
+    &.first {
+      -webkit-transform: rotate(45deg);
+      top: 10px;
+    }
+
+    &.second {
+      opacity: 0;
+    }
+
+    &.third {
+      -webkit-transform: rotate(-45deg);
+      top: -10px;
+    }
+  }
+}
+
+.hidden-menu-link {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 700;
+  color: $white;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover, &:focus, &:active {
+    color: $violet-light;
+  }
+}
+
+.hidden-menu-link-holder {
+  margin-top: 15px;
+
+  &:first-of-type {
+    margin-top: 47px;
+  }
+}
