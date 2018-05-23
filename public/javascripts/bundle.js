@@ -188,6 +188,8 @@ var _toggleFullScreen2 = _interopRequireDefault(_toggleFullScreen);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import '../stylesheets/main.scss';
+
 (0, _menu2.default)();
 (0, _carousel2.default)();
 (0, _toggleFullScreen2.default)();
@@ -265,9 +267,10 @@ exports.default = function () {
   !*** ./src/stylesheets/main.scss ***!
   \***********************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+// extracted by mini-css-extract-plugin
+module.exports = {"logo":"_2zTgWbtsDnLwpYyQiaJw5f"};
 
 /***/ }),
 

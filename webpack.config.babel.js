@@ -3,7 +3,8 @@ import path from 'path';
 import autoprefixer from 'autoprefixer';
 // import stylelint from 'stylelint'
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+//import ExtractTextPlugin from 'extract-text-webpack-plugin';
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import HtmlBeautifyPlugin from 'html-beautify-webpack-plugin';
@@ -60,12 +61,13 @@ const config = {
         test: /\.(sass|scss)$/,
         include: path.resolve(__dirname, 'src/stylesheets'),
         exclude: /\/node_modules\//,
-        use: ExtractTextPlugin.extract({
-          use: [{
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
             loader: 'css-loader',
             options: {
               sourceMap: true,
-              minimize: true,
+              minimize: NODE_ENV === 'production',
             }
           },
           {
@@ -81,8 +83,7 @@ const config = {
           {
             loader: 'sass-loader'
           }
-          ]
-        })
+        ]
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -111,8 +112,8 @@ const config = {
       },
       replace: [' type="text/javascript"']
     }),
-    new ExtractTextPlugin('stylesheets/bundle.css', {
-      allChunks: true
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
     }),
     new CopyWebpackPlugin([
       {
