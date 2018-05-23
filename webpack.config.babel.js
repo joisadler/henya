@@ -1,10 +1,7 @@
 import path from 'path';
-// import webpack from 'webpack';
 import autoprefixer from 'autoprefixer';
-// import stylelint from 'stylelint'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
-//import ExtractTextPlugin from 'extract-text-webpack-plugin';
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import HtmlBeautifyPlugin from 'html-beautify-webpack-plugin';
