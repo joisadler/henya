@@ -270,7 +270,6 @@ exports.default = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-module.exports = {"logo":"_2zTgWbtsDnLwpYyQiaJw5f"};
 
 /***/ }),
 
