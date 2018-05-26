@@ -1,31 +1,141 @@
 .topbar {
   display: none;
+
+  @media (min-width: $tablet) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 4.5%;
+    background-color: $violet-dark;
+  }
+}
+
+.topbar-contacts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 100%;
+  margin-left: 0.5vw;
+}
+
+.topbar-contact-icon {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1vw;
+  margin-right: 0.5vw;
+  font-size: 1em;
+  color: $white;
+}
+
+.topbar-contact-text {
+  font-family: "Cormorant Infant", serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: $white;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    color: $white;
+  }
+}
+
+.topbar-social-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 100%;
+  margin-right: 5.3vw;
+}
+
+.topbar-link {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 1vw;
+  font-size: 1.5em;
+  color: $white;
+  text-decoration: none;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .navbar {
   height: 20%;
   background-color: $white;
-}
-
-.navbar-inner {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: center;
+
+  @media (min-width: $tablet) {
+    height: 15.5%;
+    justify-content: space-between;
+  }
+
+  // @media (min-width: $large-desktop) {
+  //
+  // }
 }
 
 .logo {
-  width: 100%;
   height: 100%;
-  background-image: url("../images/logo.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
-.navigation {
+.home-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.main-navigation {
   display: none;
+
+  @media (min-width: $desktop) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    margin-right: 5.3vw;
+  }
+}
+
+.main-navigation-link-holder {
+  display: flex;
+  align-items: center;
+  height: 30%;
+  list-style-type: none;
+  margin-right: 1vw;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.main-navigation-link {
+  display: block;
+  font-family: "Playfair Display SC", serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: $violet-dark;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  @media (min-width: $large-desktop) {
+    font-size: 1.5em;
+  }
 }
 
 .home-content {
@@ -36,7 +146,7 @@
   background-size: cover;
 }
 
-.headline {
+.home-headline {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,9 +156,22 @@
   padding-top: 0;
   padding-bottom: 0;
   text-align: center;
+
+  h1 {
+    font-family: "Playfair Display SC", serif;
+    font-weight: 700;
+    font-size: 7vw;
+    text-transform: uppercase;
+    color: $white;
+    margin: 0;
+
+    @media (orientation: landscape) {
+      font-size: 7vh;
+    }
+  }
 }
 
-.subheadline {
+.home-subheadline {
   width: 90%;
   height: 30%;
   padding: 0;
@@ -113,24 +236,7 @@
 }
 
 @media (min-width: $tablet) {
-  .topbar {
-    display: block;
-    width: 100%;
-    height: 4%;
-    background-color: $violet-blue;
-  }
 
-  .navbar {
-    height: 16%;
-  }
-
-  .logo {
-
-  }
-
-  .navigation {
-
-  }
 }
 
 @media (min-width: $desktop) {

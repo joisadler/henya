@@ -1,8 +1,7 @@
 import carousel from './carousel';
-import menu from './menu';
+import mobileMenu from './mobile-menu';
 import toggleFullScreen from './toggleFullScreen';
-// import '../stylesheets/main.scss';
 
-menu();
+mobileMenu();
 carousel();
 toggleFullScreen();

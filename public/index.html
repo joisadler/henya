@@ -7,8 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
 		<title>Henya Adler Design</title>
 		<!-- Font-Awesome-->
-		<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
-		<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 		<!-- Fonts-->
 		<link href="https://fonts.googleapis.com/css?family=Caveat:700|Cormorant+Infant:400,400i,700|Playfair+Display+SC:400,700,900&amp;amp;subset=cyrillic" rel="stylesheet">
 		<link href="/main.css" rel="stylesheet">
@@ -16,50 +15,83 @@
 
 	<body class="page">
 		<div class="home full-screen" id="home">
-			<div class="row topbar"></div>
-			<div class="row navbar">
-				<div class="navbar-inner">
-					<div class="logo">
-						<input class="hidden-menu-ticker" id="hidden-menu-ticker" type="checkbox">
-						<label class="btn-menu" for="hidden-menu-ticker"><span class="first"></span><span class="second"></span><span class="third"></span></label>
-						<ul class="hidden-menu">
-							<li class="hidden-menu-link-holder">
-								<a class="hidden-menu-link" href="#home">В начало</a>
-							</li>
-							<li class="hidden-menu-link-holder">
-								<a class="hidden-menu-link" href="#services">Услуги</a>
-							</li>
-							<li class="hidden-menu-link-holder">
-								<a class="hidden-menu-link" href="#portfolio">Портфолио</a>
-							</li>
-							<li class="hidden-menu-link-holder">
-								<a class="hidden-menu-link" href="#benefits">Преимущества</a>
-							</li>
-							<li class="hidden-menu-link-holder">
-								<a class="hidden-menu-link" href="#questions-and-answers">Вопросы и ответы</a>
-							</li>
-							<li class="hidden-menu-link-holder">
-								<a class="hidden-menu-link" href="#testimonials">Отзывы</a>
-							</li>
-							<li class="hidden-menu-link-holder">
-								<a class="hidden-menu-link" href="#organizations">Мои клиенты</a>
-							</li>
-							<li class="hidden-menu-link-holder">
-								<a class="hidden-menu-link" href="#action">Оставить заявку</a>
-							</li>
-							<li class="hidden-menu-link-holder">
-								<a class="hidden-menu-link" href="#footer">Полезная информация</a>
-							</li>
-						</ul>
-					</div>
-					<div class="navigation"></div>
+			<div class="row topbar">
+				<div class="topbar-contacts">
+					<div class="topbar-contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+					<a class="topbar-contact-text" href="waze://?ll=31.891377,34.819971&amp;navigate=yes" title="Navigate with Waze">Rehovot, Israel</a>
+					<div class="topbar-contact-icon"><i class="fas fa-mobile-alt"></i></div>
+					<a class="topbar-contact-text" href="tel:+972587782776" title="Click to dial from mobile">+972587782776</a>
+					<div class="topbar-contact-icon"><i class="fas fa-envelope"></i></div>
+					<a class="topbar-contact-text" href="mailto:henyadesign@gmail.com" title="Send Email">henyadesign@gmail.com</a>
+				</div>
+				<div class="topbar-social-links">
+					<a class="topbar-link" href="https://www.facebook.com/henyadesign" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+					<a class="topbar-link" href="https://www.linkedin.com/in/henyaadler/" title="Linkedin"><i class="fab fa-linkedin"></i></a>
+					<a class="topbar-link" href="https://www.instagram.com/henya_design/" title="Instagram"><i class="fab fa-instagram"></i></a>
 				</div>
 			</div>
+			<div class="row navbar">
+				<img class="logo" src="../images/logo.png">
+				<input class="hidden-menu-ticker" id="hidden-menu-ticker" type="checkbox">
+				<label class="btn-menu" for="hidden-menu-ticker"><span class="first"></span><span class="second"></span><span class="third"></span></label>
+				<ul class="hidden-menu">
+					<li class="hidden-menu-link-holder">
+						<a class="hidden-menu-link" href="#home">В начало</a>
+					</li>
+					<li class="hidden-menu-link-holder">
+						<a class="hidden-menu-link" href="#services">Услуги</a>
+					</li>
+					<li class="hidden-menu-link-holder">
+						<a class="hidden-menu-link" href="#portfolio">Портфолио</a>
+					</li>
+					<li class="hidden-menu-link-holder">
+						<a class="hidden-menu-link" href="#benefits">Преимущества</a>
+					</li>
+					<li class="hidden-menu-link-holder">
+						<a class="hidden-menu-link" href="#questions-and-answers">Вопросы и ответы</a>
+					</li>
+					<li class="hidden-menu-link-holder">
+						<a class="hidden-menu-link" href="#testimonials">Отзывы</a>
+					</li>
+					<li class="hidden-menu-link-holder">
+						<a class="hidden-menu-link" href="#organizations">Мои клиенты</a>
+					</li>
+					<li class="hidden-menu-link-holder">
+						<a class="hidden-menu-link" href="#action">Оставить заявку</a>
+					</li>
+				</ul>
+				<ul class="main-navigation">
+					<li class="main-navigation-link-holder">
+						<a class="main-navigation-link" href="#home">В начало</a>
+					</li>
+					<li class="main-navigation-link-holder">
+						<a class="main-navigation-link" href="#services">Услуги</a>
+					</li>
+					<li class="main-navigation-link-holder">
+						<a class="main-navigation-link" href="#portfolio">Портфолио</a>
+					</li>
+					<li class="main-navigation-link-holder">
+						<a class="main-navigation-link" href="#benefits">Преимущества</a>
+					</li>
+					<li class="main-navigation-link-holder">
+						<a class="main-navigation-link" href="#questions-and-answers">Вопросы и ответы</a>
+					</li>
+					<li class="main-navigation-link-holder">
+						<a class="main-navigation-link" href="#testimonials">Отзывы</a>
+					</li>
+					<li class="main-navigation-link-holder">
+						<a class="main-navigation-link" href="#organizations">Мои клиенты</a>
+					</li>
+					<li class="main-navigation-link-holder">
+						<a class="main-navigation-link" href="#action">Оставить заявку</a>
+					</li>
+				</ul>
+			</div>
 			<div class="home-content">
-				<div class="headline">
+				<div class="home-headline">
 					<h1>Устали от поисков удачного дизайна?</h1>
 				</div>
-				<div class="subheadline">
+				<div class="home-subheadline">
 					<h2>Теперь вы можете расслабиться!</h2>
 					<h2>Отныне ваши заботы я беру на себя.</h2>
 				</div>

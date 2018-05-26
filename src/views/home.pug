@@ -1,14 +1,46 @@
 .home.full-screen(id='home')
   .row.topbar
+    .topbar-contacts
+      .topbar-contact-icon
+        i.fas.fa-map-marker-alt
+      a.topbar-contact-text(href="waze://?ll=31.891377,34.819971&navigate=yes" title="Navigate with Waze") Rehovot, Israel
+      .topbar-contact-icon
+        i.fas.fa-mobile-alt
+      a.topbar-contact-text(href='tel:+972587782776' title="Click to dial from mobile") +972587782776
+      .topbar-contact-icon
+        i.fas.fa-envelope
+      a.topbar-contact-text(href='mailto:henyadesign@gmail.com' title='Send Email') henyadesign@gmail.com
+    .topbar-social-links
+      a.topbar-link(href='https://www.facebook.com/henyadesign' title='Facebook')
+        i.fab.fa-facebook-square
+      a.topbar-link(href='https://www.linkedin.com/in/henyaadler/' title='Linkedin')
+        i.fab.fa-linkedin
+      a.topbar-link(href='https://www.instagram.com/henya_design/' title='Instagram')
+        i.fab.fa-instagram
   .row.navbar
-    .navbar-inner
-      .logo
-        include menu
-      .navigation
+    img.logo(src='../images/logo.png')
+    include mobile-menu
+    ul.main-navigation
+      li.main-navigation-link-holder
+        a.main-navigation-link(href='#home') В начало
+      li.main-navigation-link-holder
+        a.main-navigation-link(href='#services') Услуги
+      li.main-navigation-link-holder
+        a.main-navigation-link(href='#portfolio') Портфолио
+      li.main-navigation-link-holder
+        a.main-navigation-link(href='#benefits') Преимущества
+      li.main-navigation-link-holder
+        a.main-navigation-link(href='#questions-and-answers') Вопросы и ответы
+      li.main-navigation-link-holder
+        a.main-navigation-link(href='#testimonials') Отзывы
+      li.main-navigation-link-holder
+        a.main-navigation-link(href='#organizations') Мои клиенты
+      li.main-navigation-link-holder
+        a.main-navigation-link(href='#action') Оставить заявку
   .home-content
-    .headline
+    .home-headline
       h1 Устали от поисков удачного дизайна?
-    .subheadline
+    .home-subheadline
       h2 Теперь вы можете расслабиться!
       h2 Отныне ваши заботы я беру на себя.
     .proposition

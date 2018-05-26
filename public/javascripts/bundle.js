@@ -178,9 +178,9 @@ var _carousel = __webpack_require__(/*! ./carousel */ "./src/javascripts/carouse
 
 var _carousel2 = _interopRequireDefault(_carousel);
 
-var _menu = __webpack_require__(/*! ./menu */ "./src/javascripts/menu.js");
+var _mobileMenu = __webpack_require__(/*! ./mobile-menu */ "./src/javascripts/mobile-menu.js");
 
-var _menu2 = _interopRequireDefault(_menu);
+var _mobileMenu2 = _interopRequireDefault(_mobileMenu);
 
 var _toggleFullScreen = __webpack_require__(/*! ./toggleFullScreen */ "./src/javascripts/toggleFullScreen.js");
 
@@ -188,18 +188,16 @@ var _toggleFullScreen2 = _interopRequireDefault(_toggleFullScreen);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import '../stylesheets/main.scss';
-
-(0, _menu2.default)();
+(0, _mobileMenu2.default)();
 (0, _carousel2.default)();
 (0, _toggleFullScreen2.default)();
 
 /***/ }),
 
-/***/ "./src/javascripts/menu.js":
-/*!*********************************!*\
-  !*** ./src/javascripts/menu.js ***!
-  \*********************************/
+/***/ "./src/javascripts/mobile-menu.js":
+/*!****************************************!*\
+  !*** ./src/javascripts/mobile-menu.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
