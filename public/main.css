@@ -718,7 +718,7 @@ a:hover, a:focus {
 .hidden-menu {
   display: block;
   list-style: none;
-  padding: 10px;
+  padding: 0 10px;
   overflow-y: auto;
   margin: 0;
   -webkit-box-sizing: border-box;
@@ -727,7 +727,7 @@ a:hover, a:focus {
   width: 50%;
   background-color: #1A0430;
   opacity: 0.9;
-  height: 150%;
+  height: 100vh;
   position: fixed;
   top: 0;
   right: -50%;
@@ -738,6 +738,9 @@ a:hover, a:focus {
   z-index: 2;
   -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden; }
+  @media (min-width: 768px), (orientation: landscape) {
+    .hidden-menu {
+      width: 30%; } }
 
 .hidden-menu-ticker {
   display: none; }
@@ -747,12 +750,8 @@ a:hover, a:focus {
   background-color: #4C3E66;
   padding: 5px;
   position: fixed;
-  top: -webkit-calc(20vh / 5);
-  top: -moz-calc(20vh / 5);
-  top: calc(20vh / 5);
-  right: -webkit-calc(20vh / 5);
-  right: -moz-calc(20vh / 5);
-  right: calc(20vh / 5);
+  top: 4vh;
+  right: 4vh;
   cursor: pointer;
   -webkit-transition: right 0.23s;
   -o-transition: right 0.23s;
@@ -788,9 +787,16 @@ a:hover, a:focus {
       display: none; } }
 
 .hidden-menu-ticker:checked ~ .btn-menu {
-  right: -webkit-calc(50% - 45px);
-  right: -moz-calc(50% - 45px);
-  right: calc(50% - 45px); }
+  top: 0;
+  right: 50%;
+  -webkit-border-radius: 5px 0 0 5px;
+     -moz-border-radius: 5px 0 0 5px;
+          border-radius: 5px 0 0 5px;
+  background-color: #1A0430;
+  opacity: 0.9; }
+  @media (min-width: 768px), (orientation: landscape) {
+    .hidden-menu-ticker:checked ~ .btn-menu {
+      right: 30%; } }
 
 .hidden-menu-ticker:checked ~ .hidden-menu {
   right: 0; }
@@ -816,9 +822,10 @@ a:hover, a:focus {
     color: #77749C; }
 
 .hidden-menu-link-holder {
-  margin-top: 15px; }
-  .hidden-menu-link-holder:first-of-type {
-    margin-top: 47px; }
+  margin-top: 3vh; }
+  @media (min-width: 768px) {
+    .hidden-menu-link-holder:first-of-type {
+      margin-top: 7.5vh; } }
 
 /* 2.3. Services page elements */
 .services-container {
