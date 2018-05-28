@@ -174,13 +174,17 @@ exports.default = function () {
 "use strict";
 
 
-var _carousel = __webpack_require__(/*! ./carousel */ "./src/javascripts/carousel.js");
+var _topbar = __webpack_require__(/*! ./topbar */ "./src/javascripts/topbar.js");
 
-var _carousel2 = _interopRequireDefault(_carousel);
+var _topbar2 = _interopRequireDefault(_topbar);
 
 var _mobileMenu = __webpack_require__(/*! ./mobile-menu */ "./src/javascripts/mobile-menu.js");
 
 var _mobileMenu2 = _interopRequireDefault(_mobileMenu);
+
+var _carousel = __webpack_require__(/*! ./carousel */ "./src/javascripts/carousel.js");
+
+var _carousel2 = _interopRequireDefault(_carousel);
 
 var _toggleFullScreen = __webpack_require__(/*! ./toggleFullScreen */ "./src/javascripts/toggleFullScreen.js");
 
@@ -188,6 +192,7 @@ var _toggleFullScreen2 = _interopRequireDefault(_toggleFullScreen);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+(0, _topbar2.default)();
 (0, _mobileMenu2.default)();
 (0, _carousel2.default)();
 (0, _toggleFullScreen2.default)();
@@ -256,6 +261,34 @@ exports.default = function () {
   } else {
     cancelFullScreen.call(doc);
   }
+};
+
+/***/ }),
+
+/***/ "./src/javascripts/topbar.js":
+/*!***********************************!*\
+  !*** ./src/javascripts/topbar.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+exports.default = function () {
+  var topbarContacts = document.querySelectorAll('.topbar-contact-text');
+  [].concat(_toConsumableArray(topbarContacts)).forEach(function (contact) {
+    // Сheck if the device is a desktop
+    if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      contact.style.pointerEvents = 'none'; // eslint-disable-line no-param-reassign
+    }
+  });
 };
 
 /***/ }),
