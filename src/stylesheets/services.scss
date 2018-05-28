@@ -1,1 +1,64 @@
+.services-container {
+  width: 90vw;
+  margin: 5vw auto 0 auto;
+}
 
+.services-headline {
+  width: 100%;
+  text-align: center;
+}
+
+.services-content {
+  width: 100%;
+}
+
+.service-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 5vw 0;
+
+  &:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+
+  &:nth-child(odd) {
+    background-color: $violet-dark;
+  }
+
+  &:nth-child(even) {
+    background-color: $violet-medium;
+  }
+}
+
+.service {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.service-image {
+  margin: 25% auto 0 auto;
+  width: 33%;
+  height: auto;
+}
+
+.service-caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 75%;
+  height: 42%;
+
+  p {
+    width: 100%;
+    font-size: 1.3rem;
+  }
+}

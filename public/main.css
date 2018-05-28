@@ -827,7 +827,6 @@ a:hover, a:focus {
     .hidden-menu-link-holder:first-of-type {
       margin-top: 7.5vh; } }
 
-/* 2.3. Services page elements */
 .services-container {
   width: 90vw;
   margin: 5vw auto 0 auto; }
@@ -890,7 +889,6 @@ a:hover, a:focus {
     width: 100%;
     font-size: 1.3rem; }
 
-/*2.4. Portfolio page elements */
 .portfolio-headline {
   width: 100%;
   text-align: center;
@@ -993,12 +991,8 @@ a:hover, a:focus {
   -moz-background-size: cover;
        background-size: cover; }
 
-/* 2.5. */
 #footer {
   height: 5000px; }
-
-/*3. Other elements: */
-/*3.2 Call-to-action button */
 
 
 /*# sourceMappingURL=main.css.map*/
