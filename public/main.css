@@ -310,7 +310,7 @@ template {
 .page {
   height: 100%;
   min-height: 100%;
-  background-color: #77749C;
+  background-color: #3A1C34;
   font-family: "Cormorant Infant", serif;
   font-size: 16px;
   color: #000; }
@@ -349,7 +349,7 @@ p {
   margin: 0; }
 
 a:hover, a:focus {
-  color: #77749C;
+  color: #D79392;
   text-decoration: none;
   outline: 0; }
 
@@ -384,7 +384,7 @@ a:hover, a:focus {
               justify-content: space-between;
       width: 100%;
       height: 4.5%;
-      background-color: #1A0430; } }
+      background-color: #3A1C34; } }
 
 .topbar-contacts {
   display: -webkit-box;
@@ -568,7 +568,7 @@ a:hover, a:focus {
      -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 30%;
+  height: 50%;
   list-style-type: none;
   margin-right: 1vw; }
   .main-navigation-link-holder:last-child {
@@ -579,7 +579,7 @@ a:hover, a:focus {
   font-family: "Playfair Display SC", serif;
   font-weight: 700;
   font-size: 1.5em;
-  color: #1A0430;
+  color: #3A1C34;
   text-decoration: none;
   text-transform: uppercase; }
   @media (min-width: 1920px) {
@@ -589,8 +589,8 @@ a:hover, a:focus {
 .home-content {
   width: 100%;
   height: 80%;
-  background-color: #77749C;
-  background: url(/images/main-background.png) no-repeat 0 0;
+  background-color: #D79392;
+  background: url(/images/relax.jpg) no-repeat 0 0;
   -moz-background-size: cover;
        background-size: cover; }
 
@@ -725,7 +725,7 @@ a:hover, a:focus {
      -moz-box-sizing: border-box;
           box-sizing: border-box;
   width: 50%;
-  background-color: #1A0430;
+  background-color: #3A1C34;
   opacity: 0.9;
   height: 100vh;
   position: fixed;
@@ -747,7 +747,7 @@ a:hover, a:focus {
 
 .btn-menu {
   color: #fff;
-  background-color: #4C3E66;
+  background-color: #3A1C34;
   padding: 5px;
   position: fixed;
   top: 4vh;
@@ -792,7 +792,7 @@ a:hover, a:focus {
   -webkit-border-radius: 5px 0 0 5px;
      -moz-border-radius: 5px 0 0 5px;
           border-radius: 5px 0 0 5px;
-  background-color: #1A0430;
+  background-color: #3A1C34;
   opacity: 0.9; }
   @media (min-width: 768px), (orientation: landscape) {
     .hidden-menu-ticker:checked ~ .btn-menu {
@@ -819,7 +819,7 @@ a:hover, a:focus {
   text-decoration: none;
   text-transform: uppercase; }
   .hidden-menu-link:hover, .hidden-menu-link:focus, .hidden-menu-link:active {
-    color: #77749C; }
+    color: #D79392; }
 
 .hidden-menu-link-holder {
   margin-top: 3vh; }
@@ -847,9 +847,9 @@ a:hover, a:focus {
     display: block;
     padding-top: 100%; }
   .service-wrapper:nth-child(odd) {
-    background-color: #1A0430; }
+    background-color: #A7567B; }
   .service-wrapper:nth-child(even) {
-    background-color: #6E2250; }
+    background-color: #D79392; }
 
 .service {
   width: 100%;
@@ -911,7 +911,7 @@ a:hover, a:focus {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #1A0430; }
+  background: #3A1C34; }
 
 .gallery-wrapper {
   width: 100%;

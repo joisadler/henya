@@ -24,11 +24,11 @@
   }
 
   &:nth-child(odd) {
-    background-color: $violet-dark;
+    background-color: $violet-medium;
   }
 
   &:nth-child(even) {
-    background-color: $violet-medium;
+    background-color: $violet-light;
   }
 }
 

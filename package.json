@@ -44,6 +44,7 @@
     "eslint-plugin-react": "^7.2.1",
     "file-loader": "^1.1.11",
     "html-beautify-webpack-plugin": "^1.0.5",
+    "image-webpack-loader": "^4.2.0",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
     "nodemon": "^1.17.3",
