@@ -216,7 +216,6 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = function () {
   document.body.addEventListener('click', function (event) {
     var target = event.target;
-    var hiddenMenu = document.querySelector('.hidden-menu');
     var ticker = document.getElementById('hidden-menu-ticker');
     var label = document.querySelector('.btn-menu');
     var span1 = document.querySelector('.first');
@@ -228,7 +227,7 @@ exports.default = function () {
       ticker.checked = false;
     }
 
-    if (menuIsOpened && target !== hiddenMenu && target !== ticker && target !== label && target !== span1 && target !== span2 && target !== span3) {
+    if (menuIsOpened && target !== ticker && target !== label && target !== span1 && target !== span2 && target !== span3) {
       closeMenu();
     }
   });

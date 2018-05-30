@@ -1,7 +1,6 @@
 export default () => {
   document.body.addEventListener('click', (event) => {
     const target = event.target;
-    const hiddenMenu = document.querySelector('.hidden-menu');
     const ticker = document.getElementById('hidden-menu-ticker');
     const label = document.querySelector('.btn-menu');
     const span1 = document.querySelector('.first');
@@ -12,7 +11,6 @@ export default () => {
     function closeMenu() { ticker.checked = false; }
 
     if (menuIsOpened &&
-      target !== hiddenMenu &&
       target !== ticker &&
       target !== label &&
       target !== span1 &&
