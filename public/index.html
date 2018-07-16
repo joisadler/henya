@@ -14,7 +14,7 @@
   </head>
 
   <body class="page">
-    <div class="home full-screen" id="home">
+    <section class="home full-screen" id="home">
       <div class="row topbar">
         <div class="topbar-contacts">
           <div class="topbar-contact-icon"><i class="fas fa-map-marker-alt"></i></div>
@@ -30,8 +30,8 @@
           <a class="topbar-link" href="https://www.instagram.com/henya_design/" title="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-      <div class="row navbar">
-        <img class="logo" src="../images/logo.png">
+      <nav class="row">
+        <img class="logo" src="../images/logo.png" alt="Henya Adler Design">
         <input class="hidden-menu-ticker" id="hidden-menu-ticker" type="checkbox">
         <label class="btn-menu" for="hidden-menu-ticker"><span class="first"></span><span class="second"></span><span class="third"></span></label>
         <ul class="hidden-menu">
@@ -60,50 +60,63 @@
             <a class="hidden-menu-link" href="#action">Оставить заявку</a>
           </li>
         </ul>
-        <ul class="main-navigation">
-          <li class="main-navigation-link-holder">
-            <a class="main-navigation-link" href="#home">в начало</a>
+        <ul class="home-navigation">
+          <li class="home-navigation-link-holder">
+            <a class="home-navigation-link" href="#home">в начало</a>
           </li>
-          <li class="main-navigation-link-holder">
-            <a class="main-navigation-link" href="#services">услуги</a>
+          <li class="home-navigation-link-holder">
+            <a class="home-navigation-link" href="#services">услуги</a>
           </li>
-          <li class="main-navigation-link-holder">
-            <a class="main-navigation-link" href="#portfolio">портфолио</a>
+          <li class="home-navigation-link-holder">
+            <a class="home-navigation-link" href="#portfolio">портфолио</a>
           </li>
-          <li class="main-navigation-link-holder">
-            <a class="main-navigation-link" href="#benefits">преимущества</a>
+          <li class="home-navigation-link-holder">
+            <a class="home-navigation-link" href="#benefits">преимущества</a>
           </li>
-          <li class="main-navigation-link-holder">
-            <a class="main-navigation-link" href="#questions-and-answers">вопросы и ответы</a>
+          <li class="home-navigation-link-holder">
+            <a class="home-navigation-link" href="#questions-and-answers">вопросы и ответы</a>
           </li>
-          <li class="main-navigation-link-holder">
-            <a class="main-navigation-link" href="#testimonials">отзывы</a>
+          <li class="home-navigation-link-holder">
+            <a class="home-navigation-link" href="#testimonials">отзывы</a>
           </li>
-          <li class="main-navigation-link-holder">
-            <a class="main-navigation-link" href="#organizations">мои клиенты</a>
+          <li class="home-navigation-link-holder">
+            <a class="home-navigation-link" href="#organizations">мои клиенты</a>
           </li>
-          <li class="main-navigation-link-holder">
-            <a class="main-navigation-link" href="#action">оставить заявку</a>
+          <li class="home-navigation-link-holder">
+            <a class="home-navigation-link" href="#action">оставить заявку</a>
           </li>
         </ul>
-      </div>
-      <div class="home-content">
-        <div class="home-headline">
+      </nav>
+      <div class="home-container">
+        <header class="home-headline">
           <h1>Устали от поисков удачного дизайна?</h1>
-        </div>
-        <div class="home-subheadline">
-          <h2>Теперь вы можете расслабиться!</h2>
-          <h2>Отныне ваши заботы я беру на себя.</h2>
-        </div>
-        <div class="proposition">
-          <h2>Хотите узнать больше?</h2>
-        </div>
-        <div class="action-button-holder">
-          <a class="action-button" href="#action">Оставить заявку</a>
+        </header>
+        <div class="home-sections">
+          <div class="home-illustration-section">
+            <div class="home-illustration"></div>
+          </div>
+          <div class="home-content-section">
+            <div class="home-subheadline">
+              <h2>Теперь вы можете расслабиться!</h2>
+              <h2>Отныне ваши заботы я беру на себя.</h2>
+            </div>
+            <div class="home-action">
+              <div class="home-proposition">
+                <h2>Хотите узнать больше?</h2>
+              </div>
+              <div class="home-contact-options">
+                <!--a.action-button(href='#action') Напишите мне!-->
+                <a class="home-social-link home-mail-link" href="mailto:henyadesign@gmail.com" title="Send Email"></a>
+                <a class="home-social-link home-whatsapp-link" href="https://wa.me/972587782776" title="WhatsApp"></a>
+                <a class="home-social-link home-facebook-link" href="fb://page/2036302739931258" title="Facebook Page"></a>
+                <a class="home-social-link home-instagram-link" href="instagram://user?username=henya_design" title="Instagram"></a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row" id="services">
+    </section>
+    <section class="row" id="services">
       <div class="services-container">
         <div class="services-headline">
           <h3>Что вы получите?</h3>
@@ -159,8 +172,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="row" id="portfolio">
+    </section>
+    <section class="row" id="portfolio">
       <div class="portfolio-headline">
         <h3>Примеры работ</h3>
       </div>
@@ -184,25 +197,25 @@
           <button class="arrow next"></button>
         </div>
       </div>
-    </div>
-    <div class="row" id="benefits">
+    </section>
+    <section class="row" id="benefits">
       <h3>Преимущества<p>Преимущества</p></h3>
-    </div>
-    <div class="row" id="questions-and-answers">
+    </section>
+    <section class="row" id="questions-and-answers">
       <h3>Вопросы и ответы<p>Вопросы и ответы</p></h3>
-    </div>
-    <div class="row" id="testimonials">
+    </section>
+    <section class="row" id="testimonials">
       <h3>Отзывы<p>Отзывы</p></h3>
-    </div>
-    <div class="row" id="organizations">
+    </section>
+    <section class="row" id="organizations">
       <h3>Мои клиенты<p>Мои клиенты</p></h3>
-    </div>
-    <div class="row" id="action">
+    </section>
+    <section class="row" id="action">
       <h3>Оставить заявку<p>Оставить заявку</p></h3>
-    </div>
-    <div class="row" id="footer">
+    </section>
+    <footer class="row" id="footer">
       <h3>Подвал<p>Photo by Brady Corps on Unsplash</p></h3>
-    </div>
+    </footer>
     <script src="/javascripts/bundle.js"></script>
   </body>
 

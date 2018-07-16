@@ -164,6 +164,36 @@ exports.default = function () {
 
 /***/ }),
 
+/***/ "./src/javascripts/home-social-links.js":
+/*!**********************************************!*\
+  !*** ./src/javascripts/home-social-links.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  var fbLink = document.querySelector('.home-facebook-link');
+  var instaLink = document.querySelector('.home-instagram-link');
+  if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // on desktop
+    fbLink.setAttribute('href', 'https://www.facebook.com/henyadesign/');
+    instaLink.setAttribute('href', 'https://www.instagram.com/henya_design/');
+  }
+  if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    // on IOS
+    fbLink.setAttribute('href', 'fb://page?id=2036302739931258');
+  }
+};
+
+/***/ }),
+
 /***/ "./src/javascripts/index.js":
 /*!**********************************!*\
   !*** ./src/javascripts/index.js ***!
@@ -182,6 +212,10 @@ var _mobileMenu = __webpack_require__(/*! ./mobile-menu */ "./src/javascripts/mo
 
 var _mobileMenu2 = _interopRequireDefault(_mobileMenu);
 
+var _homeSocialLinks = __webpack_require__(/*! ./home-social-links */ "./src/javascripts/home-social-links.js");
+
+var _homeSocialLinks2 = _interopRequireDefault(_homeSocialLinks);
+
 var _carousel = __webpack_require__(/*! ./carousel */ "./src/javascripts/carousel.js");
 
 var _carousel2 = _interopRequireDefault(_carousel);
@@ -194,6 +228,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _topbar2.default)();
 (0, _mobileMenu2.default)();
+(0, _homeSocialLinks2.default)();
 (0, _carousel2.default)();
 (0, _toggleFullScreen2.default)();
 
