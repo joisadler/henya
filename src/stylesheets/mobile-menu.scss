@@ -61,6 +61,13 @@
   @media (min-width: $desktop) {
       display: none;
   }
+  @media only screen
+  and (min-width: 1024px)
+  and (max-width: 1366px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1.5) { // iPad pro in lanscape orientation
+    display: block;
+  }
 }
 
 .hidden-menu-ticker:checked ~ {

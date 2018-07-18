@@ -423,7 +423,7 @@ a:hover, a:focus {
   margin-right: 0.5vw;
   font-size: 1em;
   color: #fff; }
-  @media (min-width: 1367px) {
+  @media (min-width: 1280px) {
     .topbar-contact-icon {
       font-size: 1.3em; } }
   @media (min-width: 1921px) {
@@ -439,7 +439,7 @@ a:hover, a:focus {
   text-decoration: none; }
   .topbar-contact-text:hover, .topbar-contact-text:focus {
     color: #fff; }
-  @media (min-width: 1367px) {
+  @media (min-width: 1280px) {
     .topbar-contact-text {
       font-size: 1.3em; } }
   @media (min-width: 1921px) {
@@ -529,7 +529,7 @@ a:hover, a:focus {
 
 .home-navigation {
   display: none; }
-  @media (min-width: 1367px) {
+  @media (min-width: 1280px) {
     .home-navigation {
       display: -webkit-box;
       display: -webkit-flex;
@@ -565,6 +565,9 @@ a:hover, a:focus {
       margin: 0;
       margin-right: 1.5vw;
       padding: 0; } }
+  @media only screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
+    .home-navigation {
+      display: none; } }
 
 .home-navigation-link-holder {
   display: -webkit-box;
@@ -675,7 +678,7 @@ a:hover, a:focus {
           align-items: center;
   width: 90%;
   height: 100%; }
-  @media (max-width: 1367px) {
+  @media (max-width: 1280px) {
     .home-sections {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
@@ -684,7 +687,7 @@ a:hover, a:focus {
          -moz-box-direction: normal;
           -ms-flex-direction: column;
               flex-direction: column; } }
-  @media (orientation: landscape), (min-width: 1367px) {
+  @media (orientation: landscape), (min-width: 1280px) {
     .home-sections {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
@@ -799,7 +802,7 @@ a:hover, a:focus {
   text-align: center;
   width: 100%;
   height: 40%; }
-  @media (orientation: landscape), (min-width: 1367px) {
+  @media (orientation: landscape), (min-width: 1280px) {
     .home-subheadline {
       -webkit-box-pack: center;
       -webkit-justify-content: center;
@@ -838,7 +841,7 @@ a:hover, a:focus {
   @media (min-width: 768px) and (orientation: portrait) {
     .home-action {
       padding-bottom: 5vmin; } }
-  @media (orientation: landscape), (min-width: 1367px) {
+  @media (orientation: landscape), (min-width: 1280px) {
     .home-action {
       padding-bottom: 5vmin;
       height: 50%; } }
@@ -998,9 +1001,12 @@ a:hover, a:focus {
       top: -moz-calc((15.5vh / 3) + 4.5vh);
       top: calc((15.5vh / 3) + 4.5vh);
       right: 5.3vh; } }
-  @media (min-width: 1367px) {
+  @media (min-width: 1280px) {
     .btn-menu {
       display: none; } }
+  @media only screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
+    .btn-menu {
+      display: block; } }
 
 .hidden-menu-ticker:checked ~ .btn-menu {
   top: 0;
