@@ -193,6 +193,33 @@ exports.default = function () {
 
 /***/ }),
 
+/***/ "./src/javascripts/home.js":
+/*!*********************************!*\
+  !*** ./src/javascripts/home.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  var subheadlines = document.querySelectorAll('.home-subheadline h2, .home-action h2');
+  if (/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // device is a mobile phone
+    /* eslint-disable no-return-assign, no-param-reassign */
+    subheadlines.forEach(function (h2) {
+      return h2.style.fontSize = '6.4vmin';
+    });
+  }
+};
+
+/***/ }),
+
 /***/ "./src/javascripts/index.js":
 /*!**********************************!*\
   !*** ./src/javascripts/index.js ***!
@@ -202,6 +229,10 @@ exports.default = function () {
 
 "use strict";
 
+
+var _home = __webpack_require__(/*! ./home */ "./src/javascripts/home.js");
+
+var _home2 = _interopRequireDefault(_home);
 
 var _topbar = __webpack_require__(/*! ./topbar */ "./src/javascripts/topbar.js");
 
@@ -229,6 +260,7 @@ var _toggleFullScreen2 = _interopRequireDefault(_toggleFullScreen);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+(0, _home2.default)();
 (0, _topbar2.default)();
 (0, _navbar2.default)();
 (0, _mobileMenu2.default)();

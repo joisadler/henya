@@ -682,6 +682,15 @@ a:hover, a:focus {
           align-items: center;
   width: 90%;
   height: 100%; }
+  @media (max-width: 1367px) {
+    .home-sections {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+         -moz-box-orient: vertical;
+         -moz-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
   @media (orientation: landscape), (min-width: 1367px) {
     .home-sections {
       -webkit-box-orient: horizontal;
@@ -718,9 +727,13 @@ a:hover, a:focus {
       -ms-flex-align: center;
           align-items: center;
   margin: 0; }
-  @media (orientation: landscape), (min-width: 1367px) {
+  @media (orientation: landscape) {
     .home-illustration-section {
       width: 50%;
+      height: 100%; } }
+  @media (orientation: landscape) and (min-width: 768px) {
+    .home-illustration-section {
+      width: 60%;
       height: 100%; } }
 
 .home-illustration {
@@ -757,11 +770,14 @@ a:hover, a:focus {
           justify-content: flex-start;
   width: 100%;
   height: 50%; }
-  @media (orientation: landscape), (min-width: 1367px) {
+  @media (orientation: landscape) {
     .home-content-section {
       -webkit-justify-content: space-around;
           -ms-flex-pack: distribute;
               justify-content: space-around;
+      height: 100%; } }
+  @media (orientation: landscape) and (min-width: 768px) {
+    .home-content-section {
       height: 100%; } }
 
 .home-subheadline {
@@ -825,17 +841,25 @@ a:hover, a:focus {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  padding-bottom: 10vmin; }
+  padding-bottom: 2vmin; }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .home-action {
+      padding-bottom: 5vmin; } }
   @media (orientation: landscape), (min-width: 1367px) {
     .home-action {
+      padding-bottom: 5vmin;
       height: 50%; } }
 
 .home-subheadline h2, .home-action h2 {
   font-family: "Caveat", cursive;
   font-weight: 700;
-  font-size: 6.4vmin;
+  font-size: 6.2vmin;
   color: #fff;
   margin: 0; }
+
+@media (min-width: 768px) and (orientation: landscape) {
+  .home-subheadline h2, .home-action h2 {
+    font-size: 5vmin; } }
 
 .home-proposition {
   display: -webkit-box;
@@ -897,6 +921,10 @@ a:hover, a:focus {
     margin-left: 0; }
   .home-social-link:last-child {
     margin-right: 0; }
+  @media (min-width: 768px) {
+    .home-social-link {
+      height: 10vmin;
+      width: 10vmin; } }
 
 .home-mail-link {
   background-color: #fff;
