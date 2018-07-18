@@ -725,11 +725,7 @@ a:hover, a:focus {
   margin: 0; }
   @media (orientation: landscape) {
     .home-illustration-section {
-      width: 50%;
-      height: 100%; } }
-  @media (orientation: landscape) and (min-width: 768px) {
-    .home-illustration-section {
-      width: 60%;
+      width: 40%;
       height: 100%; } }
 
 .home-illustration {
@@ -771,9 +767,7 @@ a:hover, a:focus {
       -webkit-justify-content: space-around;
           -ms-flex-pack: distribute;
               justify-content: space-around;
-      height: 100%; } }
-  @media (orientation: landscape) and (min-width: 768px) {
-    .home-content-section {
+      width: 60%;
       height: 100%; } }
 
 .home-subheadline {

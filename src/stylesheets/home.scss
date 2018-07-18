@@ -214,11 +214,7 @@
   margin: 0;
 
   @media (orientation: landscape) {
-    width: 50%;
-    height: 100%;
-  }
-  @media (orientation: landscape) and (min-width: $tablet) {
-    width: 60%;
+    width: 40%;
     height: 100%;
   }
 }
@@ -242,9 +238,7 @@
 
   @media (orientation: landscape) {
     justify-content: space-around;
-    height: 100%;
-  }
-  @media (orientation: landscape) and (min-width: $tablet) {
+    width: 60%;
     height: 100%;
   }
 }
