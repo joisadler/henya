@@ -178,16 +178,72 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function () {
-  var fbLink = document.querySelector('.home-facebook-link');
-  var instaLink = document.querySelector('.home-instagram-link');
+  var topbarLinks = document.querySelectorAll('.topbar-link');
+  var facebookLink = document.querySelector('.home-facebook-link');
+  var instagramLink = document.querySelector('.home-instagram-link');
+  var whatsAppLink = document.querySelector('.home-whatsapp-link');
+  var mailLink = document.querySelector('.home-mail-link');
+  var linkedinLink = document.querySelector('.home-linkedin-link');
+  var topbarMailIcon = document.getElementById('topbar-mail-icon');
+  var topbarFacebookIcon = document.getElementById('topbar-facebook-icon');
+  var topbarInstagramIcon = document.getElementById('topbar-instagram-icon');
+  var topbarLinkedinIcon = document.getElementById('topbar-linkedin-icon');
+
   if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    // on desktop
-    fbLink.setAttribute('href', 'https://www.facebook.com/henyadesign/');
-    instaLink.setAttribute('href', 'https://www.instagram.com/henya_design/');
+    // Desktop devices
+    facebookLink.setAttribute('href', 'https://www.facebook.com/henyadesign/');
+    instagramLink.setAttribute('href', 'https://www.instagram.com/henya_design/');
+    mailLink.setAttribute('href', '#contact');
+
+    /* eslint-disable no-return-assign, no-param-reassign */
+    topbarLinks.forEach(function (link) {
+      link.addEventListener('mouseover', function () {
+        link.style.color = '#CB74C0';
+      });
+    });
+    topbarLinks.forEach(function (link) {
+      link.addEventListener('mouseleave', function () {
+        link.style.color = '#FFF';
+      });
+    });
+
+    mailLink.addEventListener('mouseover', function () {
+      topbarMailIcon.style.color = '#CB74C0';
+    });
+    mailLink.addEventListener('mouseleave', function () {
+      topbarMailIcon.style.color = '#FFF';
+    });
+
+    facebookLink.addEventListener('mouseover', function () {
+      topbarFacebookIcon.style.color = '#CB74C0';
+    });
+    facebookLink.addEventListener('mouseleave', function () {
+      topbarFacebookIcon.style.color = '#FFF';
+    });
+
+    instagramLink.addEventListener('mouseover', function () {
+      topbarInstagramIcon.style.color = '#CB74C0';
+    });
+    instagramLink.addEventListener('mouseleave', function () {
+      topbarInstagramIcon.style.color = '#FFF';
+    });
+
+    linkedinLink.addEventListener('mouseover', function () {
+      topbarLinkedinIcon.style.color = '#CB74C0';
+    });
+    linkedinLink.addEventListener('mouseleave', function () {
+      topbarLinkedinIcon.style.color = '#FFF';
+    });
   }
+
   if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-    // on IOS
-    fbLink.setAttribute('href', 'fb://page?id=2036302739931258');
+    // IOS devices
+    facebookLink.setAttribute('href', 'fb://page?id=2036302739931258');
+  }
+
+  if (/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // mobile phones only
+    whatsAppLink.style.display = 'block';
   }
 };
 

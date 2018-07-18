@@ -4,18 +4,20 @@ section.home.full-screen(id="home")
       .topbar-contact-icon
         i.fas.fa-map-marker-alt
       a.topbar-contact-text(href="waze://?ll=31.891377,34.819971&navigate=yes" title="Navigate with Waze") Rehovot, Israel
-      .topbar-contact-icon
+      .topbar-contact-icon(id="topbar-number-icon")
         i.fas.fa-mobile-alt
-      a.topbar-contact-text(href="tel:+972587782776" title="Click to dial from mobile") +972587782776
+      a.topbar-contact-text(href="tel:+972587782776" title="Click to dial from mobile" id="topbar-number") +972587782776
       .topbar-contact-icon
         i.fas.fa-envelope
-      a.topbar-contact-text(href="mailto:henyadesign@gmail.com" title="Send Email") henyadesign@gmail.com
+      a.topbar-contact-text(href="mailto:henyadesign@gmail.com") henyadesign@gmail.com
     .topbar-social-links
-      a.topbar-link(href="https://www.facebook.com/henyadesign" title="Facebook")
-        i.fab.fa-facebook-square
-      a.topbar-link(href="https://www.linkedin.com/in/henyaadler/" title="Linkedin")
+      a.topbar-link(href="#contact" title="Send Email" id="topbar-mail-icon")
+        i.fas.fa-envelope
+      a.topbar-link(href="https://www.linkedin.com/in/henyaadler/" title="Go to Linkedin page" id="topbar-linkedin-icon")
         i.fab.fa-linkedin
-      a.topbar-link(href="https://www.instagram.com/henya_design/" title="Instagram")
+      a.topbar-link(href="https://www.facebook.com/henyadesign" title="Go to Facebook page" id="topbar-facebook-icon")
+        i.fab.fa-facebook-square
+      a.topbar-link(href="https://www.instagram.com/henya_design/" title="Go to Instagram page" id="topbar-instagram-icon")
         i.fab.fa-instagram
   nav.row.home-navbar(id="home-navbar")
     img.logo(src="../images/logo.png" alt="Henya Adler Design")
@@ -36,7 +38,7 @@ section.home.full-screen(id="home")
       li.home-navigation-link-holder
         a.home-navigation-link(href="#organizations") наши клиенты
       li.home-navigation-link-holder
-        a.home-navigation-link(href="#action") оставить заявку
+        a.home-navigation-link(href="#contact") оставить заявку
         
   .home-container
     header.home-headline
@@ -52,8 +54,8 @@ section.home.full-screen(id="home")
           .home-proposition
             h2 Хотите узнать больше?
           .home-contact-options
-            //a.action-button(href='#action') Напишите мне!
             a.home-social-link.home-mail-link(href="mailto:henyadesign@gmail.com" title="Send Email")
-            a.home-social-link.home-whatsapp-link(href="https://wa.me/972587782776" title="WhatsApp")
-            a.home-social-link.home-facebook-link(href="fb://page/2036302739931258" title="Facebook Page")
-            a.home-social-link.home-instagram-link(href="instagram://user?username=henya_design" title="Instagram")
+            a.home-social-link.home-whatsapp-link(href="https://wa.me/972587782776" title="Call (from mobile)")
+            a.home-social-link.home-linkedin-link(href="https://www.linkedin.com/in/henyaadler" title="Go to LinkedIn page")
+            a.home-social-link.home-facebook-link(href="fb://page/2036302739931258" title="Go to Facebook page")
+            a.home-social-link.home-instagram-link(href="instagram://user?username=henya_design" title="Go to Instagram page")

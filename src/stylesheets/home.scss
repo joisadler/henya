@@ -337,7 +337,14 @@
   background-image: url('../images/mail-round.png')
 }
 .home-whatsapp-link {
-  background-image: url('../images/whatsapp-round.png')
+  background-image: url('../images/whatsapp-round.png');
+
+  @media (min-width: $tablet) {
+    display: none;
+  }
+}
+.home-linkedin-link {
+  background-image: url('../images/linkedin-round.png');
 }
 .home-facebook-link {
   background-image: url('../images/facebook-round.png')

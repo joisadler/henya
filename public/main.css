@@ -331,18 +331,18 @@ h3 {
   font-family: "Cormorant Infant", serif;
   font-weight: 700;
   font-size: 1.5rem;
-  color: #fff;
+  color: #FFF;
   margin: 0; }
 
 p {
   font-family: "Cormorant Infant", serif;
   font-weight: 400;
   font-size: 1rem;
-  color: #fff;
+  color: #FFF;
   margin: 0; }
 
 a:hover, a:focus {
-  color: rgba(203, 116, 192, 0.5);
+  color: #CB74C0;
   text-decoration: none;
   outline: 0; }
 
@@ -422,7 +422,7 @@ a:hover, a:focus {
           justify-content: center;
   margin-right: 0.5vw;
   font-size: 1em;
-  color: #fff; }
+  color: #FFF; }
   @media (min-width: 1280px) {
     .topbar-contact-icon {
       font-size: 1.3em; } }
@@ -435,10 +435,10 @@ a:hover, a:focus {
   font-family: "Cormorant Infant", serif;
   font-weight: bold;
   font-size: 1em;
-  color: #fff;
+  color: #FFF;
   text-decoration: none; }
   .topbar-contact-text:hover, .topbar-contact-text:focus {
-    color: #fff; }
+    color: #FFF; }
   @media (min-width: 1280px) {
     .topbar-contact-text {
       font-size: 1.3em; } }
@@ -484,7 +484,7 @@ a:hover, a:focus {
           align-items: center;
   margin-right: 1vw;
   font-size: 1.5em;
-  color: #fff;
+  color: #FFF;
   text-decoration: none; }
   .topbar-link:last-child {
     margin-right: 0; }
@@ -494,7 +494,7 @@ a:hover, a:focus {
 
 .home-navbar {
   height: 20%;
-  background-color: #fff;
+  background-color: #FFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -651,7 +651,7 @@ a:hover, a:focus {
     line-height: 10.5vmin;
     text-transform: uppercase;
     text-align: center;
-    color: #fff;
+    color: #FFF;
     margin: 0; }
     @media (min-width: 768px) {
       .home-headline h1 {
@@ -844,7 +844,7 @@ a:hover, a:focus {
   font-family: "Caveat", cursive;
   font-weight: 700;
   font-size: 6.2vmin;
-  color: #fff;
+  color: #FFF;
   margin: 0; }
 
 @media (min-width: 768px) and (orientation: landscape) {
@@ -917,11 +917,17 @@ a:hover, a:focus {
       width: 10vmin; } }
 
 .home-mail-link {
-  background-color: #fff;
+  background-color: #FFF;
   background-image: url(/images/mail-round.png); }
 
 .home-whatsapp-link {
   background-image: url(/images/whatsapp-round.png); }
+  @media (min-width: 768px) {
+    .home-whatsapp-link {
+      display: none; } }
+
+.home-linkedin-link {
+  background-image: url(/images/linkedin-round.png); }
 
 .home-facebook-link {
   background-image: url(/images/facebook-round.png); }
@@ -959,7 +965,7 @@ a:hover, a:focus {
   display: none; }
 
 .btn-menu {
-  color: #fff;
+  color: #FFF;
   background-color: #3A1C34;
   padding: 5px;
   position: fixed;
@@ -980,7 +986,7 @@ a:hover, a:focus {
   .btn-menu span {
     display: block;
     height: 5px;
-    background-color: #fff;
+    background-color: #FFF;
     margin: 5px 0 0;
     -webkit-transition: all 0.1s linear 0.23s;
     -o-transition: all 0.1s linear 0.23s;
@@ -1030,11 +1036,11 @@ a:hover, a:focus {
 .hidden-menu-link {
   font-family: "Playfair Display SC", serif;
   font-weight: 700;
-  color: #fff;
+  color: #FFF;
   text-decoration: none;
   text-transform: uppercase; }
   .hidden-menu-link:hover, .hidden-menu-link:focus, .hidden-menu-link:active {
-    color: rgba(203, 116, 192, 0.5); }
+    color: #CB74C0; }
 
 .hidden-menu-link-holder {
   margin-top: 3vh; }
@@ -1064,7 +1070,7 @@ a:hover, a:focus {
   .service-wrapper:nth-child(odd) {
     background-color: #BC3895; }
   .service-wrapper:nth-child(even) {
-    background-color: rgba(203, 116, 192, 0.5); }
+    background-color: #CB74C0; }
 
 .service {
   width: 100%;

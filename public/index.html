@@ -19,15 +19,16 @@
         <div class="topbar-contacts">
           <div class="topbar-contact-icon"><i class="fas fa-map-marker-alt"></i></div>
           <a class="topbar-contact-text" href="waze://?ll=31.891377,34.819971&amp;navigate=yes" title="Navigate with Waze">Rehovot, Israel</a>
-          <div class="topbar-contact-icon"><i class="fas fa-mobile-alt"></i></div>
-          <a class="topbar-contact-text" href="tel:+972587782776" title="Click to dial from mobile">+972587782776</a>
+          <div class="topbar-contact-icon" id="topbar-number-icon"><i class="fas fa-mobile-alt"></i></div>
+          <a class="topbar-contact-text" href="tel:+972587782776" title="Click to dial from mobile" id="topbar-number">+972587782776</a>
           <div class="topbar-contact-icon"><i class="fas fa-envelope"></i></div>
-          <a class="topbar-contact-text" href="mailto:henyadesign@gmail.com" title="Send Email">henyadesign@gmail.com</a>
+          <a class="topbar-contact-text" href="mailto:henyadesign@gmail.com">henyadesign@gmail.com</a>
         </div>
         <div class="topbar-social-links">
-          <a class="topbar-link" href="https://www.facebook.com/henyadesign" title="Facebook"><i class="fab fa-facebook-square"></i></a>
-          <a class="topbar-link" href="https://www.linkedin.com/in/henyaadler/" title="Linkedin"><i class="fab fa-linkedin"></i></a>
-          <a class="topbar-link" href="https://www.instagram.com/henya_design/" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a class="topbar-link" href="#contact" title="Send Email" id="topbar-mail-icon"><i class="fas fa-envelope"></i></a>
+          <a class="topbar-link" href="https://www.linkedin.com/in/henyaadler/" title="Go to Linkedin page" id="topbar-linkedin-icon"><i class="fab fa-linkedin"></i></a>
+          <a class="topbar-link" href="https://www.facebook.com/henyadesign" title="Go to Facebook page" id="topbar-facebook-icon"><i class="fab fa-facebook-square"></i></a>
+          <a class="topbar-link" href="https://www.instagram.com/henya_design/" title="Go to Instagram page" id="topbar-instagram-icon"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
       <nav class="row home-navbar" id="home-navbar">
@@ -57,7 +58,7 @@
             <a class="hidden-menu-link" href="#organizations">Наши клиенты</a>
           </li>
           <li class="hidden-menu-link-holder">
-            <a class="hidden-menu-link" href="#action">Оставить заявку</a>
+            <a class="hidden-menu-link" href="#contact">Оставить заявку</a>
           </li>
         </ul>
         <ul class="home-navigation">
@@ -83,7 +84,7 @@
             <a class="home-navigation-link" href="#organizations">наши клиенты</a>
           </li>
           <li class="home-navigation-link-holder">
-            <a class="home-navigation-link" href="#action">оставить заявку</a>
+            <a class="home-navigation-link" href="#contact">оставить заявку</a>
           </li>
         </ul>
       </nav>
@@ -105,11 +106,11 @@
                 <h2>Хотите узнать больше?</h2>
               </div>
               <div class="home-contact-options">
-                <!--a.action-button(href='#action') Напишите мне!-->
                 <a class="home-social-link home-mail-link" href="mailto:henyadesign@gmail.com" title="Send Email"></a>
-                <a class="home-social-link home-whatsapp-link" href="https://wa.me/972587782776" title="WhatsApp"></a>
-                <a class="home-social-link home-facebook-link" href="fb://page/2036302739931258" title="Facebook Page"></a>
-                <a class="home-social-link home-instagram-link" href="instagram://user?username=henya_design" title="Instagram"></a>
+                <a class="home-social-link home-whatsapp-link" href="https://wa.me/972587782776" title="Call (from mobile)"></a>
+                <a class="home-social-link home-linkedin-link" href="https://www.linkedin.com/in/henyaadler" title="Go to LinkedIn page"></a>
+                <a class="home-social-link home-facebook-link" href="fb://page/2036302739931258" title="Go to Facebook page"></a>
+                <a class="home-social-link home-instagram-link" href="instagram://user?username=henya_design" title="Go to Instagram page"></a>
               </div>
             </div>
           </div>
@@ -210,7 +211,7 @@
     <section class="row" id="organizations">
       <h3>Мои клиенты<p>Мои клиенты</p></h3>
     </section>
-    <section class="row" id="action">
+    <section class="row" id="contact">
       <h3>Оставить заявку<p>Оставить заявку</p></h3>
     </section>
     <footer class="row" id="footer">
