@@ -89,7 +89,6 @@
 
 .home-navbar {
   height: 20%;
-  //background-color: rgba(255,255,255,.8);
   background-color: $white;
   display: flex;
   flex-direction: row;
@@ -345,38 +344,3 @@
 .home-instagram-link {
   background-image: url('../images/instagram-round.png')
 }
-
-// .action-button {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   height: 9vmax;
-//   width: 50%;
-//   border: 1px solid #ac730b;
-//   border-radius: 10vmin;
-//   background: #ffbd12;
-//   background: linear-gradient(to bottom, #ffbd12, #ac730b);
-//   text-shadow: #7b5208 1px 1px 1px;
-//   font: normal normal bold 1.3rem "Playfair Display SC", serif;
-//   color: $white;
-//   text-decoration: none;
-//   text-transform: uppercase;
-//
-//   &:hover, &:focus {
-//     border: 1px solid #f6a410;
-//     background: #ffe316;
-//     background: linear-gradient(to bottom, #ffe316, #ce8a0d);
-//     color: $white;
-//     text-decoration: none;
-//   }
-//
-//   &:active {
-//     background: #ac730b;
-//     background: linear-gradient(to bottom, #ac730b, #ac730b);
-//   }
-//
-//   @media (orientation: landscape) {
-//     height: 6vw;
-//     font-size: 1.2rem;
-//   }
-// }

@@ -6,7 +6,7 @@
   margin: 0;
   box-sizing: border-box;
   width: 50%;
-  background-color: rgba(58,28,52,1);
+  background-color: $violet-dark;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -68,7 +68,7 @@
     top: 0;
     right: 50%;
     border-radius: 5px 0 0 5px;
-    background-color: rgba(58,28,52,1);
+    background-color: $violet-dark;
 
     @media (min-width: $tablet), (orientation: landscape) {
       right: 30%;

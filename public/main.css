@@ -327,13 +327,6 @@ template {
   padding: 0;
   margin: 0; }
 
-h2 {
-  font-family: "Caveat", cursive;
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #fff;
-  margin: 0; }
-
 h3 {
   font-family: "Cormorant Infant", serif;
   font-weight: 700;
@@ -949,7 +942,7 @@ a:hover, a:focus {
      -moz-box-sizing: border-box;
           box-sizing: border-box;
   width: 50%;
-  background-color: #3a1c34;
+  background-color: #3A1C34;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -1015,7 +1008,7 @@ a:hover, a:focus {
   -webkit-border-radius: 5px 0 0 5px;
      -moz-border-radius: 5px 0 0 5px;
           border-radius: 5px 0 0 5px;
-  background-color: #3a1c34; }
+  background-color: #3A1C34; }
   @media (min-width: 768px), (orientation: landscape) {
     .hidden-menu-ticker:checked ~ .btn-menu {
       right: 30%; } }
