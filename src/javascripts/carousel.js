@@ -1,6 +1,5 @@
 
 export default () => {
-  console.log('hello!') // eslint-disable-line
   const carousel = document.getElementById('carousel');
   // const carouselWrapper = document.querySelector('.carousel-wrapper');
   const gallery = document.getElementById('gallery');

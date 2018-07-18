@@ -499,7 +499,7 @@ a:hover, a:focus {
     .topbar-link {
       font-size: 2em; } }
 
-nav {
+.home-navbar {
   height: 20%;
   background-color: #fff;
   display: -webkit-box;
@@ -523,7 +523,7 @@ nav {
       -ms-flex-pack: center;
           justify-content: center; }
   @media (min-width: 768px) {
-    nav {
+    .home-navbar {
       height: 15.5%;
       -webkit-box-pack: justify;
       -webkit-justify-content: space-between;
@@ -833,7 +833,7 @@ nav {
 .home-subheadline h2, .home-action h2 {
   font-family: "Caveat", cursive;
   font-weight: 700;
-  font-size: 6.5vmin;
+  font-size: 6.4vmin;
   color: #fff;
   margin: 0; }
 
@@ -945,8 +945,8 @@ nav {
   background-color: #3A1C34;
   padding: 5px;
   position: fixed;
-  top: 4vh;
-  right: 4vh;
+  top: 6vmin;
+  right: 6vmin;
   cursor: pointer;
   -webkit-transition: right 0.23s;
   -o-transition: right 0.23s;
@@ -976,7 +976,7 @@ nav {
       top: -webkit-calc((15.5vh / 3) + 4.5vh);
       top: -moz-calc((15.5vh / 3) + 4.5vh);
       top: calc((15.5vh / 3) + 4.5vh);
-      right: 5.3vw; } }
+      right: 5.3vh; } }
   @media (min-width: 1367px) {
     .btn-menu {
       display: none; } }

@@ -88,7 +88,6 @@ Object.defineProperty(exports, "__esModule", {
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 exports.default = function () {
-  console.log('hello!'); // eslint-disable-line
   var carousel = document.getElementById('carousel');
   // const carouselWrapper = document.querySelector('.carousel-wrapper');
   var gallery = document.getElementById('gallery');
@@ -208,6 +207,10 @@ var _topbar = __webpack_require__(/*! ./topbar */ "./src/javascripts/topbar.js")
 
 var _topbar2 = _interopRequireDefault(_topbar);
 
+var _navbar = __webpack_require__(/*! ./navbar */ "./src/javascripts/navbar.js");
+
+var _navbar2 = _interopRequireDefault(_navbar);
+
 var _mobileMenu = __webpack_require__(/*! ./mobile-menu */ "./src/javascripts/mobile-menu.js");
 
 var _mobileMenu2 = _interopRequireDefault(_mobileMenu);
@@ -227,6 +230,7 @@ var _toggleFullScreen2 = _interopRequireDefault(_toggleFullScreen);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _topbar2.default)();
+(0, _navbar2.default)();
 (0, _mobileMenu2.default)();
 (0, _homeSocialLinks2.default)();
 (0, _carousel2.default)();
@@ -266,6 +270,30 @@ exports.default = function () {
       closeMenu();
     }
   });
+};
+
+/***/ }),
+
+/***/ "./src/javascripts/navbar.js":
+/*!***********************************!*\
+  !*** ./src/javascripts/navbar.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  var menuButton = document.querySelector('.btn-menu');
+  if (/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // device is a mobile phone
+    menuButton.style.top = 'calc(15.5vh / 3)';
+  }
 };
 
 /***/ }),
@@ -316,10 +344,19 @@ Object.defineProperty(exports, "__esModule", {
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 exports.default = function () {
+  var topbar = document.getElementById('home-topbar');
+  var navbar = document.getElementById('home-navbar');
+  if (/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // device is a mobile phone
+    topbar.style.display = 'none';
+    navbar.style.height = '20%';
+  }
+
   var topbarContacts = document.querySelectorAll('.topbar-contact-text');
   [].concat(_toConsumableArray(topbarContacts)).forEach(function (contact) {
     // Сheck if the device is a desktop
     if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      // device is a desktop
       contact.style.pointerEvents = 'none'; // eslint-disable-line no-param-reassign
     }
   });

@@ -30,8 +30,8 @@
   background-color: $violet-dark;
   padding: 5px;
   position: fixed;
-  top: 4vh;
-  right: 4vh;
+  top: 6vmin;
+  right: 6vmin;
   cursor: pointer;
   transition: right 0.23s;
   z-index: 3;
@@ -55,7 +55,7 @@
 
   @media (min-width: $tablet) {
     top: calc((15.5vh / 3) + 4.5vh);
-    right: 5.3vw;
+    right: 5.3vh;
   }
 
   @media (min-width: $desktop) {

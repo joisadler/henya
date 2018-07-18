@@ -1,5 +1,5 @@
-section.home.full-screen(id='home')
-  .row.topbar
+section.home.full-screen(id="home")
+  .row.topbar(id="home-topbar")
     .topbar-contacts
       .topbar-contact-icon
         i.fas.fa-map-marker-alt
@@ -17,7 +17,7 @@ section.home.full-screen(id='home')
         i.fab.fa-linkedin
       a.topbar-link(href="https://www.instagram.com/henya_design/" title="Instagram")
         i.fab.fa-instagram
-  nav.row
+  nav.row.home-navbar(id="home-navbar")
     img.logo(src="../images/logo.png" alt="Henya Adler Design")
     include mobile-menu
     ul.home-navigation
@@ -34,7 +34,7 @@ section.home.full-screen(id='home')
       li.home-navigation-link-holder
         a.home-navigation-link(href="#testimonials") отзывы
       li.home-navigation-link-holder
-        a.home-navigation-link(href="#organizations") мои клиенты
+        a.home-navigation-link(href="#organizations") наши клиенты
       li.home-navigation-link-holder
         a.home-navigation-link(href="#action") оставить заявку
         
@@ -47,7 +47,7 @@ section.home.full-screen(id='home')
       .home-content-section
         .home-subheadline
           h2 Теперь вы можете расслабиться!
-          h2 Отныне ваши заботы я беру на себя.
+          h2 Отныне ваши заботы мы берем на себя.
         .home-action
           .home-proposition
             h2 Хотите узнать больше?
