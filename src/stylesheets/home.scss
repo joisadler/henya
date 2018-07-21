@@ -205,6 +205,7 @@
 }
 
 .home-illustration-section {
+  position: relative;
   width: 100%;
   height: 50%;
   display: flex;
@@ -220,6 +221,8 @@
 }
 
 .home-illustration {
+  position: absolute;
+  left: -150%;
   width: 100%;
   height: 90%;
   background-image: url('../images/armchair.png');
@@ -286,7 +289,17 @@
     margin: 0;
   }
 
-  @media (min-width: $tablet) and (orientation: landscape) {
+  @media (min-width: $tablet) {
+    h2 {
+      font-size: 5vmin;
+    }
+  }
+  @media (min-width: $desktop) {
+    h2 {
+      font-size: 7vmin;
+    }
+  }
+  @media (min-width: $desktop) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
     h2 {
       font-size: 5vmin;
     }

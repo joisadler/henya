@@ -1,0 +1,16 @@
+{
+  "tabulous.defaultTerminals": [{
+    "name": "NPM Start",
+    "directory": "/home/joisadler/github/henya",
+    "command": "npm start",
+    "executeComand": true
+  }, {
+    "name": "Webpack watch",
+    "directory": "/home/joisadler/github/henya",
+    "command": "npm run watch",
+    "executeCommand": true
+  }, {
+    "name": "Working Section",
+    "directory": "/home/joisadler/github/henya"
+  }]
+}

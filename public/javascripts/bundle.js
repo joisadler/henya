@@ -163,6 +163,37 @@ exports.default = function () {
 
 /***/ }),
 
+/***/ "./src/javascripts/home-animation.js":
+/*!*******************************************!*\
+  !*** ./src/javascripts/home-animation.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  var illustration = document.querySelector('.home-illustration');
+
+  var i = 50;
+  var timer = setInterval(function () {
+    i -= 1;
+    illustration.style.left = '-' + i * 3 + '%';
+    //console.log(illustration.style.left)
+    if (i === 0) {
+      clearInterval(timer);
+      return;
+    }
+  }, 5);
+};
+
+/***/ }),
+
 /***/ "./src/javascripts/home-social-links.js":
 /*!**********************************************!*\
   !*** ./src/javascripts/home-social-links.js ***!
@@ -290,6 +321,10 @@ var _home = __webpack_require__(/*! ./home */ "./src/javascripts/home.js");
 
 var _home2 = _interopRequireDefault(_home);
 
+var _homeAnimation = __webpack_require__(/*! ./home-animation */ "./src/javascripts/home-animation.js");
+
+var _homeAnimation2 = _interopRequireDefault(_homeAnimation);
+
 var _topbar = __webpack_require__(/*! ./topbar */ "./src/javascripts/topbar.js");
 
 var _topbar2 = _interopRequireDefault(_topbar);
@@ -317,6 +352,7 @@ var _toggleFullScreen2 = _interopRequireDefault(_toggleFullScreen);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _home2.default)();
+(0, _homeAnimation2.default)();
 (0, _topbar2.default)();
 (0, _navbar2.default)();
 (0, _mobileMenu2.default)();
