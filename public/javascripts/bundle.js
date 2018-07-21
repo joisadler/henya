@@ -178,18 +178,112 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function () {
+  var homepage = document.getElementById('home');
+  var container = document.querySelector('.home-container');
+  var headline = document.querySelector('.home-headline');
+  var subheadline = document.querySelector('.home-subheadline');
   var illustration = document.querySelector('.home-illustration');
+  var action = document.querySelector('.home-action');
+  var homepageHeight = homepage.offsetHeight;
+  var containerHeight = container.offsetHeight;
 
-  var i = 50;
-  var timer = setInterval(function () {
-    i -= 1;
-    illustration.style.left = '-' + i * 3 + '%';
-    //console.log(illustration.style.left)
-    if (i === 0) {
-      clearInterval(timer);
-      return;
-    }
-  }, 5);
+  var animateHomepage = function animateHomepage() {
+    homepage.classList.remove('full-screen');
+    var bottom = homepageHeight * 0.2;
+    var step = bottom / 50;
+    var i = 0;
+
+    var timer = setInterval(function () {
+      i += step;
+      homepage.style.height = homepageHeight - i + 'px';
+      if (i >= bottom) {
+        clearInterval(timer);
+      }
+    }, 1);
+
+    setTimeout(function () {
+      var j = 0;
+      var timer2 = setInterval(function () {
+        j += step;
+        homepage.style.height = homepageHeight * 0.8 + j + 'px';
+        if (j >= bottom) {
+          clearInterval(timer2);
+        }
+      }, 1);
+    }, 1000);
+  };
+
+  var animateAction = function animateAction() {
+    var i = 100;
+    var j = 0;
+    var timer = setInterval(function () {
+      i -= 2;
+      j = (Math.abs(i - 100) / 100).toFixed(1);
+      action.style.top = i + 'px';
+      action.style.opacity = '' + j;
+      if (i === 0) {
+        clearInterval(timer);
+      }
+    }, 10);
+    animateHomepage();
+  };
+
+  var animateSubheadline = function animateSubheadline() {
+    var i = 3000;
+    var j = 0;
+    var timer = setInterval(function () {
+      i -= 20;
+      j += 0.0067;
+      subheadline.style.left = i + 'px';
+      subheadline.style.opacity = '' + j.toFixed(1);
+      if (i === 0) {
+        clearInterval(timer);
+      }
+    }, 7);
+    setTimeout(animateAction, 2500);
+  };
+
+  var animateIllustration = function animateIllustration() {
+    var i = 0;
+    var timer = setInterval(function () {
+      i += 1;
+      illustration.style.opacity = '' + (i / 50).toFixed(1);
+      if (i === 50) {
+        clearInterval(timer);
+      }
+    }, 20);
+    setTimeout(animateSubheadline, 500);
+  };
+
+  var animateHeadline = function animateHeadline() {
+    var i = 0;
+    var timer1 = setInterval(function () {
+      i += 1;
+      headline.style.opacity = '' + (i / 50).toFixed(1);
+      if (i === 50) {
+        clearInterval(timer1);
+      }
+    }, 20);
+
+    setTimeout(function () {
+      var j = 0.4;
+      var timer2 = setInterval(function () {
+        j -= 0.005;
+        headline.style.marginTop = containerHeight * j + 'px';
+        if (j < 0.01) {
+          clearInterval(timer2);
+        }
+      }, 12);
+    }, 1000);
+
+    setTimeout(animateIllustration, 1000 + 960);
+  };
+
+  animateHeadline();
+  window.addEventListener('orientationchange', function () {
+    homepage.style.height = '100%';
+    homepage.style.minHeight = '100%';
+  });
 };
 
 /***/ }),

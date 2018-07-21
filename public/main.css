@@ -627,6 +627,9 @@ a:hover, a:focus {
   background-repeat: no-repeat; }
 
 .home-headline {
+  margin-top: -webkit-calc(80vh * 0.4);
+  margin-top: -moz-calc(80vh * 0.4);
+  margin-top: calc(80vh * 0.4);
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -643,7 +646,8 @@ a:hover, a:focus {
       -ms-flex-pack: center;
           justify-content: center;
   width: 90%;
-  height: 20%; }
+  height: 20%;
+  opacity: 0; }
   .home-headline h1 {
     font-family: "Playfair Display SC", serif;
     font-weight: 900;
@@ -698,7 +702,6 @@ a:hover, a:focus {
               flex-direction: row; } }
 
 .home-illustration-section {
-  position: relative;
   width: 100%;
   height: 50%;
   display: -webkit-box;
@@ -730,8 +733,7 @@ a:hover, a:focus {
       height: 100%; } }
 
 .home-illustration {
-  position: absolute;
-  left: -150%;
+  opacity: 0;
   width: 100%;
   height: 90%;
   background-image: url(/images/armchair.png);
@@ -764,7 +766,8 @@ a:hover, a:focus {
       -ms-flex-pack: start;
           justify-content: flex-start;
   width: 100%;
-  height: 50%; }
+  height: 50%;
+  overflow: hidden; }
   @media (orientation: landscape) {
     .home-content-section {
       -webkit-justify-content: space-around;
@@ -774,6 +777,8 @@ a:hover, a:focus {
       height: 100%; } }
 
 .home-subheadline {
+  position: relative;
+  left: 3000px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -809,6 +814,8 @@ a:hover, a:focus {
       height: 50%; } }
 
 .home-action {
+  position: relative;
+  top: 100%;
   width: 100%;
   height: 60%;
   display: -webkit-box;
@@ -834,7 +841,8 @@ a:hover, a:focus {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  padding-bottom: 2vmin; }
+  padding-bottom: 2vmin;
+  opacity: 0; }
   @media (min-width: 768px) and (orientation: portrait) {
     .home-action {
       padding-bottom: 5vmin; } }
@@ -856,7 +864,7 @@ a:hover, a:focus {
 
 @media (min-width: 1280px) {
   .home-subheadline h2, .home-action h2 {
-    font-size: 7vmin; } }
+    font-size: 6.5vmin; } }
 
 @media (min-width: 1280px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
   .home-subheadline h2, .home-action h2 {
