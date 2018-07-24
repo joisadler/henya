@@ -435,6 +435,10 @@ var _homeSocialLinks = __webpack_require__(/*! ./home-social-links */ "./src/jav
 
 var _homeSocialLinks2 = _interopRequireDefault(_homeSocialLinks);
 
+var _services = __webpack_require__(/*! ./services */ "./src/javascripts/services.js");
+
+var _services2 = _interopRequireDefault(_services);
+
 var _carousel = __webpack_require__(/*! ./carousel */ "./src/javascripts/carousel.js");
 
 var _carousel2 = _interopRequireDefault(_carousel);
@@ -451,6 +455,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _navbar2.default)();
 (0, _mobileMenu2.default)();
 (0, _homeSocialLinks2.default)();
+(0, _services2.default)();
 (0, _carousel2.default)();
 (0, _toggleFullScreen2.default)();
 
@@ -530,6 +535,43 @@ exports.default = function () {
       // device is a tablet
       menuButton.style.top = 'calc((15.5vh / 3) + 4.5vh)';
     }
+  });
+};
+
+/***/ }),
+
+/***/ "./src/javascripts/services.js":
+/*!*************************************!*\
+  !*** ./src/javascripts/services.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  var serviceWrappers = document.querySelectorAll('.service-wrapper');
+
+  serviceWrappers.forEach(function (wrapper) {
+    var width = wrapper.offsetWidth;
+    wrapper.style.height = width + 'px';
+    window.addEventListener('orientationchange', function () {
+      if (window.screen.height > window.screen.width) {
+        // orientation is portrait
+        console.log('p');
+        wrapper.style.width = window.screen.width * 0.425 + 'px';
+      } else if (window.screen.height < window.screen.width) {
+        // orientation is landscape
+        console.log('l');
+        wrapper.style.width = window.screen.width * 0.275 + 'px';
+      }
+      wrapper.style.height = wrapper.offsetWidth + 'px';
+    });
   });
 };
 

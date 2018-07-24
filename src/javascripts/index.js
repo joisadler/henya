@@ -4,6 +4,8 @@ import topbar from './topbar';
 import navbar from './navbar';
 import mobileMenu from './mobile-menu';
 import homeSocialLinks from './home-social-links';
+import services from './services';
+
 import carousel from './carousel';
 import toggleFullScreen from './toggleFullScreen';
 
@@ -13,5 +15,6 @@ topbar();
 navbar();
 mobileMenu();
 homeSocialLinks();
+services();
 carousel();
 toggleFullScreen();
