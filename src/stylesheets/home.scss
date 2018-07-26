@@ -165,11 +165,9 @@
   h1 {
     font-weight: 900;
     font-size: 6.7vmin;
-    line-height: 10.5vmin;
 
     @media (min-width: $tablet) {
       font-size: 5vmin;
-      line-height: 9vw;
     }
   }
 }
@@ -268,32 +266,6 @@
     height: 50%;
   }
 }
-
-// .home-subheadline, .home-action {
-//   h2 {
-//     font-family: "Caveat", cursive;
-//     font-weight: 700;
-//     font-size: 6.2vmin;
-//     color: $white;
-//     margin: 0;
-//   }
-
-//   @media (min-width: $tablet) {
-//     h2 {
-//       font-size: 5vmin;
-//     }
-//   }
-//   @media (min-width: $desktop) {
-//     h2 {
-//       font-size: 6.5vmin;
-//     }
-//   }
-//   @media (min-width: $desktop) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-//     h2 {
-//       font-size: 5vmin;
-//     }
-//   }
-// }
 
 .home-proposition {
   display: flex;

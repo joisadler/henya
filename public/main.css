@@ -709,12 +709,10 @@ a:hover, a:focus {
   opacity: 0; }
   .home-headline h1 {
     font-weight: 900;
-    font-size: 6.7vmin;
-    line-height: 10.5vmin; }
+    font-size: 6.7vmin; }
     @media (min-width: 768px) {
       .home-headline h1 {
-        font-size: 5vmin;
-        line-height: 9vw; } }
+        font-size: 5vmin; } }
 
 .home-sections {
   display: -webkit-box;
