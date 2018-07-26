@@ -107,11 +107,9 @@
   font-family: "Playfair Display SC", serif;
   font-weight: 700;
   color: $white;
+  font-size: 4.5vmin;
   text-decoration: none;
   text-transform: uppercase;
-  &:hover, &:focus, &:active {
-    color: $violet-light;
-  }
 }
 
 .hidden-menu-link-holder {

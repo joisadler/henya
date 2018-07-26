@@ -175,14 +175,9 @@
   opacity: 0;
 
   h1 {
-    font-family: "Playfair Display SC", serif;
     font-weight: 900;
     font-size: 6.7vmin;
     line-height: 10.5vmin;
-    text-transform: uppercase;
-    text-align: center;
-    color: $white;
-    margin: 0;
 
     @media (min-width: $tablet) {
       font-size: 5vmin;

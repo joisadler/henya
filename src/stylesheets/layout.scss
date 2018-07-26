@@ -6,7 +6,7 @@
   min-height: 100%;
   background-color: $violet-dark;
   font-family: "Cormorant Infant", serif;
-  //font-size: 16px;
+  font-size: 16px;
   color: $white;
 }
 
@@ -22,6 +22,42 @@
   width: 100%;
   padding: 0;
   margin: 0;
+}
+
+h1, h3 {
+  font-family: "Playfair Display SC", serif;
+    color: $white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.section-headline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 21.375vmin;
+  
+  h3 {
+    font-weight: 700;
+    font-size: 5vmin;
+  }
+  @media (min-width: $tablet) {
+    h3 {
+      font-size: 4.5vmin;
+    }
+  }
+  @media (min-width: $desktop) {
+    h3 {
+      font-size: 6.5vmin;
+    }
+  }
+  @media (min-width: $desktop) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    h3 {
+      font-size: 5vmin;
+    }
+  }
 }
 
 p {
