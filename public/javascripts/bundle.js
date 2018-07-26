@@ -215,14 +215,14 @@ exports.default = function () {
 
   var animateHomepage = function animateHomepage() {
     homepage.classList.remove('full-screen');
-    var bottom = homepageHeight * 0.21;
+    var bottom = containerHeight * 0.25;
     var step = bottom / 50;
     var i = 0;
-    homepage.style.height = homepageHeight - i + 'px';
+    container.style.height = containerHeight - i + 'px';
 
     var timer = setInterval(function () {
       i += step;
-      homepage.style.height = homepageHeight - i + 'px';
+      container.style.height = containerHeight - i + 'px';
       if (i >= bottom) {
         clearInterval(timer);
       }
@@ -297,8 +297,8 @@ exports.default = function () {
     setTimeout(animateIllustration, 1000 + 960);
   };
 
-  if (!/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    // device is a desktop or a tablet
+  if (!/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // device is a desktop
     animateHeadline();
     window.addEventListener('orientationchange', function () {
       homepage.style.height = '100%';

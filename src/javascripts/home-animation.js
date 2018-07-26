@@ -1,5 +1,5 @@
 export default () => {
-  const homepage = document.getElementById('home')
+  const homepage = document.getElementById('home');
   const container = document.querySelector('.home-container');
   const headline = document.querySelector('.home-headline');
   const subheadline = document.querySelector('.home-subheadline');
@@ -36,14 +36,14 @@ export default () => {
 
   const animateHomepage = () => {
     homepage.classList.remove('full-screen');
-    const bottom = homepageHeight * 0.21;
+    const bottom = containerHeight * 0.25;
     const step = bottom / 50;
     let i = 0;
-    homepage.style.height = `${homepageHeight - i}px`;
+    container.style.height = `${containerHeight - i}px`;
 
     const timer = setInterval(() => {
       i += step;
-      homepage.style.height = `${homepageHeight - i}px`;
+      container.style.height = `${containerHeight - i}px`;
       if (i >= bottom) {
         clearInterval(timer);
       }
@@ -119,7 +119,7 @@ export default () => {
     setTimeout(animateIllustration, 1000 + 960);
   };
 
-  if (!(/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) { // device is a desktop or a tablet
+  if (!(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) { // device is a desktop
     animateHeadline();
     window.addEventListener('orientationchange', () => {
       homepage.style.height = '100%';
