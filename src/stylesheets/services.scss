@@ -3,7 +3,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  width: 90%;
+  width: 80%;
   margin: 0 auto 0 auto;
 }
 
@@ -31,17 +31,38 @@
 
   @media (orientation: landscape), (min-width: $tablet) {
     width: 30%;
+    &:nth-child(odd) {
+      background-color: $violet-medium;
+    }
+    &:nth-child(even) {
+      background-color: $violet-light;
+    }
     &:last-child {
       margin-right: 17.5%;
     }
     &:nth-last-child(2) {
       margin-left: 17.5%;
     }
-    &:nth-child(odd) {
+  }
+  @media (min-width: $desktop) {
+    width: 21.25%;
+    &:nth-child(1),
+    &:nth-child(3),
+    &:nth-child(6),
+    &:nth-child(8) {
+      background-color: $violet-medium;
+    }
+    &:nth-child(2),
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(7) {
       background-color: $violet-light;
     }
-    &:nth-child(even) {
-      background-color: $violet-medium;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:nth-last-child(2) {
+      margin-left: 0;
     }
   }
 }

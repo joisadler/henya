@@ -110,6 +110,11 @@
   font-size: 4.5vmin;
   text-decoration: none;
   text-transform: uppercase;
+
+  @media (min-width: $tablet) {
+    font-size: 3vmin;
+  }
+
 }
 
 .hidden-menu-link-holder {

@@ -31,6 +31,32 @@ h1, h3 {
     text-transform: uppercase;
 }
 
+//.home-subheadline, .home-action {
+  h2 {
+    font-family: "Caveat", cursive;
+    font-weight: 700;
+    font-size: 6.2vmin;
+    color: $white;
+    margin: 0;
+  }
+
+  @media (min-width: $tablet) {
+    h2 {
+      font-size: 5vmin;
+    }
+  // }
+  // @media (min-width: $desktop) {
+  //   h2 {
+  //     font-size: 5vmin;
+  //   }
+  // }
+  // @media (min-width: $desktop) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  //   h2 {
+  //     font-size: 5vmin;
+  //   }
+  }
+//}
+
 .section-headline {
   display: flex;
   flex-direction: column;
@@ -44,12 +70,12 @@ h1, h3 {
     font-size: 5vmin;
   }
   @media (min-width: $tablet) {
+    height: 18vmin;
     h3 {
-      font-size: 4.5vmin;
+      font-size: 3vmin;
     }
   }
   @media (min-width: $desktop) {
-    height: 18vmin;
     h3 {
       font-size: 3vmin;
     }
