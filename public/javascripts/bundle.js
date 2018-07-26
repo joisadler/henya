@@ -184,34 +184,7 @@ exports.default = function () {
   var subheadline = document.querySelector('.home-subheadline');
   var illustration = document.querySelector('.home-illustration');
   var action = document.querySelector('.home-action');
-  var homepageHeight = homepage.offsetHeight;
   var containerHeight = container.offsetHeight;
-
-  // const animateHomepage = () => {
-  //   homepage.classList.remove('full-screen');
-  //   const bottom = homepageHeight * 0.2;
-  //   const step = bottom / 50;
-  //   let i = 0;
-
-  //   const timer = setInterval(() => {
-  //     i += step;
-  //     homepage.style.height = `${homepageHeight - i}px`;
-  //     if (i >= bottom) {
-  //       clearInterval(timer);
-  //     }
-  //   }, 1);
-
-  //   setTimeout(() => {
-  //     let j = 0;
-  //     const timer2 = setInterval(() => {
-  //       j += step;
-  //       homepage.style.height = `${(homepageHeight * 0.8) + j}px`;
-  //       if (j >= bottom) {
-  //         clearInterval(timer2);
-  //       }
-  //     }, 1);
-  //   }, 1000);
-  // };
 
   var animateHomepage = function animateHomepage() {
     homepage.classList.remove('full-screen');
@@ -593,13 +566,14 @@ exports.default = function () {
   var violetLight = '#CB74C0';
   var violetMedium = '#BC3895';
 
+  /* eslint-disable no-param-reassign */
   serviceWrappers.forEach(function (wrapper) {
     var width = wrapper.offsetWidth;
     wrapper.style.height = width + 'px';
+
     window.addEventListener('orientationchange', function () {
       if (window.screen.height > window.screen.width && window.screen.width < 768) {
         // orientation is portrait and it's a mobile phone
-        console.log('portrait');
         wrapper.style.width = window.screen.width * 0.425 + 'px';
         wrapper1.style.backgroundColor = violetLight;
         wrapper4.style.backgroundColor = violetLight;
@@ -613,7 +587,6 @@ exports.default = function () {
         wrapper8.style.marginRight = '0';
       } else if (window.screen.height < window.screen.width || window.screen.width >= 768) {
         // orientation is landscape
-        console.log('landscape');
         wrapper.style.width = window.screen.width * 0.275 + 'px';
         wrapper1.style.backgroundColor = violetMedium;
         wrapper3.style.backgroundColor = violetMedium;

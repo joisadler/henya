@@ -1,4 +1,4 @@
-export default () =>  {
+export default () => {
   const serviceWrappers = document.querySelectorAll('.service-wrapper');
   const wrapper1 = serviceWrappers[0];
   const wrapper2 = serviceWrappers[1];
@@ -11,12 +11,14 @@ export default () =>  {
   const violetLight = '#CB74C0';
   const violetMedium = '#BC3895';
 
+  /* eslint-disable no-param-reassign */
   serviceWrappers.forEach((wrapper) => {
     const width = wrapper.offsetWidth;
     wrapper.style.height = `${width}px`;
+
     window.addEventListener('orientationchange', () => {
-      if (window.screen.height > window.screen.width && window.screen.width < 768) { // orientation is portrait and it's a mobile phone
-        console.log('portrait')
+      if (window.screen.height > window.screen.width &&
+         window.screen.width < 768) { // orientation is portrait and it's a mobile phone
         wrapper.style.width = `${window.screen.width * 0.425}px`;
         wrapper1.style.backgroundColor = violetLight;
         wrapper4.style.backgroundColor = violetLight;
@@ -28,8 +30,8 @@ export default () =>  {
         wrapper7.style.backgroundColor = violetMedium;
         wrapper7.style.marginLeft = '0';
         wrapper8.style.marginRight = '0';
-      } else if (window.screen.height < window.screen.width || window.screen.width >= 768) { // orientation is landscape
-        console.log('landscape')
+      } else if (window.screen.height < window.screen.width ||
+         window.screen.width >= 768) { // orientation is landscape
         wrapper.style.width = `${window.screen.width * 0.275}px`;
         wrapper1.style.backgroundColor = violetMedium;
         wrapper3.style.backgroundColor = violetMedium;

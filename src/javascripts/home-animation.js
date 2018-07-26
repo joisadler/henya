@@ -5,34 +5,7 @@ export default () => {
   const subheadline = document.querySelector('.home-subheadline');
   const illustration = document.querySelector('.home-illustration');
   const action = document.querySelector('.home-action');
-  const homepageHeight = homepage.offsetHeight;
   const containerHeight = container.offsetHeight;
-
-  // const animateHomepage = () => {
-  //   homepage.classList.remove('full-screen');
-  //   const bottom = homepageHeight * 0.2;
-  //   const step = bottom / 50;
-  //   let i = 0;
-
-  //   const timer = setInterval(() => {
-  //     i += step;
-  //     homepage.style.height = `${homepageHeight - i}px`;
-  //     if (i >= bottom) {
-  //       clearInterval(timer);
-  //     }
-  //   }, 1);
-
-  //   setTimeout(() => {
-  //     let j = 0;
-  //     const timer2 = setInterval(() => {
-  //       j += step;
-  //       homepage.style.height = `${(homepageHeight * 0.8) + j}px`;
-  //       if (j >= bottom) {
-  //         clearInterval(timer2);
-  //       }
-  //     }, 1);
-  //   }, 1000);
-  // };
 
   const animateHomepage = () => {
     homepage.classList.remove('full-screen');
@@ -65,7 +38,6 @@ export default () => {
     setTimeout(() => {
       animateHomepage();
     }, 500);
-    
   };
 
   const animateSubheadline = () => {
