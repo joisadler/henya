@@ -49,8 +49,9 @@ h1, h3 {
     }
   }
   @media (min-width: $desktop) {
+    height: 20vmin;
     h3 {
-      font-size: 6.5vmin;
+      font-size: 3vmin;
     }
   }
   @media (min-width: $desktop) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {

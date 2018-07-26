@@ -8,11 +8,38 @@ export default () => {
   const homepageHeight = homepage.offsetHeight;
   const containerHeight = container.offsetHeight;
 
+  // const animateHomepage = () => {
+  //   homepage.classList.remove('full-screen');
+  //   const bottom = homepageHeight * 0.2;
+  //   const step = bottom / 50;
+  //   let i = 0;
+
+  //   const timer = setInterval(() => {
+  //     i += step;
+  //     homepage.style.height = `${homepageHeight - i}px`;
+  //     if (i >= bottom) {
+  //       clearInterval(timer);
+  //     }
+  //   }, 1);
+
+  //   setTimeout(() => {
+  //     let j = 0;
+  //     const timer2 = setInterval(() => {
+  //       j += step;
+  //       homepage.style.height = `${(homepageHeight * 0.8) + j}px`;
+  //       if (j >= bottom) {
+  //         clearInterval(timer2);
+  //       }
+  //     }, 1);
+  //   }, 1000);
+  // };
+
   const animateHomepage = () => {
     homepage.classList.remove('full-screen');
-    const bottom = homepageHeight * 0.2;
+    const bottom = homepageHeight * 0.21;
     const step = bottom / 50;
     let i = 0;
+    homepage.style.height = `${homepageHeight - i}px`;
 
     const timer = setInterval(() => {
       i += step;
@@ -20,18 +47,7 @@ export default () => {
       if (i >= bottom) {
         clearInterval(timer);
       }
-    }, 1);
-
-    setTimeout(() => {
-      let j = 0;
-      const timer2 = setInterval(() => {
-        j += step;
-        homepage.style.height = `${(homepageHeight * 0.8) + j}px`;
-        if (j >= bottom) {
-          clearInterval(timer2);
-        }
-      }, 1);
-    }, 1000);
+    }, 1.5);
   };
 
   const animateAction = () => {
@@ -46,7 +62,10 @@ export default () => {
         clearInterval(timer);
       }
     }, 10);
-    animateHomepage();
+    setTimeout(() => {
+      animateHomepage();
+    }, 500);
+    
   };
 
   const animateSubheadline = () => {
@@ -61,7 +80,7 @@ export default () => {
         clearInterval(timer);
       }
     }, 7);
-    setTimeout(animateAction, 2500);
+    setTimeout(animateAction, 2000);
   };
 
   const animateIllustration = () => {

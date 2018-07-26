@@ -187,11 +187,38 @@ exports.default = function () {
   var homepageHeight = homepage.offsetHeight;
   var containerHeight = container.offsetHeight;
 
+  // const animateHomepage = () => {
+  //   homepage.classList.remove('full-screen');
+  //   const bottom = homepageHeight * 0.2;
+  //   const step = bottom / 50;
+  //   let i = 0;
+
+  //   const timer = setInterval(() => {
+  //     i += step;
+  //     homepage.style.height = `${homepageHeight - i}px`;
+  //     if (i >= bottom) {
+  //       clearInterval(timer);
+  //     }
+  //   }, 1);
+
+  //   setTimeout(() => {
+  //     let j = 0;
+  //     const timer2 = setInterval(() => {
+  //       j += step;
+  //       homepage.style.height = `${(homepageHeight * 0.8) + j}px`;
+  //       if (j >= bottom) {
+  //         clearInterval(timer2);
+  //       }
+  //     }, 1);
+  //   }, 1000);
+  // };
+
   var animateHomepage = function animateHomepage() {
     homepage.classList.remove('full-screen');
-    var bottom = homepageHeight * 0.2;
+    var bottom = homepageHeight * 0.21;
     var step = bottom / 50;
     var i = 0;
+    homepage.style.height = homepageHeight - i + 'px';
 
     var timer = setInterval(function () {
       i += step;
@@ -199,18 +226,7 @@ exports.default = function () {
       if (i >= bottom) {
         clearInterval(timer);
       }
-    }, 1);
-
-    setTimeout(function () {
-      var j = 0;
-      var timer2 = setInterval(function () {
-        j += step;
-        homepage.style.height = homepageHeight * 0.8 + j + 'px';
-        if (j >= bottom) {
-          clearInterval(timer2);
-        }
-      }, 1);
-    }, 1000);
+    }, 1.5);
   };
 
   var animateAction = function animateAction() {
@@ -225,7 +241,9 @@ exports.default = function () {
         clearInterval(timer);
       }
     }, 10);
-    animateHomepage();
+    setTimeout(function () {
+      animateHomepage();
+    }, 500);
   };
 
   var animateSubheadline = function animateSubheadline() {
@@ -240,7 +258,7 @@ exports.default = function () {
         clearInterval(timer);
       }
     }, 7);
-    setTimeout(animateAction, 2500);
+    setTimeout(animateAction, 2000);
   };
 
   var animateIllustration = function animateIllustration() {
