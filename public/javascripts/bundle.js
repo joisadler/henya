@@ -279,11 +279,22 @@ exports.default = function () {
     setTimeout(animateIllustration, 1000 + 960);
   };
 
-  animateHeadline();
-  window.addEventListener('orientationchange', function () {
-    homepage.style.height = '100%';
-    homepage.style.minHeight = '100%';
-  });
+  if (!/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // device is a desktop or a tablet
+    animateHeadline();
+    window.addEventListener('orientationchange', function () {
+      homepage.style.height = '100%';
+      homepage.style.minHeight = '100%';
+    });
+  } else {
+    headline.style.opacity = '1';
+    headline.style.marginTop = '0';
+    illustration.style.opacity = '1';
+    subheadline.style.left = '0';
+    subheadline.style.opacity = '1';
+    action.style.top = '0';
+    action.style.opacity = '1';
+  }
 };
 
 /***/ }),
