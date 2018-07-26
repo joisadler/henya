@@ -418,14 +418,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function () {
-  var subheadlines = document.querySelectorAll('.home-subheadline h2, .home-action h2');
-  if (/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    // device is a mobile phone
-    /* eslint-disable no-return-assign, no-param-reassign */
-    subheadlines.forEach(function (h2) {
-      return h2.style.fontSize = '6.4vmin';
-    });
-  }
+  // const subheadlines = document.querySelectorAll('.home-subheadline h2, .home-action h2');
+  // if ((/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) { // device is a mobile phone
+  //   /* eslint-disable no-return-assign, no-param-reassign */
+  //   subheadlines.forEach(h2 => h2.style.fontSize = '6.4vmin');
+  // }
 };
 
 /***/ }),
@@ -585,19 +582,49 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function () {
   var serviceWrappers = document.querySelectorAll('.service-wrapper');
+  var wrapper1 = serviceWrappers[0];
+  var wrapper2 = serviceWrappers[1];
+  var wrapper3 = serviceWrappers[2];
+  var wrapper4 = serviceWrappers[3];
+  var wrapper5 = serviceWrappers[4];
+  var wrapper6 = serviceWrappers[5];
+  var wrapper7 = serviceWrappers[6];
+  var wrapper8 = serviceWrappers[7];
+  var violetLight = '#CB74C0';
+  var violetMedium = '#BC3895';
 
   serviceWrappers.forEach(function (wrapper) {
     var width = wrapper.offsetWidth;
     wrapper.style.height = width + 'px';
     window.addEventListener('orientationchange', function () {
-      if (window.screen.height > window.screen.width) {
-        // orientation is portrait
-        console.log('p');
+      if (window.screen.height > window.screen.width && window.screen.width < 768) {
+        // orientation is portrait and it's a mobile phone
+        console.log('portrait');
         wrapper.style.width = window.screen.width * 0.425 + 'px';
-      } else if (window.screen.height < window.screen.width) {
+        wrapper1.style.backgroundColor = violetLight;
+        wrapper4.style.backgroundColor = violetLight;
+        wrapper5.style.backgroundColor = violetLight;
+        wrapper8.style.backgroundColor = violetLight;
+        wrapper2.style.backgroundColor = violetMedium;
+        wrapper3.style.backgroundColor = violetMedium;
+        wrapper6.style.backgroundColor = violetMedium;
+        wrapper7.style.backgroundColor = violetMedium;
+        wrapper7.style.marginLeft = '0';
+        wrapper8.style.marginRight = '0';
+      } else if (window.screen.height < window.screen.width || window.screen.width >= 768) {
         // orientation is landscape
-        console.log('l');
+        console.log('landscape');
         wrapper.style.width = window.screen.width * 0.275 + 'px';
+        wrapper1.style.backgroundColor = violetMedium;
+        wrapper3.style.backgroundColor = violetMedium;
+        wrapper5.style.backgroundColor = violetMedium;
+        wrapper7.style.backgroundColor = violetMedium;
+        wrapper2.style.backgroundColor = violetLight;
+        wrapper4.style.backgroundColor = violetLight;
+        wrapper6.style.backgroundColor = violetLight;
+        wrapper8.style.backgroundColor = violetLight;
+        wrapper7.style.marginLeft = '17.5%';
+        wrapper8.style.marginRight = '17.5%';
       }
       wrapper.style.height = wrapper.offsetWidth + 'px';
     });
