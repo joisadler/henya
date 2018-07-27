@@ -77,12 +77,12 @@ h1, h3 {
   }
   @media (min-width: $desktop) {
     h3 {
-      font-size: 3vmin;
+      font-size: 3.6vmin;
     }
   }
   @media (min-width: $desktop) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
     h3 {
-      font-size: 5vmin;
+      font-size: 3vmin;
     }
   }
 }
