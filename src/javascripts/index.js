@@ -5,8 +5,7 @@ import navbar from './navbar';
 import mobileMenu from './mobile-menu';
 import homeSocialLinks from './home-social-links';
 import services from './services';
-
-import carousel from './carousel';
+import portfolio from './portfolio';
 import toggleFullScreen from './toggleFullScreen';
 
 home();
@@ -16,5 +15,5 @@ navbar();
 mobileMenu();
 homeSocialLinks();
 services();
-carousel();
+portfolio();
 toggleFullScreen();
