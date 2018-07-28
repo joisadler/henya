@@ -23,13 +23,16 @@
   display: flex;
   flex: 0 1 calc(50% - 2.5vmin);
   margin-bottom: 5vw;
+  background-color: transparent;
+  border: 1px solid $white;
+  
   &:nth-child(4n+0),
   &:nth-child(4n+1) {
-    background-color: $violet-light;
+    //background-color: $gray-light;
   }
   &:nth-child(4n-2),
   &:nth-child(4n-1) {
-    background-color: $violet-medium;
+    //background-color: $gray-dark;
   }
   &:last-child,
   &:nth-last-child(2) {
@@ -40,10 +43,10 @@
   (min-width: $tablet) {
     flex: 0 1 calc(33.3% - 3.3vw);
     &:nth-child(odd) {
-      background-color: $violet-medium;
+      //background-color: $gray-dark;
     }
     &:nth-child(even) {
-      background-color: $violet-light;
+      //background-color: $gray-light;
     }
     &:last-child {
       margin-right: 17.5%;
@@ -61,13 +64,13 @@
     &:nth-child(3),
     &:nth-child(6),
     &:nth-child(8) {
-      background-color: $violet-medium;
+      //background-color: $gray-dark;
     }
     &:nth-child(2),
     &:nth-child(4),
     &:nth-child(5),
     &:nth-child(7) {
-      background-color: $violet-light;
+      //background-color: $gray-light;
     }
     &:last-child {
       margin-right: 0;
@@ -109,6 +112,7 @@
     font-size: 4vmin;
     padding: 0;
     font-weight: bold;
+    color: $white;
   }
 
   @media (min-width: $tablet) {
