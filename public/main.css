@@ -1186,6 +1186,9 @@ a:hover, a:focus {
      -moz-box-flex: 0;
       -ms-flex: 0 1 calc(50% - 2.5vmin);
           flex: 0 1 calc(50% - 2.5vmin);
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   margin-bottom: 5vw;
   background-color: transparent;
   border: 1px solid #FFF; }
@@ -1216,7 +1219,12 @@ a:hover, a:focus {
       .service-wrapper:nth-last-child(2) {
         margin-left: 0; }
       .service-wrapper:last-child, .service-wrapper:nth-last-child(2), .service-wrapper:nth-last-child(3), .service-wrapper:nth-last-child(4) {
-        margin-bottom: 0; } }
+        margin-bottom: 0; }
+      .service-wrapper:hover, .service-wrapper:active, .service-wrapperfocus {
+        border: 2px solid #FFF;
+        -webkit-box-shadow: 0 0 1vw #FFF;
+           -moz-box-shadow: 0 0 1vw #FFF;
+                box-shadow: 0 0 1vw #FFF; } }
 
 .service {
   width: 100%;
