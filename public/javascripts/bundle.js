@@ -214,6 +214,7 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function () {
   var topbarLinks = document.querySelectorAll('.topbar-link');
+  var socialLinks = document.querySelectorAll('.home-social-link');
   var facebookLink = document.querySelector('.home-facebook-link');
   var instagramLink = document.querySelector('.home-instagram-link');
   var whatsAppLink = document.querySelector('.home-whatsapp-link');
@@ -271,6 +272,15 @@ exports.default = function () {
     });
   }
 
+  socialLinks.forEach(function (link) {
+    link.addEventListener('mouseover', function () {
+      link.style.boxShadow = '0 0 1vw white';
+    });
+    link.addEventListener('mouseleave', function () {
+      link.style.boxShadow = 'none';
+    });
+  });
+
   if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
     // IOS devices
     facebookLink.setAttribute('href', 'fb://page?id=2036302739931258');
@@ -298,13 +308,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-exports.default = function () {
-  // const subheadlines = document.querySelectorAll('.home-subheadline h2, .home-action h2');
-  // if ((/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) { // device is a mobile phone
-  //   /* eslint-disable no-return-assign, no-param-reassign */
-  //   subheadlines.forEach(h2 => h2.style.fontSize = '6.4vmin');
-  // }
-};
+exports.default = function () {};
 
 /***/ }),
 

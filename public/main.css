@@ -984,6 +984,11 @@ a:hover, a:focus {
     margin-left: 0; }
   .home-social-link:last-child {
     margin-right: 0; }
+  .home-social-linkactive, .home-social-linkhover, .home-social-linkfocus {
+    border: 1px solid #FFF;
+    -webkit-box-shadow: 0 0 1vmin #FFF;
+       -moz-box-shadow: 0 0 1vmin #FFF;
+            box-shadow: 0 0 1vmin #FFF; }
   @media (min-width: 768px) {
     .home-social-link {
       height: 10vmin;
@@ -1236,7 +1241,6 @@ a:hover, a:focus {
       .service-wrapper:last-child, .service-wrapper:nth-last-child(2), .service-wrapper:nth-last-child(3), .service-wrapper:nth-last-child(4) {
         margin-bottom: 0; }
       .service-wrapper:hover, .service-wrapper:active, .service-wrapperfocus {
-        border: 2px solid #FFF;
         -webkit-box-shadow: 0 0 1vw #FFF;
            -moz-box-shadow: 0 0 1vw #FFF;
                 box-shadow: 0 0 1vw #FFF; } }

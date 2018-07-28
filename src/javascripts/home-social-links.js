@@ -1,5 +1,6 @@
 export default () => {
   const topbarLinks = document.querySelectorAll('.topbar-link');
+  const socialLinks = document.querySelectorAll('.home-social-link');
   const facebookLink = document.querySelector('.home-facebook-link');
   const instagramLink = document.querySelector('.home-instagram-link');
   const whatsAppLink = document.querySelector('.home-whatsapp-link');
@@ -55,6 +56,15 @@ export default () => {
       topbarLinkedinIcon.style.color = '#FFF';
     });
   }
+
+  socialLinks.forEach((link) => {
+    link.addEventListener('mouseover', () => {
+      link.style.boxShadow = '0 0 1vw white';
+    });
+    link.addEventListener('mouseleave', () => {
+      link.style.boxShadow = 'none';
+    });
+  });
 
   if ((/iPhone|iPad|iPod/i.test(navigator.userAgent))) { // IOS devices
     facebookLink.setAttribute('href', 'fb://page?id=2036302739931258');
