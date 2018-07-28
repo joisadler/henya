@@ -1027,9 +1027,21 @@ a:hover, a:focus {
   -o-transition: right 0.2s;
   -moz-transition: right 0.2s;
   transition: right 0.2s;
-  z-index: 2;
+  z-index: 1000;
   -webkit-transform: translateZ(0);
-  -webkit-backface-visibility: hidden; }
+  -webkit-backface-visibility: hidden;
+  border-top: 1px solid #FFF; }
+  .hidden-menu:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 35px;
+    height: -webkit-calc(100% - 35px);
+    height: -moz-calc(100% - 35px);
+    height: calc(100% - 35px);
+    width: 1px;
+    background: #FFF;
+    z-index: 1000; }
   @media (min-width: 768px), (orientation: landscape) {
     .hidden-menu {
       width: 30%; } }
@@ -1049,7 +1061,7 @@ a:hover, a:focus {
   -o-transition: right 0.23s;
   -moz-transition: right 0.23s;
   transition: right 0.23s;
-  z-index: 3;
+  z-index: 1000;
   width: 25px;
   -webkit-border-radius: 5px;
      -moz-border-radius: 5px;
@@ -1087,7 +1099,10 @@ a:hover, a:focus {
   -webkit-border-radius: 5px 0 0 5px;
      -moz-border-radius: 5px 0 0 5px;
           border-radius: 5px 0 0 5px;
-  background-color: #0A002D; }
+  background-color: #0A002D;
+  border-left: 1px solid #FFF;
+  border-bottom: 1px solid #FFF;
+  border-top: 1px solid #FFF; }
   @media (min-width: 768px), (orientation: landscape) {
     .hidden-menu-ticker:checked ~ .btn-menu {
       right: 30%; } }
