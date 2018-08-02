@@ -307,7 +307,7 @@ template {
 
 /* colors */
 /* breakpoints */
-/* image sizes for adaptive images */
+/* adaptive images */
 .page {
   display: -webkit-box;
   display: -webkit-flex;
@@ -813,7 +813,6 @@ a:hover, a:focus {
   opacity: 0;
   width: 100%;
   height: 90%;
-  background-image: url(/images/armchair-639-649.png);
   -moz-background-size: contain;
        background-size: contain;
   background-repeat: no-repeat;
@@ -1028,85 +1027,85 @@ a:hover, a:focus {
 
 .home-mail-link {
   background-color: #FFF;
-  background-image: url(/images/mail-round-100.png);
+  background-image: url(/images/mail-100.png);
   -moz-background-size: contain;
        background-size: contain; }
   @media (max-width: 767px) {
     .home-mail-link {
-      background: url(/images/mail-round-48.png);
+      background: url(/images/mail-48.png);
       background-color: #FFF;
       -moz-background-size: contain;
            background-size: contain; } }
   @media (min-width: 768px) and (max-width: 1279px) {
     .home-mail-link {
-      background: url(/images/mail-round-64.png);
+      background: url(/images/mail-64.png);
       background-color: #FFF;
       -moz-background-size: contain;
            background-size: contain; } }
-  @media (min-width: 1280px) {
+  @media (min-width: 1280px) and (max-width: 1920px) {
     .home-mail-link {
-      background: url(/images/mail-round-100.png);
+      background: url(/images/mail-100.png);
       background-color: #FFF;
       -moz-background-size: contain;
            background-size: contain; } }
 
 .home-facebook-link {
-  background-image: url(/images/facebook-round-100.png);
+  background-image: url(/images/facebook-100.png);
   -moz-background-size: contain;
        background-size: contain; }
   @media (max-width: 767px) {
     .home-facebook-link {
-      background: url(/images/facebook-round-48.png);
+      background: url(/images/facebook-48.png);
       -moz-background-size: contain;
            background-size: contain; } }
   @media (min-width: 768px) and (max-width: 1279px) {
     .home-facebook-link {
-      background: url(/images/facebook-round-64.png);
+      background: url(/images/facebook-64.png);
       -moz-background-size: contain;
            background-size: contain; } }
-  @media (min-width: 1280px) {
+  @media (min-width: 1280px) and (max-width: 1920px) {
     .home-facebook-link {
-      background: url(/images/facebook-round-100.png);
+      background: url(/images/facebook-100.png);
       -moz-background-size: contain;
            background-size: contain; } }
 
 .home-instagram-link {
-  background-image: url(/images/instagram-round-100.png);
+  background-image: url(/images/instagram-100.png);
   -moz-background-size: contain;
        background-size: contain; }
   @media (max-width: 767px) {
     .home-instagram-link {
-      background: url(/images/instagram-round-48.png);
+      background: url(/images/instagram-48.png);
       -moz-background-size: contain;
            background-size: contain; } }
   @media (min-width: 768px) and (max-width: 1279px) {
     .home-instagram-link {
-      background: url(/images/instagram-round-64.png);
+      background: url(/images/instagram-64.png);
       -moz-background-size: contain;
            background-size: contain; } }
-  @media (min-width: 1280px) {
+  @media (min-width: 1280px) and (max-width: 1920px) {
     .home-instagram-link {
-      background: url(/images/instagram-round-100.png);
+      background: url(/images/instagram-100.png);
       -moz-background-size: contain;
            background-size: contain; } }
 
 .home-linkedin-link {
-  background-image: url(/images/linkedin-round-100.png);
+  background-image: url(/images/linkedin-100.png);
   -moz-background-size: contain;
        background-size: contain; }
   @media (max-width: 767px) {
     .home-linkedin-link {
-      background: url(/images/linkedin-round-48.png);
+      background: url(/images/linkedin-48.png);
       -moz-background-size: contain;
            background-size: contain; } }
   @media (min-width: 768px) and (max-width: 1279px) {
     .home-linkedin-link {
-      background: url(/images/linkedin-round-64.png);
+      background: url(/images/linkedin-64.png);
       -moz-background-size: contain;
            background-size: contain; } }
-  @media (min-width: 1280px) {
+  @media (min-width: 1280px) and (max-width: 1920px) {
     .home-linkedin-link {
-      background: url(/images/linkedin-round-100.png);
+      background: url(/images/linkedin-100.png);
       -moz-background-size: contain;
            background-size: contain; } }
 

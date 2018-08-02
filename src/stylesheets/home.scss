@@ -228,30 +228,30 @@
   opacity: 0;
   width: 100%;
   height: 90%;
-  background-image: url('../images/armchair-639-649.png');
+  //background-image: url('../images/armchair-639-649.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 
-  @media (max-width: ($tablet - 1)) {
+  @media #{$phones} {
     background: url('../images/armchair-261-265.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
   }
-  @media (min-width: $tablet) and (max-width: ($desktop - 1)) {
+  @media #{$tablets} {
     background: url('../images/armchair-494-502.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
   }
-  @media (min-width: $desktop) and (max-width: ($large-desktop - 1)) {
+  @media #{$desktops} {
     background: url('../images/armchair-639-649.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
   }
-  @media (min-width: $large-desktop) {
+  @media #{$large-desktops} {
     background: url('../images/armchair-959-974.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -357,34 +357,22 @@
   }
 }
 
-@for $i from 1 through 4 {
+@for $i from 1 through length($social-links-list) {
   .home-#{nth($social-links-list, $i)}-link {
     @if nth($social-links-list, $i) == mail {
       background-color: $white;
     }
-    background-image: url('../images/#{nth($social-links-list, $i)}-round-100.png');
+    background-image: url('../images/#{nth($social-links-list, $i)}-#{map-get($social-links-image-sizes-list, $desktops)}.png');
     background-size: contain;
-  
-    @media (max-width: ($tablet - 1)) {
-      background: url('../images/#{nth($social-links-list, $i)}-round-48.png');
-      @if nth($social-links-list, $i) == mail {
-        background-color: $white;
+
+    @each $key, $value in $social-links-image-sizes-list {
+      @media #{$key} {
+        background: url('../images/#{nth($social-links-list, $i)}-#{$value}.png');
+        @if nth($social-links-list, $i) == mail {
+          background-color: $white;
+        }
+        background-size: contain;
       }
-      background-size: contain;
-    }
-    @media (min-width: $tablet) and (max-width: ($desktop - 1)) {
-      background: url('../images/#{nth($social-links-list, $i)}-round-64.png');
-      @if nth($social-links-list, $i) == mail {
-        background-color: $white;
-      }
-      background-size: contain;
-    }
-    @media (min-width: $desktop) {
-      background: url('../images/#{nth($social-links-list, $i)}-round-100.png');
-      @if nth($social-links-list, $i) == mail {
-        background-color: $white;
-      }
-      background-size: contain;
     }
   }
 }

@@ -9,6 +9,16 @@ $tablet: 768px;
 $desktop: 1280px;
 $large-desktop: 1921px;
 
-/* image sizes for adaptive images */
+/* adaptive images */
+$phones: '(max-width: #{$tablet - 1})';
+$tablets: '(min-width: #{$tablet}) and (max-width: (#{$desktop - 1}))';
+$desktops: '(min-width: #{$desktop}) and (max-width: (#{$large-desktop - 1}))';
+$large-desktops: '(min-width: #{$large-desktop})';
+
 $social-links-list: mail, facebook, instagram, linkedin;
-$social-links-image-sizes: 48, 64, 100;
+
+$social-links-image-sizes-list: (
+  $phones: 48, 
+  $tablets: 64,
+  $desktops: 100
+  );
