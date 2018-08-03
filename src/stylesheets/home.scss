@@ -215,34 +215,18 @@
   opacity: 0;
   width: 100%;
   height: 90%;
-  //background-image: url('../images/armchair-639-649.png');
+  background-image: url('../images/armchair-639-649.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 
-  @media #{$phones} {
-    background: url('../images/armchair-261-265.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  @media #{$tablets} {
-    background: url('../images/armchair-494-502.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  @media #{$desktops} {
-    background: url('../images/armchair-639-649.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  @media #{$large-desktops} {
-    background: url('../images/armchair-959-974.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  @each $key, $value in $home-illustration-sizes-list {
+    @media #{$key} {
+      background: url('../images/armchair-#{$value}.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
 }
 
