@@ -18,9 +18,9 @@ $large-desktops: '(min-width: #{$large-desktop})';
 $social-links-list: mail, facebook, instagram, linkedin;
 
 $social-links-image-sizes-list: (
-  $phones: 48, 
-  $tablets: 64,
-  $desktops: 100
+  $phones: '48', 
+  $tablets: '64',
+  $desktops: '100'
 );
 
 $home-background-sizes-list: (
