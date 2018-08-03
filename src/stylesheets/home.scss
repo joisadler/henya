@@ -153,25 +153,12 @@
   background-repeat: no-repeat;
   border-bottom: 1px solid $white;
 
-  @media (max-width: ($tablet - 1)) {
-    background: url('../images/main-background-640-1136.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  @media (min-width: $tablet) and (max-width: ($desktop - 1)) {
-    background: url('../images/main-background-768-1024.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  @media (min-width: $desktop) and (max-width: ($large-desktop - 1)) {
-    background: url('../images/main-background-1280-720.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  @media (min-width: $large-desktop) {
-    background: url('../images/main-background-1920-1080.png');
-    background-size: cover;
-    background-repeat: no-repeat;
+  @each $key, $value in $home-background-sizes-list {
+    @media #{$key} {
+      background: url('../images/main-background-#{$value}.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   }
 }
 

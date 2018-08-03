@@ -21,4 +21,11 @@ $social-links-image-sizes-list: (
   $phones: 48, 
   $tablets: 64,
   $desktops: 100
-  );
+);
+
+$home-background-sizes-list: (
+  $phones: '640-1136',
+  $tablets: '768-1024',
+  $desktops: '1280-720',
+  $large-desktops: '1920-1080'
+);
