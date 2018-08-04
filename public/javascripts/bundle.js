@@ -468,57 +468,49 @@ Object.defineProperty(exports, "__esModule", {
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 exports.default = function () {
-  var carousel = document.getElementById('carousel');
-  // const carouselWrapper = document.querySelector('.carousel-wrapper');
-  var gallery = document.getElementById('gallery');
-  var galleryItems = gallery.querySelectorAll('.gallery-item');
-  var images = [].concat(_toConsumableArray(gallery.querySelectorAll('img')));
-  // const image = images[0];
-  var prevButton = carousel.querySelector('.prev');
-  var nextButton = carousel.querySelector('.next');
-  var currentImageNumber = Math.floor((1 + galleryItems.length) / 2);
-  var vw = document.documentElement.clientWidth / 100;
-  var galleryWidth = 90 * vw;
-  var position = galleryWidth * (currentImageNumber - 1);
-  gallery.style.marginLeft = '-' + position + 'px';
+  var portfolioContainer = document.querySelector('.portfolio-container');
+  var portfolio = document.querySelector('.portfolio');
+  var portfolioImages = [].concat(_toConsumableArray(portfolio.querySelectorAll('img')));
+  var prevButton = portfolioContainer.querySelector('.prev');
+  var nextButton = portfolioContainer.querySelector('.next');
+  var currentImageNumber = 1;
+  var width = portfolioContainer.offsetWidth;
+  var position = width * (currentImageNumber - 1);
+
+  portfolio.style.marginLeft = '-' + position + 'px';
 
   window.addEventListener('resize', function () {
-    vw = document.documentElement.clientWidth / 100;
-    galleryWidth = 90 * vw;
-    position = galleryWidth * (currentImageNumber - 1);
-    gallery.style.marginLeft = '-' + position + 'px';
-  }, true);
-
-  [].concat(_toConsumableArray(galleryItems)).forEach(function (item) {
-    item.style.width = '90vw'; // eslint-disable-line
+    width = portfolioContainer.offsetWidth;
+    position = width * (currentImageNumber - 1);
+    portfolio.style.marginLeft = '-' + position + 'px';
   });
 
   var moveRight = function moveRight() {
-    if (currentImageNumber === galleryItems.length) {
+    if (currentImageNumber === portfolioImages.length) {
       currentImageNumber = 0;
     }
-    if (currentImageNumber < galleryItems.length) {
+    if (currentImageNumber < portfolioImages.length) {
       currentImageNumber += 1;
     }
-    position = galleryWidth * (currentImageNumber - 1);
-    gallery.style.marginLeft = '-' + position + 'px';
+    position = width * (currentImageNumber - 1);
+    portfolio.style.marginLeft = '-' + position + 'px';
   };
 
   var moveLeft = function moveLeft() {
     if (currentImageNumber === 1) {
-      currentImageNumber = galleryItems.length + 1;
+      currentImageNumber = portfolioImages.length + 1;
     }
     if (currentImageNumber > 1) {
       currentImageNumber -= 1;
     }
-    position = galleryWidth * (currentImageNumber - 1);
-    gallery.style.marginLeft = '-' + position + 'px';
+    position = width * (currentImageNumber - 1);
+    portfolio.style.marginLeft = '-' + position + 'px';
   };
 
-  prevButton.addEventListener('click', moveLeft, true);
-  nextButton.addEventListener('click', moveRight, true);
+  prevButton.addEventListener('click', moveLeft);
+  nextButton.addEventListener('click', moveRight);
 
-  images.forEach(function (i) {
+  portfolioImages.forEach(function (i) {
     i.addEventListener('click', function (e) {
       var img = e.target;
       if (img.requestFullscreen) {
@@ -539,6 +531,78 @@ exports.default = function () {
       });
     });
   });
+
+  //   const carousel = document.getElementById('carousel');
+  //   // const carouselWrapper = document.querySelector('.carousel-wrapper');
+  //   const gallery = document.getElementById('gallery');
+  //   const galleryItems = gallery.querySelectorAll('.gallery-item');
+  //   const images = [...gallery.querySelectorAll('img')];
+  //   // const image = images[0];
+  //   const prevButton = carousel.querySelector('.prev');
+  //   const nextButton = carousel.querySelector('.next');
+  //   let currentImageNumber = Math.floor((1 + galleryItems.length) / 2);
+  //   let vw = document.documentElement.clientWidth / 100;
+  //   let galleryWidth = 90 * vw;
+  //   let position = galleryWidth * (currentImageNumber - 1);
+  //   gallery.style.marginLeft = `-${position}px`;
+
+  //   window.addEventListener('resize', () => {
+  //     vw = document.documentElement.clientWidth / 100;
+  //     galleryWidth = 90 * vw;
+  //     position = galleryWidth * (currentImageNumber - 1);
+  //     gallery.style.marginLeft = `-${position}px`;
+  //   }, true);
+
+  //   [...galleryItems].forEach((item) => {
+  //     item.style.width = `90vw`; // eslint-disable-line
+  //   });
+
+  //   const moveRight = () => {
+  //     if (currentImageNumber === galleryItems.length) {
+  //       currentImageNumber = 0;
+  //     }
+  //     if (currentImageNumber < galleryItems.length) {
+  //       currentImageNumber += 1;
+  //     }
+  //     position = galleryWidth * (currentImageNumber - 1);
+  //     gallery.style.marginLeft = `-${position}px`;
+  //   };
+
+  //   const moveLeft = () => {
+  //     if (currentImageNumber === 1) {
+  //       currentImageNumber = galleryItems.length + 1;
+  //     }
+  //     if (currentImageNumber > 1) {
+  //       currentImageNumber -= 1;
+  //     }
+  //     position = galleryWidth * (currentImageNumber - 1);
+  //     gallery.style.marginLeft = `-${position}px`;
+  //   };
+
+  //   prevButton.addEventListener('click', moveLeft, true);
+  //   nextButton.addEventListener('click', moveRight, true);
+
+  //   images.forEach((i) => {
+  //     i.addEventListener('click', (e) => {
+  //       const img = e.target;
+  //       if (img.requestFullscreen) {
+  //         img.requestFullscreen();
+  //       } else if (img.mozRequestFullScreen) {
+  //         img.mozRequestFullScreen();
+  //       } else if (img.webkitRequestFullScreen) {
+  //         img.webkitRequestFullScreen();
+  //       }
+  //       img.addEventListener('click', () => {
+  //         if (document.cancelFullScreen) {
+  //           document.cancelFullScreen();
+  //         } else if (document.mozCancelFullScreen) {
+  //           document.mozCancelFullScreen();
+  //         } else if (document.webkitCancelFullScreen) {
+  //           document.webkitCancelFullScreen();
+  //         }
+  //       });
+  //     });
+  //   });
 };
 
 /***/ }),

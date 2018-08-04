@@ -28,7 +28,7 @@
   &:last-child,
   &:nth-last-child(2) {
     margin-bottom: 0;
-  } 
+  }
   @media (orientation: landscape),
   (min-width: $tablet) {
     flex: 0 1 calc(33.3% - 3.3vw);
