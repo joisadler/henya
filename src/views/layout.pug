@@ -10,7 +10,13 @@ html.page(lang="ru")
     link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous")
     
     // Fonts
-    link(href="https://fonts.googleapis.com/css?family=Caveat:700|Cormorant+Infant:400,400i,700|Playfair+Display+SC:400,700,900&amp;subset=cyrillic" rel="stylesheet")  
+    link(href="https://fonts.googleapis.com/css?family=Caveat:700|Cormorant+Infant:400,400i,700|Playfair+Display+SC:400,700,900&amp;subset=cyrillic" rel="stylesheet")
+    
+    // Background image preloading
+    link(rel="preload" as="image" href="../images/main-background-640-1136.png" media="max-width: 767px")
+    link(rel="preload" as="image" href="../images/main-background-768-1024.png" media="(min-width: 768) and (max-width: 1279)")
+    link(rel="preload" as="image" href="../images/main-background-1280-720.png" media="(min-width: 1280) and (max-width: 1920)")
+    link(rel="preload" as="image" href="../images/main-background-1920-1080.png" media="min-width: 1921")
 
   body.page
     block content

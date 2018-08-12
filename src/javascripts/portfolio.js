@@ -1,138 +1,106 @@
 
 export default () => {
-  const portfolioContainer = document.querySelector('.portfolio-container');
-  const portfolio = document.querySelector('.portfolio');
-  const portfolioImages = [...portfolio.querySelectorAll('img')];
-  const prevButton = portfolioContainer.querySelector('.prev');
-  const nextButton = portfolioContainer.querySelector('.next');
-  let currentImageNumber = 1;
-  let width = portfolioContainer.offsetWidth;
-  let position = width * (currentImageNumber - 1);
-
-  portfolio.style.marginLeft = `-${position}px`;
-
-  window.addEventListener('resize', () => {
-    width = portfolioContainer.offsetWidth;
-    position = width * (currentImageNumber - 1);
-    portfolio.style.marginLeft = `-${position}px`;
-  });
+  const sliderContainer = document.querySelector('.slider-container');
+  const slider = document.querySelector('.slider');
+  const images = [...document.querySelectorAll('.portfolio-image')];
+  const urls = images.map(i => i.src);
+  const prevButton = sliderContainer.querySelector('.prev');
+  const nextButton = sliderContainer.querySelector('.next');
+  const prevFullScreenButton = slider.querySelector('.slider > .prev');
+  const nextFullScreenButton = slider.querySelector('.slider > .next');
+  let position = 0;
 
   const moveRight = () => {
-    if (currentImageNumber === portfolioImages.length) {
-      currentImageNumber = 0;
-    }
-    if (currentImageNumber < portfolioImages.length) {
-      currentImageNumber += 1;
-    }
-    position = width * (currentImageNumber - 1);
-    portfolio.style.marginLeft = `-${position}px`;
+    position += 1;
+    if (position === urls.length) position = 0;
+    slider.style.backgroundImage = `url(${urls[position]})`;
   };
 
   const moveLeft = () => {
-    if (currentImageNumber === 1) {
-      currentImageNumber = portfolioImages.length + 1;
-    }
-    if (currentImageNumber > 1) {
-      currentImageNumber -= 1;
-    }
-    position = width * (currentImageNumber - 1);
-    portfolio.style.marginLeft = `-${position}px`;
+    position -= 1;
+    if (position < 0) position = urls.length - 1;
+    slider.style.backgroundImage = `url(${urls[position]})`;
   };
 
-  prevButton.addEventListener('click', moveLeft);
-  nextButton.addEventListener('click', moveRight);
+  const improveImageQuality = () => {
+    slider.style.backgroundImage = slider.style.backgroundImage.replace(/small/, 'big');
+  };
 
-  portfolioImages.forEach((i) => {
-    i.addEventListener('click', (e) => {
-      const img = e.target;
-      if (img.requestFullscreen) {
-        img.requestFullscreen();
-      } else if (img.mozRequestFullScreen) {
-        img.mozRequestFullScreen();
-      } else if (img.webkitRequestFullScreen) {
-        img.webkitRequestFullScreen();
-      }
-      img.addEventListener('click', () => {
-        if (document.cancelFullScreen) {
-          document.cancelFullScreen();
-        } else if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
-        } else if (document.webkitCancelFullScreen) {
-          document.webkitCancelFullScreen();
-        }
-      });
-    });
+  slider.style.backgroundImage = `url(${urls[position]})`;
+  prevButton.addEventListener('click', moveLeft);
+  prevFullScreenButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    moveLeft();
+  });
+  nextButton.addEventListener('click', moveRight);
+  nextFullScreenButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    moveRight();
   });
 
-//   const carousel = document.getElementById('carousel');
-//   // const carouselWrapper = document.querySelector('.carousel-wrapper');
-//   const gallery = document.getElementById('gallery');
-//   const galleryItems = gallery.querySelectorAll('.gallery-item');
-//   const images = [...gallery.querySelectorAll('img')];
-//   // const image = images[0];
-//   const prevButton = carousel.querySelector('.prev');
-//   const nextButton = carousel.querySelector('.next');
-//   let currentImageNumber = Math.floor((1 + galleryItems.length) / 2);
-//   let vw = document.documentElement.clientWidth / 100;
-//   let galleryWidth = 90 * vw;
-//   let position = galleryWidth * (currentImageNumber - 1);
-//   gallery.style.marginLeft = `-${position}px`;
+  if (typeof document.isFullscreen === 'undefined') {
+    document.isFullscreen = () =>
+      !((document.fullScreenElement !== undefined && document.fullScreenElement === null) ||
+      (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) ||
+      (document.mozFullScreen !== undefined && !document.mozFullScreen) ||
+      (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen));
+  }
 
-//   window.addEventListener('resize', () => {
-//     vw = document.documentElement.clientWidth / 100;
-//     galleryWidth = 90 * vw;
-//     position = galleryWidth * (currentImageNumber - 1);
-//     gallery.style.marginLeft = `-${position}px`;
-//   }, true);
+  if (!(/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+    document.addEventListener('keydown', (event) => {
+      if (document.isFullscreen()) {
+        const key = event.key;
+        switch (key) {
+          case 'ArrowLeft':
+            moveLeft();
+            improveImageQuality();
+            break;
+          case 'ArrowRight':
+            moveRight();
+            improveImageQuality();
+            break;
+          case 'Escape':
+            if (document.cancelFullScreen) {
+              document.cancelFullScreen();
+            } else if (document.mozCancelFullScreen) {
+              document.mozCancelFullScreen();
+            } else if (document.webkitCancelFullScreen) {
+              document.webkitCancelFullScreen();
+            }
+            break;
+          default:
+            break;
+        }
+      }
+    });
+  }
 
-//   [...galleryItems].forEach((item) => {
-//     item.style.width = `90vw`; // eslint-disable-line
-//   });
-
-//   const moveRight = () => {
-//     if (currentImageNumber === galleryItems.length) {
-//       currentImageNumber = 0;
-//     }
-//     if (currentImageNumber < galleryItems.length) {
-//       currentImageNumber += 1;
-//     }
-//     position = galleryWidth * (currentImageNumber - 1);
-//     gallery.style.marginLeft = `-${position}px`;
-//   };
-
-//   const moveLeft = () => {
-//     if (currentImageNumber === 1) {
-//       currentImageNumber = galleryItems.length + 1;
-//     }
-//     if (currentImageNumber > 1) {
-//       currentImageNumber -= 1;
-//     }
-//     position = galleryWidth * (currentImageNumber - 1);
-//     gallery.style.marginLeft = `-${position}px`;
-//   };
-
-//   prevButton.addEventListener('click', moveLeft, true);
-//   nextButton.addEventListener('click', moveRight, true);
-
-//   images.forEach((i) => {
-//     i.addEventListener('click', (e) => {
-//       const img = e.target;
-//       if (img.requestFullscreen) {
-//         img.requestFullscreen();
-//       } else if (img.mozRequestFullScreen) {
-//         img.mozRequestFullScreen();
-//       } else if (img.webkitRequestFullScreen) {
-//         img.webkitRequestFullScreen();
-//       }
-//       img.addEventListener('click', () => {
-//         if (document.cancelFullScreen) {
-//           document.cancelFullScreen();
-//         } else if (document.mozCancelFullScreen) {
-//           document.mozCancelFullScreen();
-//         } else if (document.webkitCancelFullScreen) {
-//           document.webkitCancelFullScreen();
-//         }
-//       });
-//     });
-//   });
+  slider.addEventListener('click', (e) => {
+    const s = e.target;
+    if (s.requestFullscreen) {
+      if (!(/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) { // device is not a mobile phone
+        improveImageQuality();
+      }
+      s.requestFullscreen();
+    } else if (s.mozRequestFullScreen) {
+      if (!(/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+        improveImageQuality();
+      }
+      s.mozRequestFullScreen();
+    } else if (s.webkitRequestFullScreen) {
+      if (!(/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+        improveImageQuality();
+      }
+      s.webkitRequestFullScreen();
+    }
+    slider.addEventListener('click', () => {
+      if (document.cancelFullScreen) {
+        document.cancelFullScreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitCancelFullScreen) {
+        document.webkitCancelFullScreen();
+      }
+    });
+  });
 };

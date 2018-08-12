@@ -340,6 +340,9 @@ template {
   padding: 0;
   margin: 0; }
 
+.preload {
+  display: none; }
+
 .row {
   width: 100%;
   padding: 0;
@@ -405,9 +408,14 @@ h2 {
 p {
   font-family: "Cormorant Infant", serif;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 4vmin;
+  font-weight: bold;
   color: #FFF;
-  margin: 0; }
+  margin: 0;
+  padding: 0 5vw 0 5vw; }
+  @media (min-width: 768px) {
+    p p {
+      font-size: 2.5vmin; } }
 
 a:hover, a:focus {
   color: #CB74C0;
@@ -1382,7 +1390,8 @@ a:hover, a:focus {
     font-size: 4vmin;
     padding: 0;
     font-weight: bold;
-    color: #FFF; }
+    color: #FFF;
+    padding: 0; }
   @media (min-width: 768px) {
     .service-caption p {
       font-size: 2.5vmin; } }
@@ -1417,48 +1426,38 @@ a:hover, a:focus {
   min-height: -moz-calc(21.375vmin + 90vmin);
   min-height: calc(21.375vmin + 90vmin); }
 
-.portfolio-container {
+.slider-container {
   width: 90vmin;
   height: 90vmin;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  overflow: hidden;
   position: relative;
   border: 1px solid white; }
 
-.portfolio {
-  height: 90vmin;
-  width: 99999px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-size: 0;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0; }
-
-.portfolio-item {
-  display: inline-block;
-  height: 90vmin;
-  width: 90vmin; }
-
-.portfolio-image-container {
-  height: 100%;
-  width: 100%; }
-
-.portfolio-image {
+.slider {
+  position: relative;
   height: 100%;
   width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain; }
+  -moz-background-size: contain;
+       background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transition: background-image 0.25s ease-out;
+  -o-transition: background-image 0.25s ease-out;
+  -moz-transition: background-image 0.25s ease-out;
+  transition: background-image 0.25s ease-out; }
+  .slider:-webkit-full-screen {
+    background-color: #0A002D; }
+  .slider:-moz-full-screen {
+    background-color: #0A002D; }
+  .slider:-ms-fullscreen {
+    background-color: #0A002D; }
+  .slider:fullscreen {
+    background-color: #0A002D; }
 
 .arrow {
   width: 15%;
   height: 100%;
   position: absolute;
+  top: 0;
   padding: 0;
   background: transparent;
   -moz-background-size: auto 15%;
@@ -1466,10 +1465,24 @@ a:hover, a:focus {
   background-position: center;
   background-repeat: no-repeat;
   border: none;
-  display: block;
   z-index: 3; }
   .arrow:focus, .arrow:hover, .arrow:active {
     cursor: pointer; }
+
+.slider > .arrow {
+  display: none; }
+
+.slider:-webkit-full-screen > .arrow {
+  display: block; }
+
+.slider:-moz-full-screen > .arrow {
+  display: block; }
+
+.slider:-ms-fullscreen > .arrow {
+  display: block; }
+
+.slider:fullscreen > .arrow {
+  display: block; }
 
 .prev {
   left: 0;

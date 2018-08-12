@@ -18,6 +18,10 @@
   margin: 0;
 }
 
+.preload {
+  display: none;
+}
+
 .row {
   width: 100%;
   padding: 0;
@@ -32,31 +36,19 @@ h1, h3 {
     text-transform: uppercase;
 }
 
-//.home-subheadline, .home-action {
-  h2 {
-    font-family: "Caveat", cursive;
-    font-weight: 700;
-    font-size: 6.2vmin;
-    color: $white;
-    margin: 0;
-  }
+h2 {
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+  font-size: 6.2vmin;
+  color: $white;
+  margin: 0;
+}
 
-  @media (min-width: $tablet) {
-    h2 {
-      font-size: 5vmin;
-    }
-  // }
-  // @media (min-width: $desktop) {
-  //   h2 {
-  //     font-size: 5vmin;
-  //   }
-  // }
-  // @media (min-width: $desktop) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-  //   h2 {
-  //     font-size: 5vmin;
-  //   }
+@media (min-width: $tablet) {
+  h2 {
+    font-size: 5vmin;
   }
-//}
+}
 
 .section-headline {
   display: flex;
@@ -91,10 +83,17 @@ h1, h3 {
 p {
   font-family: "Cormorant Infant", serif;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 4vmin;
+  font-weight: bold;
   color: $white;
   margin: 0;
-  //padding: 0 5vw 0 5vw;
+  padding: 0 5vw 0 5vw;
+
+  @media (min-width: $tablet) {
+    p {
+      font-size: 2.5vmin;
+    }
+  }
 }
 
 a {

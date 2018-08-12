@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <!-- Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Caveat:700|Cormorant+Infant:400,400i,700|Playfair+Display+SC:400,700,900&amp;amp;subset=cyrillic" rel="stylesheet">
+    <!-- Background image preloading-->
+    <link rel="preload" as="image" href="../images/main-background-640-1136.png" media="max-width: 767px">
+    <link rel="preload" as="image" href="../images/main-background-768-1024.png" media="(min-width: 768) and (max-width: 1279)">
+    <link rel="preload" as="image" href="../images/main-background-1280-720.png" media="(min-width: 1280) and (max-width: 1920)">
+    <link rel="preload" as="image" href="../images/main-background-1920-1080.png" media="min-width: 1921">
     <link href="/main.css" rel="stylesheet">
   </head>
 
@@ -178,21 +183,34 @@
       <header class="section-headline">
         <h3>Примеры работ</h3>
       </header>
-      <div class="portfolio-container">
+      <div class="slider-container">
         <button class="arrow prev"></button>
-        <ul class="portfolio">
-          <li class="portfolio-item">
-            <div class="portfolio-image-container">
-              <img class="portfolio-image" src="images/portfolio-images/business-card1.jpg" alt="Business card 1">
-            </div>
-          </li>
-          <li class="portfolio-item">
-            <div class="portfolio-image-container">
-              <img class="portfolio-image" src="images/portfolio-images/2017.png" alt="Jerusalem 2017">
-            </div>
-          </li>
-        </ul>
         <button class="arrow next"></button>
+        <img class="portfolio-image preload" src="../images/portfolio-images/self-portrait-small.jpg">
+        <img class="portfolio-image preload" src="../images/portfolio-images/flower-small.jpg">
+        <img class="portfolio-image preload" src="../images/portfolio-images/business-card1-small.jpg">
+        <img class="portfolio-image preload" src="../images/portfolio-images/business-card2-small.jpg">
+        <img class="portfolio-image preload" src="../images/portfolio-images/business-card3-small.jpg">
+        <img class="portfolio-image preload" src="../images/portfolio-images/2017-small.png">
+        <img class="portfolio-image preload" src="../images/portfolio-images/be-yourself-small.jpg">
+        <img class="portfolio-image preload" src="../images/portfolio-images/camel-small.jpg">
+        <img class="portfolio-image preload" src="../images/portfolio-images/collage-small.jpg">
+        <img class="portfolio-image preload" src="../images/portfolio-images/invitation1-small.jpg">
+        <img class="portfolio-image preload" src="../images/portfolio-images/invitation2-small.jpg">
+        <img class="portfolio-image preload" src="../images/portfolio-images/jacobs-small.jpg">
+        <img class="portfolio-image preload" src="../images/portfolio-images/live-the-life-small.png">
+        <img class="portfolio-image preload" src="../images/portfolio-images/2018-small.jpg">
+        <img class="portfolio-image preload" src="../images/portfolio-images/old-small.jpg">
+        <img class="portfolio-image preload" src="../images/portfolio-images/player1-small.jpg">
+        <img class="portfolio-image preload" src="../images/portfolio-images/player2-small.jpg">
+        <img class="portfolio-image preload" src="../images/portfolio-images/toldot1-small.jpg">
+        <img class="portfolio-image preload" src="../images/portfolio-images/toldot2-small.jpg">
+        <img class="portfolio-image preload" src="../images/portfolio-images/veggie-small.jpg">
+        <img class="portfolio-image preload" src="../images/portfolio-images/yad-itzhak-small.png">
+        <div class="slider">
+          <button class="arrow prev"></button>
+          <button class="arrow next"></button>
+        </div>
       </div>
     </section>
     <section class="row" id="benefits">
