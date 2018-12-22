@@ -1,0 +1,24 @@
+.about-container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.my-photo {
+  display: block;
+  float: left;
+  margin-right: 4vmin;
+  margin-bottom: 2vmin;
+  shape-outside: circle();
+  shape-margin: 4vmin;
+  width: 40vmin;
+  height: 40vmin;
+  border-radius: 50%;
+  object-fit: cover;
+
+  @media (min-width: $tablet) {
+    display: inline;
+    width: 50vmin;
+    height: 50vmin;
+    margin-right: 8vmin;
+  }
+}

@@ -11,6 +11,21 @@ export default () => {
   const topbarInstagramIcon = document.getElementById('topbar-instagram-icon');
   const topbarLinkedinIcon = document.getElementById('topbar-linkedin-icon');
 
+  if ((/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) { // Mobile devices
+    facebookLink.addEventListener('click', () => {
+      setTimeout(() => {
+        window.location = 'https://www.facebook.com/henyadesign/';
+      }, 25);
+      window.location = 'fb://page/2036302739931258';
+    });
+    instagramLink.addEventListener('click', () => {
+      setTimeout(() => {
+        window.location = 'https://www.instagram.com/henya_design/';
+      }, 25);
+      window.location = 'instagram://user?username=henya_design';
+    });
+  }
+
   if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) { // Desktop devices
     facebookLink.setAttribute('href', 'https://www.facebook.com/henyadesign/');
     instagramLink.setAttribute('href', 'https://www.instagram.com/henya_design/');

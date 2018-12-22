@@ -3,46 +3,60 @@
   flex-flow: column nowrap;
   align-items: center;
   justify-content: flex-start;
-  height: calc(21.375vmin + 90vmin);
-  min-height: calc(21.375vmin + 90vmin);
+  height: calc(21.375vmin + 70vmin);
+  min-height: calc(21.375vmin + 70vmin);
+
+  @media (min-width: $desktop), (orientation: landscape) {
+    height: calc(21.375vmin + 90vmin);
+    min-height: calc(21.375vmin + 90vmin);
+  }
 }
 
 .slider-container {
-  width: 90vmin;
-  height: 90vmin;
+  width: 100%;
+  height: 70vmin;
   position: relative;
-  border: 1px solid white;
+
+  @media (min-width: $desktop), (orientation: landscape) {
+    height: 90vmin;
+  }
 }
 
 .slider {
-  position: relative;
-  height: 100%;
-  width: 100%;
+  height: 70vmin;
+  width: 90%;
+  margin: 0 auto;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   transition: background-image 0.25s ease-out;
 
+  @media (min-width: $desktop), (orientation: landscape) {
+    height: 90vmin;
+  }
+
   &:fullscreen {
+    width: 100%;
     background-color: $violet-dark;
   }
 }
 
 .arrow {
-  width: 15%;
+  width: 25%;
   height: 100%;
   position: absolute;
   top: 0;
   padding: 0;
   background: transparent;
   background-size: auto 15%;
-  background-position: center;
   background-repeat: no-repeat;
   border: none;
   z-index: 3;
+  outline: none;
 
   &:focus, &:hover, &:active {
     cursor: pointer;
+    outline: none;
   }
 }
 
@@ -51,14 +65,20 @@
 }
 .slider:fullscreen > .arrow {
   display: block;
+
+  @media (orientation: portrait) {
+    background-size: auto 8%;
+  }
 }
 
 .prev {
   left: 0;
   background-image: url("../images/left.svg");
+  background-position: 15% center;
 }
 
 .next {
   right: 0;
   background-image: url("../images/right.svg");
+  background-position: 85% center;
 }

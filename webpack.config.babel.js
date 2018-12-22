@@ -6,7 +6,6 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import HtmlBeautifyPlugin from 'html-beautify-webpack-plugin';
 
-
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
 const config = {

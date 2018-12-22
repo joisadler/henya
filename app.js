@@ -11,7 +11,7 @@ const app = express();
 const debug = Debug('henya:app');
 app.set('views', path.join(__dirname, 'src/views'));
 app.set('view engine', 'pug');
-//app.use(favicon(path.join(__dirname, 'public/images/favicon', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public/images/favicon', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({

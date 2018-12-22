@@ -7,6 +7,7 @@ import homeSocialLinks from './home-social-links';
 import services from './services';
 import portfolio from './portfolio';
 import toggleFullScreen from './toggleFullScreen';
+import about from './about';
 
 home();
 homeAnimation();
@@ -17,3 +18,4 @@ homeSocialLinks();
 services();
 portfolio();
 toggleFullScreen();
+about();

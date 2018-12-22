@@ -407,7 +407,6 @@ h2 {
 
 p {
   font-family: "Cormorant Infant", serif;
-  font-weight: 400;
   font-size: 4vmin;
   font-weight: bold;
   color: #FFF;
@@ -416,6 +415,20 @@ p {
   @media (min-width: 768px) {
     p p {
       font-size: 2.5vmin; } }
+
+p.text-content {
+  width: 100%;
+  font-size: 5vmin;
+  padding: 0;
+  font-weight: normal;
+  color: #FFF;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+       hyphens: auto; }
+  @media (min-width: 768px) {
+    p.text-content {
+      font-size: 3.5vmin; } }
 
 a:hover, a:focus {
   color: #CB74C0;
@@ -1390,8 +1403,7 @@ a:hover, a:focus {
     font-size: 4vmin;
     padding: 0;
     font-weight: bold;
-    color: #FFF;
-    padding: 0; }
+    color: #FFF; }
   @media (min-width: 768px) {
     .service-caption p {
       font-size: 2.5vmin; } }
@@ -1419,23 +1431,33 @@ a:hover, a:focus {
      -moz-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  height: -webkit-calc(21.375vmin + 90vmin);
-  height: -moz-calc(21.375vmin + 90vmin);
-  height: calc(21.375vmin + 90vmin);
-  min-height: -webkit-calc(21.375vmin + 90vmin);
-  min-height: -moz-calc(21.375vmin + 90vmin);
-  min-height: calc(21.375vmin + 90vmin); }
+  height: -webkit-calc(21.375vmin + 70vmin);
+  height: -moz-calc(21.375vmin + 70vmin);
+  height: calc(21.375vmin + 70vmin);
+  min-height: -webkit-calc(21.375vmin + 70vmin);
+  min-height: -moz-calc(21.375vmin + 70vmin);
+  min-height: calc(21.375vmin + 70vmin); }
+  @media (min-width: 1280px), (orientation: landscape) {
+    #portfolio {
+      height: -webkit-calc(21.375vmin + 90vmin);
+      height: -moz-calc(21.375vmin + 90vmin);
+      height: calc(21.375vmin + 90vmin);
+      min-height: -webkit-calc(21.375vmin + 90vmin);
+      min-height: -moz-calc(21.375vmin + 90vmin);
+      min-height: calc(21.375vmin + 90vmin); } }
 
 .slider-container {
-  width: 90vmin;
-  height: 90vmin;
-  position: relative;
-  border: 1px solid white; }
+  width: 100%;
+  height: 70vmin;
+  position: relative; }
+  @media (min-width: 1280px), (orientation: landscape) {
+    .slider-container {
+      height: 90vmin; } }
 
 .slider {
-  position: relative;
-  height: 100%;
-  width: 100%;
+  height: 70vmin;
+  width: 90%;
+  margin: 0 auto;
   -moz-background-size: contain;
        background-size: contain;
   background-position: center;
@@ -1444,17 +1466,24 @@ a:hover, a:focus {
   -o-transition: background-image 0.25s ease-out;
   -moz-transition: background-image 0.25s ease-out;
   transition: background-image 0.25s ease-out; }
+  @media (min-width: 1280px), (orientation: landscape) {
+    .slider {
+      height: 90vmin; } }
   .slider:-webkit-full-screen {
+    width: 100%;
     background-color: #0A002D; }
   .slider:-moz-full-screen {
+    width: 100%;
     background-color: #0A002D; }
   .slider:-ms-fullscreen {
+    width: 100%;
     background-color: #0A002D; }
   .slider:fullscreen {
+    width: 100%;
     background-color: #0A002D; }
 
 .arrow {
-  width: 15%;
+  width: 25%;
   height: 100%;
   position: absolute;
   top: 0;
@@ -1462,12 +1491,13 @@ a:hover, a:focus {
   background: transparent;
   -moz-background-size: auto 15%;
        background-size: auto 15%;
-  background-position: center;
   background-repeat: no-repeat;
   border: none;
-  z-index: 3; }
+  z-index: 3;
+  outline: none; }
   .arrow:focus, .arrow:hover, .arrow:active {
-    cursor: pointer; }
+    cursor: pointer;
+    outline: none; }
 
 .slider > .arrow {
   display: none; }
@@ -1483,14 +1513,54 @@ a:hover, a:focus {
 
 .slider:fullscreen > .arrow {
   display: block; }
+  @media (orientation: portrait) {
+    .slider:-webkit-full-screen > .arrow {
+      background-size: auto 8%; }
+    .slider:-moz-full-screen > .arrow {
+      -moz-background-size: auto 8%;
+           background-size: auto 8%; }
+    .slider:-ms-fullscreen > .arrow {
+      background-size: auto 8%; }
+    .slider:fullscreen > .arrow {
+      -moz-background-size: auto 8%;
+           background-size: auto 8%; } }
 
 .prev {
   left: 0;
-  background-image: url(/images/left.svg); }
+  background-image: url(/images/left.svg);
+  background-position: 15% center; }
 
 .next {
   right: 0;
-  background-image: url(/images/right.svg); }
+  background-image: url(/images/right.svg);
+  background-position: 85% center; }
+
+.about-container {
+  margin: 0 auto;
+  width: 90%; }
+
+.my-photo {
+  display: block;
+  float: left;
+  margin-right: 4vmin;
+  margin-bottom: 2vmin;
+  -webkit-shape-outside: circle();
+          shape-outside: circle();
+  -webkit-shape-margin: 4vmin;
+          shape-margin: 4vmin;
+  width: 40vmin;
+  height: 40vmin;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover; }
+  @media (min-width: 768px) {
+    .my-photo {
+      display: inline;
+      width: 50vmin;
+      height: 50vmin;
+      margin-right: 8vmin; } }
 
 #footer {
   height: 5000px; }

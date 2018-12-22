@@ -1,38 +1,36 @@
 
 export default () => {
-  const sliderContainer = document.querySelector('.slider-container');
+  const portfolio = document.getElementById('portfolio');
   const slider = document.querySelector('.slider');
-  const images = [...document.querySelectorAll('.portfolio-image')];
-  const urls = images.map(i => i.src);
-  const prevButton = sliderContainer.querySelector('.prev');
-  const nextButton = sliderContainer.querySelector('.next');
+  const portfolioImages = [...document.querySelectorAll('.portfolio-image')];
+  const portfolioImagesUrls = portfolioImages.map(i => i.src);
+  const prevButton = portfolio.querySelector('.prev');
+  const nextButton = portfolio.querySelector('.next');
   const prevFullScreenButton = slider.querySelector('.slider > .prev');
   const nextFullScreenButton = slider.querySelector('.slider > .next');
   let position = 0;
 
   const moveRight = () => {
     position += 1;
-    if (position === urls.length) position = 0;
-    slider.style.backgroundImage = `url(${urls[position]})`;
+    if (position === portfolioImagesUrls.length) position = 0;
+    slider.style.backgroundImage = `url(${portfolioImagesUrls[position]})`;
   };
 
   const moveLeft = () => {
     position -= 1;
-    if (position < 0) position = urls.length - 1;
-    slider.style.backgroundImage = `url(${urls[position]})`;
+    if (position < 0) position = portfolioImagesUrls.length - 1;
+    slider.style.backgroundImage = `url(${portfolioImagesUrls[position]})`;
   };
 
-  const improveImageQuality = () => {
-    slider.style.backgroundImage = slider.style.backgroundImage.replace(/small/, 'big');
-  };
+  slider.style.backgroundImage = `url(${portfolioImagesUrls[position]})`;
 
-  slider.style.backgroundImage = `url(${urls[position]})`;
   prevButton.addEventListener('click', moveLeft);
+  nextButton.addEventListener('click', moveRight);
+
   prevFullScreenButton.addEventListener('click', (e) => {
     e.stopPropagation();
     moveLeft();
   });
-  nextButton.addEventListener('click', moveRight);
   nextFullScreenButton.addEventListener('click', (e) => {
     e.stopPropagation();
     moveRight();
@@ -53,11 +51,15 @@ export default () => {
         switch (key) {
           case 'ArrowLeft':
             moveLeft();
-            improveImageQuality();
             break;
           case 'ArrowRight':
             moveRight();
-            improveImageQuality();
+            break;
+          case 'ArrowUp':
+            moveLeft();
+            break;
+          case 'ArrowDown':
+            moveRight();
             break;
           case 'Escape':
             if (document.cancelFullScreen) {
@@ -78,19 +80,10 @@ export default () => {
   slider.addEventListener('click', (e) => {
     const s = e.target;
     if (s.requestFullscreen) {
-      if (!(/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) { // device is not a mobile phone
-        improveImageQuality();
-      }
       s.requestFullscreen();
     } else if (s.mozRequestFullScreen) {
-      if (!(/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
-        improveImageQuality();
-      }
       s.mozRequestFullScreen();
     } else if (s.webkitRequestFullScreen) {
-      if (!(/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
-        improveImageQuality();
-      }
       s.webkitRequestFullScreen();
     }
     slider.addEventListener('click', () => {

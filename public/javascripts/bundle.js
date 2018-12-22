@@ -36,17 +36,32 @@
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
 /******/ 	};
 /******/
 /******/ 	// define __esModule on exports
 /******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
 /******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -70,6 +85,24 @@
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./src/javascripts/about.js":
+/*!**********************************!*\
+  !*** ./src/javascripts/about.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {};
+
+/***/ }),
 
 /***/ "./src/javascripts/home-animation.js":
 /*!*******************************************!*\
@@ -225,6 +258,22 @@ exports.default = function () {
   var topbarInstagramIcon = document.getElementById('topbar-instagram-icon');
   var topbarLinkedinIcon = document.getElementById('topbar-linkedin-icon');
 
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // Mobile devices
+    facebookLink.addEventListener('click', function () {
+      setTimeout(function () {
+        window.location = 'https://www.facebook.com/henyadesign/';
+      }, 25);
+      window.location = 'fb://page/2036302739931258';
+    });
+    instagramLink.addEventListener('click', function () {
+      setTimeout(function () {
+        window.location = 'https://www.instagram.com/henya_design/';
+      }, 25);
+      window.location = 'instagram://user?username=henya_design';
+    });
+  }
+
   if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     // Desktop devices
     facebookLink.setAttribute('href', 'https://www.facebook.com/henyadesign/');
@@ -358,6 +407,10 @@ var _toggleFullScreen = __webpack_require__(/*! ./toggleFullScreen */ "./src/jav
 
 var _toggleFullScreen2 = _interopRequireDefault(_toggleFullScreen);
 
+var _about = __webpack_require__(/*! ./about */ "./src/javascripts/about.js");
+
+var _about2 = _interopRequireDefault(_about);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _home2.default)();
@@ -369,6 +422,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _services2.default)();
 (0, _portfolio2.default)();
 (0, _toggleFullScreen2.default)();
+(0, _about2.default)();
 
 /***/ }),
 
@@ -468,41 +522,39 @@ Object.defineProperty(exports, "__esModule", {
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 exports.default = function () {
-  var sliderContainer = document.querySelector('.slider-container');
+  var portfolio = document.getElementById('portfolio');
   var slider = document.querySelector('.slider');
-  var images = [].concat(_toConsumableArray(document.querySelectorAll('.portfolio-image')));
-  var urls = images.map(function (i) {
+  var portfolioImages = [].concat(_toConsumableArray(document.querySelectorAll('.portfolio-image')));
+  var portfolioImagesUrls = portfolioImages.map(function (i) {
     return i.src;
   });
-  var prevButton = sliderContainer.querySelector('.prev');
-  var nextButton = sliderContainer.querySelector('.next');
+  var prevButton = portfolio.querySelector('.prev');
+  var nextButton = portfolio.querySelector('.next');
   var prevFullScreenButton = slider.querySelector('.slider > .prev');
   var nextFullScreenButton = slider.querySelector('.slider > .next');
   var position = 0;
 
   var moveRight = function moveRight() {
     position += 1;
-    if (position === urls.length) position = 0;
-    slider.style.backgroundImage = 'url(' + urls[position] + ')';
+    if (position === portfolioImagesUrls.length) position = 0;
+    slider.style.backgroundImage = 'url(' + portfolioImagesUrls[position] + ')';
   };
 
   var moveLeft = function moveLeft() {
     position -= 1;
-    if (position < 0) position = urls.length - 1;
-    slider.style.backgroundImage = 'url(' + urls[position] + ')';
+    if (position < 0) position = portfolioImagesUrls.length - 1;
+    slider.style.backgroundImage = 'url(' + portfolioImagesUrls[position] + ')';
   };
 
-  var improveImageQuality = function improveImageQuality() {
-    slider.style.backgroundImage = slider.style.backgroundImage.replace(/small/, 'big');
-  };
+  slider.style.backgroundImage = 'url(' + portfolioImagesUrls[position] + ')';
 
-  slider.style.backgroundImage = 'url(' + urls[position] + ')';
   prevButton.addEventListener('click', moveLeft);
+  nextButton.addEventListener('click', moveRight);
+
   prevFullScreenButton.addEventListener('click', function (e) {
     e.stopPropagation();
     moveLeft();
   });
-  nextButton.addEventListener('click', moveRight);
   nextFullScreenButton.addEventListener('click', function (e) {
     e.stopPropagation();
     moveRight();
@@ -521,11 +573,15 @@ exports.default = function () {
         switch (key) {
           case 'ArrowLeft':
             moveLeft();
-            improveImageQuality();
             break;
           case 'ArrowRight':
             moveRight();
-            improveImageQuality();
+            break;
+          case 'ArrowUp':
+            moveLeft();
+            break;
+          case 'ArrowDown':
+            moveRight();
             break;
           case 'Escape':
             if (document.cancelFullScreen) {
@@ -546,20 +602,10 @@ exports.default = function () {
   slider.addEventListener('click', function (e) {
     var s = e.target;
     if (s.requestFullscreen) {
-      if (!/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        // device is not a mobile phone
-        improveImageQuality();
-      }
       s.requestFullscreen();
     } else if (s.mozRequestFullScreen) {
-      if (!/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        improveImageQuality();
-      }
       s.mozRequestFullScreen();
     } else if (s.webkitRequestFullScreen) {
-      if (!/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        improveImageQuality();
-      }
       s.webkitRequestFullScreen();
     }
     slider.addEventListener('click', function () {
