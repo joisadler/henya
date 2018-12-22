@@ -411,6 +411,10 @@ var _about = __webpack_require__(/*! ./about */ "./src/javascripts/about.js");
 
 var _about2 = _interopRequireDefault(_about);
 
+var _testimonials = __webpack_require__(/*! ./testimonials */ "./src/javascripts/testimonials.js");
+
+var _testimonials2 = _interopRequireDefault(_testimonials);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _home2.default)();
@@ -423,6 +427,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _portfolio2.default)();
 (0, _toggleFullScreen2.default)();
 (0, _about2.default)();
+(0, _testimonials2.default)();
 
 /***/ }),
 
@@ -722,6 +727,39 @@ exports.default = function () {
           });
         }
       }
+    }, 200);
+  });
+};
+
+/***/ }),
+
+/***/ "./src/javascripts/testimonials.js":
+/*!*****************************************!*\
+  !*** ./src/javascripts/testimonials.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  var testimonialImages = document.querySelectorAll('.testimonial-image');
+  /* eslint-disable no-param-reassign */
+  testimonialImages.forEach(function (i) {
+    var width = i.offsetWidth;
+    i.style.height = width + 'px';
+  });
+  window.addEventListener('resize', function () {
+    setTimeout(function () {
+      testimonialImages.forEach(function (i) {
+        var width = i.offsetWidth;
+        i.style.height = width + 'px';
+      });
     }, 200);
   });
 };

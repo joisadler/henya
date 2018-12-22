@@ -31,9 +31,9 @@
 
 h1, h3 {
   font-family: "Playfair Display SC", serif;
-    color: $white;
-    text-align: center;
-    text-transform: uppercase;
+  color: $white;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -96,18 +96,17 @@ p {
 }
 
 p.text-content {
-  width: 100%;
-    font-size: 5vmin;
-    padding: 0;
-    font-weight: normal;
-    color: $white;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-    
-    @media (min-width: $tablet) {
-      font-size: 3.5vmin;
-    }
+  font-size: 5vmin;
+  padding: 0;
+  font-weight: normal;
+  color: $white;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  
+  @media (min-width: $tablet) {
+    font-size: 3.5vmin;
+  }
 }
 
 a {
