@@ -1,6 +1,10 @@
 .about-container {
   margin: 0 auto;
   width: 90%;
+
+  @media (min-width: $desktop) {
+    width: 80%;
+  }
 }
 
 .my-photo {

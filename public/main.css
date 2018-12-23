@@ -1537,6 +1537,9 @@ a:hover, a:focus {
 .about-container {
   margin: 0 auto;
   width: 90%; }
+  @media (min-width: 1280px) {
+    .about-container {
+      width: 80%; } }
 
 .my-photo {
   display: block;
@@ -1593,6 +1596,11 @@ a:hover, a:focus {
       -webkit-flex-wrap: wrap;
           -ms-flex-wrap: wrap;
               flex-wrap: wrap;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+         -moz-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
       width: 80%; } }
 
 .testimonial {
@@ -1623,7 +1631,7 @@ a:hover, a:focus {
   margin-bottom: 5vmin; }
   @media (min-width: 1280px) {
     .testimonial {
-      width: 25%; } }
+      width: 30%; } }
 
 .testimonial-image {
   width: 40%;
@@ -1634,22 +1642,41 @@ a:hover, a:focus {
      object-fit: cover;
   margin-top: 5vmin;
   margin-bottom: 5vmin; }
-  @media (orientation: landscape) {
+  @media (min-width: 768px), (orientation: landscape) {
     .testimonial-image {
       width: 20%; } }
+  @media (min-width: 1280px) {
+    .testimonial-image {
+      width: 40%; } }
 
 h4.testimonial-name {
   font-family: "Playfair Display SC", serif;
   font-size: 4vmin;
   font-weight: bold;
   margin: 0 0 1vw 0;
-  text-align: center; }
+  text-align: center;
+  padding-left: 5vmin;
+  padding-right: 5vmin; }
+  @media (min-width: 768px) {
+    h4.testimonial-name {
+      font-size: 3vmin; } }
+  @media (min-width: 1280px) {
+    h4.testimonial-name {
+      font-size: 2.5vmin; } }
 
 h5.testimonial-position {
   margin: 0 0 5vmin 0;
   font-family: "Playfair Display SC", serif;
   font-size: 3vmin;
-  text-align: center; }
+  text-align: center;
+  padding-left: 5vmin;
+  padding-right: 5vmin; }
+  @media (min-width: 768px) {
+    h5.testimonial-position {
+      font-size: 2vmin; } }
+  @media (min-width: 1280px) {
+    h5.testimonial-position {
+      font-size: 2vmin; } }
 
 p.testimonial-content {
   font-size: 5vmin;
@@ -1658,7 +1685,7 @@ p.testimonial-content {
   text-align: center; }
   @media (min-width: 768px) {
     p.testimonial-content {
-      font-size: 3vmin; } }
+      font-size: 3.5vmin; } }
 
 #footer {
   height: 5000px; }

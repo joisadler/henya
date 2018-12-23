@@ -7,6 +7,7 @@
   @media (min-width: $desktop) {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
     width: 80%;
   }
 }
@@ -21,7 +22,7 @@
   margin-bottom: 5vmin;
 
   @media (min-width: $desktop) {
-    width: 25%
+    width: 30%
   }
 }
 
@@ -32,8 +33,12 @@
   margin-top: 5vmin;
   margin-bottom: 5vmin;
 
-  @media (orientation: landscape) {
+  @media (min-width: $tablet),
+         (orientation: landscape) {
     width: 20%;
+  }
+  @media (min-width: $desktop) {
+    width: 40%;
   }
 }
 
@@ -43,6 +48,15 @@ h4.testimonial-name {
   font-weight: bold;
   margin: 0 0 1vw 0;
   text-align: center;
+  padding-left: 5vmin;
+  padding-right: 5vmin;
+
+  @media (min-width: $tablet) {
+    font-size: 3vmin;
+  }
+  @media (min-width: $desktop) {
+    font-size: 2.5vmin;
+  }
 }
 
 h5.testimonial-position {
@@ -50,6 +64,15 @@ h5.testimonial-position {
   font-family: "Playfair Display SC", serif;
   font-size: 3vmin;
   text-align: center;
+  padding-left: 5vmin;
+  padding-right: 5vmin;
+
+  @media (min-width: $tablet) {
+    font-size: 2vmin;
+  }
+  @media (min-width: $desktop) {
+    font-size: 2vmin;
+  }
 }
 
 p.testimonial-content {
@@ -59,6 +82,6 @@ p.testimonial-content {
   text-align: center;
 
   @media (min-width: $tablet) {
-    font-size: 3vmin;
+    font-size: 3.5vmin;
   }
 }
