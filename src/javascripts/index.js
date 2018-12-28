@@ -9,6 +9,7 @@ import portfolio from './portfolio';
 import toggleFullScreen from './toggleFullScreen';
 import about from './about';
 import testimonials from './testimonials';
+import faq from './faq';
 
 home();
 homeAnimation();
@@ -21,3 +22,4 @@ portfolio();
 toggleFullScreen();
 about();
 testimonials();
+faq();

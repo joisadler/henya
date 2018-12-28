@@ -1,0 +1,48 @@
+.faq-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5vmin;
+  height: 5vmin;
+  border-radius: 50%;
+  border: 1px solid $white;
+  transition: all 0.1s ease-in;
+
+  @media (min-width: $desktop) {
+    border-width: 2px;
+  }
+}
+
+.faq-arrow-center {
+  position: relative;
+  width: 60%;
+  height: 1px;
+  background-color: $white;
+
+  @media (min-width: $desktop) {
+    height: 2px;
+  }
+}
+
+.faq-arrow-left, .faq-arrow-right {
+  position: absolute;
+  left: 60%;
+  width: 40%;
+  height: 1px;
+  background-color: $white;
+
+  @media (min-width: $desktop) {
+    height: 2px;
+  }
+}
+
+.faq-arrow-left {
+  
+  transform: rotate(40deg);
+  transform-origin: 100%;
+}
+
+.faq-arrow-right {
+  transform: rotate(320deg);
+  transform-origin: 100%;
+}

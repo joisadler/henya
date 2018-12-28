@@ -4,6 +4,7 @@
   justify-content: flex-start;
   width: 90%;
   margin: 0 auto 0 auto;
+  
   @media (min-width: $desktop) {
     flex-direction: row;
     flex-wrap: wrap;
@@ -68,9 +69,6 @@ h5.testimonial-position {
   padding-right: 5vmin;
 
   @media (min-width: $tablet) {
-    font-size: 2vmin;
-  }
-  @media (min-width: $desktop) {
     font-size: 2vmin;
   }
 }

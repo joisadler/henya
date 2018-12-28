@@ -1,0 +1,59 @@
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 90%;
+  margin: 0 auto;
+
+  @media (min-width: $desktop) {
+    width: 80%;
+  }
+}
+
+.faq-article {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.question-container, .faq-action-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 5vmin;
+}
+
+.faq-action-container {
+  margin-bottom: 0;
+}
+
+.answer-container {
+  display: none;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 5vmin;
+}
+
+.question-text {
+  width: calc(100% - 11vmin);
+  font-family: "Playfair Display SC", serif;
+  font-size: 3vmin;
+  text-align: left;
+  padding: 0 0 0 5vmin;
+
+  @media (min-width: $tablet) {
+    font-size: 2.5vmin;
+  }
+}
+
+p.answer-text {
+  padding: 0 5vmin 0 10vmin;
+}
+
+.hidden-question {
+  display: none;
+}

@@ -416,7 +416,7 @@ p {
     p p {
       font-size: 2.5vmin; } }
 
-p.text-content {
+.text-content {
   font-size: 5vmin;
   padding: 0;
   font-weight: normal;
@@ -426,7 +426,7 @@ p.text-content {
   -moz-hyphens: auto;
        hyphens: auto; }
   @media (min-width: 768px) {
-    p.text-content {
+    .text-content {
       font-size: 3.5vmin; } }
 
 a:hover, a:focus {
@@ -1674,9 +1674,6 @@ h5.testimonial-position {
   @media (min-width: 768px) {
     h5.testimonial-position {
       font-size: 2vmin; } }
-  @media (min-width: 1280px) {
-    h5.testimonial-position {
-      font-size: 2vmin; } }
 
 p.testimonial-content {
   font-size: 5vmin;
@@ -1686,6 +1683,190 @@ p.testimonial-content {
   @media (min-width: 768px) {
     p.testimonial-content {
       font-size: 3.5vmin; } }
+
+.faq-circle {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 5vmin;
+  height: 5vmin;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+  border: 1px solid #FFF;
+  -webkit-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in; }
+  @media (min-width: 1280px) {
+    .faq-circle {
+      border-width: 2px; } }
+
+.faq-arrow-center {
+  position: relative;
+  width: 60%;
+  height: 1px;
+  background-color: #FFF; }
+  @media (min-width: 1280px) {
+    .faq-arrow-center {
+      height: 2px; } }
+
+.faq-arrow-left, .faq-arrow-right {
+  position: absolute;
+  left: 60%;
+  width: 40%;
+  height: 1px;
+  background-color: #FFF; }
+  @media (min-width: 1280px) {
+    .faq-arrow-left, .faq-arrow-right {
+      height: 2px; } }
+
+.faq-arrow-left {
+  -webkit-transform: rotate(40deg);
+     -moz-transform: rotate(40deg);
+      -ms-transform: rotate(40deg);
+       -o-transform: rotate(40deg);
+          transform: rotate(40deg);
+  -webkit-transform-origin: 100%;
+     -moz-transform-origin: 100%;
+      -ms-transform-origin: 100%;
+       -o-transform-origin: 100%;
+          transform-origin: 100%; }
+
+.faq-arrow-right {
+  -webkit-transform: rotate(320deg);
+     -moz-transform: rotate(320deg);
+      -ms-transform: rotate(320deg);
+       -o-transform: rotate(320deg);
+          transform: rotate(320deg);
+  -webkit-transform-origin: 100%;
+     -moz-transform-origin: 100%;
+      -ms-transform-origin: 100%;
+       -o-transform-origin: 100%;
+          transform-origin: 100%; }
+
+.faq-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 90%;
+  margin: 0 auto; }
+  @media (min-width: 1280px) {
+    .faq-container {
+      width: 80%; } }
+
+.faq-article {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
+
+.question-container, .faq-action-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5vmin; }
+
+.faq-action-container {
+  margin-bottom: 0; }
+
+.answer-container {
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5vmin; }
+
+.question-text {
+  width: -webkit-calc(100% - 11vmin);
+  width: -moz-calc(100% - 11vmin);
+  width: calc(100% - 11vmin);
+  font-family: "Playfair Display SC", serif;
+  font-size: 3vmin;
+  text-align: left;
+  padding: 0 0 0 5vmin; }
+  @media (min-width: 768px) {
+    .question-text {
+      font-size: 2.5vmin; } }
+
+p.answer-text {
+  padding: 0 5vmin 0 10vmin; }
+
+.hidden-question {
+  display: none; }
 
 #footer {
   height: 5000px; }

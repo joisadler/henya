@@ -104,6 +104,77 @@ exports.default = function () {};
 
 /***/ }),
 
+/***/ "./src/javascripts/faq.js":
+/*!********************************!*\
+  !*** ./src/javascripts/faq.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  var faqCircles = document.querySelectorAll('.faq-circle');
+
+  /* eslint-disable no-param-reassign */
+  faqCircles.forEach(function (circle) {
+    var questionContainer = circle.parentElement;
+
+    questionContainer.addEventListener('click', function (event) {
+      if (!circle.parentElement.classList.contains('faq-action-container')) {
+        var question = event.currentTarget;
+        var answer = question.nextElementSibling;
+        var circleIsRotated = circle.style.transform === 'rotate(90deg)';
+
+        if (circleIsRotated) {
+          circle.style.transform = 'rotate(0deg)';
+          if (answer) answer.style.display = 'none';
+        } else {
+          circle.style.transform = 'rotate(90deg)';
+          if (answer) answer.style.display = 'flex';
+        }
+      }
+    });
+  });
+
+  var moreQuestions = document.getElementById('more-questions');
+  moreQuestions.firstElementChild.firstElementChild.style.transform = 'rotate(90deg)';
+  var hiddenQuestions = document.querySelectorAll('.hidden-question');
+  moreQuestions.addEventListener('click', function () {
+    hiddenQuestions.forEach(function (q) {
+      q.style.display = 'flex';
+      moreQuestions.style.display = 'none';
+      var hideQuestions = document.getElementById('hide-questions');
+      hideQuestions.style.display = 'flex';
+    });
+  });
+
+  var hideQuestions = document.getElementById('hide-questions');
+  hideQuestions.firstElementChild.firstElementChild.style.transform = 'rotate(270deg)';
+  hideQuestions.style.display = 'none';
+  hideQuestions.addEventListener('click', function () {
+    hiddenQuestions.forEach(function (q) {
+      q.style.display = 'none';
+      moreQuestions.style.display = 'flex';
+      hideQuestions.style.display = 'none';
+    });
+    var answers = document.querySelectorAll('.answer-container');
+    answers.forEach(function (a) {
+      if (a.style.display === 'flex') {
+        a.style.display = 'none';
+        a.previousElementSibling.firstElementChild.style.transform = 'rotate(0deg)';
+      }
+    });
+  });
+};
+
+/***/ }),
+
 /***/ "./src/javascripts/home-animation.js":
 /*!*******************************************!*\
   !*** ./src/javascripts/home-animation.js ***!
@@ -415,6 +486,10 @@ var _testimonials = __webpack_require__(/*! ./testimonials */ "./src/javascripts
 
 var _testimonials2 = _interopRequireDefault(_testimonials);
 
+var _faq = __webpack_require__(/*! ./faq */ "./src/javascripts/faq.js");
+
+var _faq2 = _interopRequireDefault(_faq);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _home2.default)();
@@ -428,6 +503,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _toggleFullScreen2.default)();
 (0, _about2.default)();
 (0, _testimonials2.default)();
+(0, _faq2.default)();
 
 /***/ }),
 
