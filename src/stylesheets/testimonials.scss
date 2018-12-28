@@ -25,6 +25,9 @@
   @media (min-width: $desktop) {
     width: 30%
   }
+  &:hover, &:active, &focus {
+    box-shadow: 0 0 1vw $white;
+  }
 }
 
 .testimonial-image {

@@ -1638,6 +1638,10 @@ a:hover, a:focus {
   @media (min-width: 1280px) {
     .testimonial {
       width: 30%; } }
+  .testimonial:hover, .testimonial:active, .testimonialfocus {
+    -webkit-box-shadow: 0 0 1vw #FFF;
+       -moz-box-shadow: 0 0 1vw #FFF;
+            box-shadow: 0 0 1vw #FFF; }
 
 .testimonial-image {
   width: 40%;

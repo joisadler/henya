@@ -171,6 +171,20 @@ exports.default = function () {
       }
     });
   });
+
+  var faqHeaders = document.querySelectorAll(['.question-container', '.faq-action-container']);
+  faqHeaders.forEach(function (header) {
+    header.addEventListener('mouseover', function (e) {
+      var h = e.currentTarget;
+      var circle = h.firstElementChild;
+      circle.style.boxShadow = '0 0 1vw #FFF';
+    });
+    header.addEventListener('mouseout', function (e) {
+      var h = e.currentTarget;
+      var circle = h.firstElementChild;
+      circle.style.boxShadow = 'none';
+    });
+  });
 };
 
 /***/ }),

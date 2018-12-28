@@ -52,4 +52,18 @@ export default () => {
       }
     });
   });
+
+  const faqHeaders = document.querySelectorAll(['.question-container', '.faq-action-container']);
+  faqHeaders.forEach((header) => {
+    header.addEventListener('mouseover', (e) => {
+      const h = e.currentTarget;
+      const circle = h.firstElementChild;
+      circle.style.boxShadow = '0 0 1vw #FFF';
+    });
+    header.addEventListener('mouseout', (e) => {
+      const h = e.currentTarget;
+      const circle = h.firstElementChild;
+      circle.style.boxShadow = 'none';
+    });
+  });
 };
