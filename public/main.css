@@ -429,6 +429,12 @@ p {
     .text-content {
       font-size: 3.5vmin; } }
 
+.smile {
+  font-size: 4vmin; }
+  @media (min-width: 768px) {
+    .smile {
+      font-size: 2.5vmin; } }
+
 a:hover, a:focus {
   color: #CB74C0;
   text-decoration: none;
