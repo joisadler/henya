@@ -221,34 +221,41 @@ exports.default = function () {
     instagramLink.setAttribute('href', 'https://www.instagram.com/henya_design/');
     phoneLink.style.pointerEvents = 'none';
     mailLink.style.pointerEvents = 'none';
+  }
 
-    /* eslint-disable no-param-reassign */
+  /* eslint-disable no-param-reassign */
+  contactOptions.forEach(function (option) {
+    option.addEventListener('mouseover', function () {
+      if (option.firstElementChild.nextElementSibling.id === 'contact-options-phone-link' || option.firstElementChild.nextElementSibling.id === 'contact-options-mail-link') {
+        option.style.cursor = 'default';
+      } else option.style.cursor = 'pointer';
+      option.style.boxShadow = '0 0 1vw white';
+      option.style.border = '1px solid white';
+      if (option.firstElementChild.nextElementSibling.id !== 'contact-options-phone-link' && option.firstElementChild.nextElementSibling.id !== 'contact-options-mail-link') {
+        option.addEventListener('click', function () {
+          option.firstElementChild.nextElementSibling.click();
+        });
+      }
+    });
+    option.addEventListener('mouseleave', function () {
+      option.style.cursor = 'default';
+      option.style.boxShadow = 'none';
+      option.style.border = 'none';
+    });
+  });
+
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     contactOptions.forEach(function (option) {
       option.addEventListener('mouseover', function () {
-        if (option.firstElementChild.nextElementSibling.id === 'contact-options-phone-link' || option.firstElementChild.nextElementSibling.id === 'contact-options-mail-link') {
-          option.style.cursor = 'default';
-        } else option.style.cursor = 'pointer';
-        option.style.boxShadow = '0 0 1vw white';
-        option.style.border = '1px solid white';
-        if (option.firstElementChild.nextElementSibling.id !== 'contact-options-phone-link' && option.firstElementChild.nextElementSibling.id !== 'contact-options-mail-link') {
-          option.addEventListener('click', function () {
-            option.firstElementChild.nextElementSibling.click();
-          });
-        }
-      });
-      option.addEventListener('mouseleave', function () {
-        option.style.cursor = 'default';
-        option.style.boxShadow = 'none';
-        option.style.border = 'none';
+        option.addEventListener('click', function () {
+          option.style.boxShadow = 'none';
+          option.style.border = 'none';
+          option.firstElementChild.nextElementSibling.click();
+          option.firstElementChild.nextElementSibling.click();
+        });
       });
     });
   }
-  contactOptions.forEach(function (option) {
-    option.addEventListener('click', function () {
-      option.firstElementChild.nextElementSibling.click();
-      option.firstElementChild.nextElementSibling.click();
-    });
-  });
 };
 
 /***/ }),
