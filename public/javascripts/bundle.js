@@ -104,6 +104,155 @@ exports.default = function () {};
 
 /***/ }),
 
+/***/ "./src/javascripts/android-keyboard-fix.js":
+/*!*************************************************!*\
+  !*** ./src/javascripts/android-keyboard-fix.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  // setTimeout(() => {
+  //   const viewheight = $(window).height();
+  //   const viewwidth = $(window).width();
+  //   const viewport = document.querySelector('meta[name=viewport]');
+  //   viewport.setAttribute('content', `height=${viewheight}px, width=${viewwidth}px, initial-scale=1.0`);
+  // }, 300);
+
+  var viewport = document.querySelector('meta[name=viewport]');
+  var viewheight = $(window).height();
+  var viewwidth = $(window).width();
+  $('input, textarea').focus(function () {
+    viewport.setAttribute('content', 'height=' + viewheight + 'px, width=' + viewwidth + 'px, initial-scale=1.0, shrink-to-fit=no');
+    window.addEventListener('orientationchange', function () {
+      viewheight = window.innerWidth;
+      viewwidth = window.innerHeight;
+      viewport.setAttribute('content', 'height=' + viewheight + 'px, width=' + viewwidth + 'px, initial-scale=1.0, shrink-to-fit=no');
+    });
+    // viewport.setAttribute('content', `height=${viewheight}px, width=${viewwidth}px, initial-scale=1.0, shrink-to-fit=no`);
+  });
+
+  $('input, textarea').blur(function () {
+    viewport.setAttribute('content', 'height=' + viewheight + 'px, width=' + viewwidth + 'px, initial-scale=1.0, shrink-to-fit=no');
+    window.addEventListener('orientationchange', function () {
+      viewheight = window.outerWidth;
+      viewwidth = window.outerHeight;
+      viewport.setAttribute('content', 'height=' + viewheight + 'px, width=' + viewwidth + 'px, initial-scale=1.0, shrink-to-fit=no');
+    });
+    // viewport.setAttribute('content', `height=${viewheight}px, width=${viewwidth}px, initial-scale=1.0, shrink-to-fit=no`);
+  });
+};
+
+/***/ }),
+
+/***/ "./src/javascripts/contact.js":
+/*!************************************!*\
+  !*** ./src/javascripts/contact.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  var $form = $('#contact-form');
+  var $checkbox = $('#agree');
+  var $button = $('.contact-submit-button');
+
+  var submitHandler = function submitHandler(e) {
+    e.preventDefault();
+
+    if ($checkbox.is(':checked')) {
+      $.ajax({
+        url: '/contact',
+        type: 'POST',
+        data: $form.serialize()
+      }); // .done(response => console.log(response));
+    }
+  };
+
+  var activateButton = function activateButton() {
+    $button.toggleClass('active');
+  };
+
+  $form.on('submit', submitHandler);
+  $checkbox.on('change', activateButton);
+
+  var contactOptions = document.querySelectorAll('.contact-option');
+  var phoneLink = document.querySelector('#contact-options-phone-link');
+  var facebookLink = document.querySelector('#contact-options-facebook-link');
+  var instagramLink = document.querySelector('#contact-options-instagram-link');
+  var mailLink = document.querySelector('#contact-options-mail-link');
+
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // Mobile devices
+    facebookLink.addEventListener('click', function () {
+      setTimeout(function () {
+        window.location = 'https://www.facebook.com/henyadesign/';
+      }, 25);
+      if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        // IOS devices
+        window.location = 'fb://page?id=2036302739931258';
+      } else window.location = 'fb://page/2036302739931258';
+    });
+    instagramLink.addEventListener('click', function () {
+      setTimeout(function () {
+        window.location = 'https://www.instagram.com/henya_design/';
+      }, 25);
+      window.location = 'instagram://user?username=henya_design';
+    });
+  }
+
+  if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // Desktop devices
+    facebookLink.setAttribute('href', 'https://www.facebook.com/henyadesign/');
+    instagramLink.setAttribute('href', 'https://www.instagram.com/henya_design/');
+    phoneLink.style.pointerEvents = 'none';
+    mailLink.style.pointerEvents = 'none';
+
+    /* eslint-disable no-param-reassign */
+    contactOptions.forEach(function (option) {
+      option.addEventListener('mouseover', function () {
+        if (option.firstElementChild.nextElementSibling.id === 'contact-options-phone-link' || option.firstElementChild.nextElementSibling.id === 'contact-options-mail-link') {
+          option.style.cursor = 'default';
+        } else option.style.cursor = 'pointer';
+        option.style.boxShadow = '0 0 1vw white';
+        option.style.border = '1px solid white';
+        if (option.firstElementChild.nextElementSibling.id !== 'contact-options-phone-link' && option.firstElementChild.nextElementSibling.id !== 'contact-options-mail-link') {
+          option.addEventListener('click', function () {
+            option.firstElementChild.nextElementSibling.click();
+          });
+        }
+      });
+      option.addEventListener('mouseleave', function () {
+        option.style.cursor = 'default';
+        option.style.boxShadow = 'none';
+        option.style.border = 'none';
+      });
+    });
+  }
+  contactOptions.forEach(function (option) {
+    option.addEventListener('click', function () {
+      option.firstElementChild.nextElementSibling.click();
+      option.firstElementChild.nextElementSibling.click();
+    });
+  });
+};
+
+/***/ }),
+
 /***/ "./src/javascripts/faq.js":
 /*!********************************!*\
   !*** ./src/javascripts/faq.js ***!
@@ -504,6 +653,18 @@ var _faq = __webpack_require__(/*! ./faq */ "./src/javascripts/faq.js");
 
 var _faq2 = _interopRequireDefault(_faq);
 
+var _partners = __webpack_require__(/*! ./partners */ "./src/javascripts/partners.js");
+
+var _partners2 = _interopRequireDefault(_partners);
+
+var _contact = __webpack_require__(/*! ./contact */ "./src/javascripts/contact.js");
+
+var _contact2 = _interopRequireDefault(_contact);
+
+var _androidKeyboardFix = __webpack_require__(/*! ./android-keyboard-fix */ "./src/javascripts/android-keyboard-fix.js");
+
+var _androidKeyboardFix2 = _interopRequireDefault(_androidKeyboardFix);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _home2.default)();
@@ -518,6 +679,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _about2.default)();
 (0, _testimonials2.default)();
 (0, _faq2.default)();
+(0, _partners2.default)();
+(0, _contact2.default)();
+(0, _androidKeyboardFix2.default)();
 
 /***/ }),
 
@@ -600,6 +764,47 @@ exports.default = function () {
 
 /***/ }),
 
+/***/ "./src/javascripts/partners.js":
+/*!*************************************!*\
+  !*** ./src/javascripts/partners.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  $(document).ready(function () {
+    $('.customer-logos').slick({
+      slidesToShow: 6,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1500,
+      arrows: false,
+      dots: false,
+      pauseOnHover: false,
+      responsive: [{
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 4
+        }
+      }, {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3
+        }
+      }]
+    });
+  });
+};
+
+/***/ }),
+
 /***/ "./src/javascripts/portfolio.js":
 /*!**************************************!*\
   !*** ./src/javascripts/portfolio.js ***!
@@ -618,15 +823,15 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 exports.default = function () {
   var portfolio = document.getElementById('portfolio');
-  var slider = document.querySelector('.slider');
+  var slider = document.querySelector('.portfolio-slider');
   var portfolioImages = [].concat(_toConsumableArray(document.querySelectorAll('.portfolio-image')));
   var portfolioImagesUrls = portfolioImages.map(function (i) {
     return i.src;
   });
   var prevButton = portfolio.querySelector('.prev');
   var nextButton = portfolio.querySelector('.next');
-  var prevFullScreenButton = slider.querySelector('.slider > .prev');
-  var nextFullScreenButton = slider.querySelector('.slider > .next');
+  var prevFullScreenButton = slider.querySelector('.portfolio-slider > .prev');
+  var nextFullScreenButton = slider.querySelector('.portfolio-slider > .next');
   var position = 0;
 
   var moveRight = function moveRight() {

@@ -39,6 +39,7 @@ h1, h3 {
 h2 {
   font-family: "Caveat", cursive;
   font-weight: 700;
+  font-style: normal;
   font-size: 6.2vmin;
   color: $white;
   margin: 0;
@@ -47,6 +48,37 @@ h2 {
 @media (min-width: $tablet) {
   h2 {
     font-size: 5vmin;
+  }
+}
+
+h4 {
+  font-family: "Playfair Display SC", serif;
+  font-size: 4vmin;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  padding-left: 5vmin;
+  padding-right: 5vmin;
+
+  @media (min-width: $tablet) {
+    font-size: 3vmin;
+  }
+  @media (min-width: $desktop) {
+    font-size: 2.5vmin;
+  }
+}
+
+h5 {
+  margin: 0;
+  font-family: "Playfair Display SC", serif;
+  font-size: 3vmin;
+  font-weight: bold;
+  text-align: center;
+  padding-left: 5vmin;
+  padding-right: 5vmin;
+
+  @media (min-width: $tablet) {
+    font-size: 2vmin;
   }
 }
 
@@ -62,6 +94,7 @@ h2 {
     font-weight: 700;
     font-size: 5vmin;
   }
+  
   @media (min-width: $tablet) {
     height: 18vmin;
     h3 {
@@ -129,3 +162,30 @@ a {
   outline-offset: 0;
   -webkit-tap-highlight-color: transparent;
 }
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: $white;
+  font-size: 4vmin;
+
+  @media (min-width: $tablet) {
+    font-size: 2.5vmin;
+  }
+  @media (min-width: $desktop) {
+    font-size: 2.5vmin;
+  }
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: $white;
+  opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: $white;
+  opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: $white;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: $white;
+}
+  

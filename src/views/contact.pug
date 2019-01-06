@@ -1,4 +1,53 @@
 section.row#contact
   header.section-headline
     h3 Свяжитесь со мной!
-  p Здесь будет располагаться контактная форма и другие способы связи
+  .contact-container
+    .contact-form-container
+      .contact-form-headline
+        h4 Оставьте заявку
+        h5 И я свяжусь с вами в ближайшее время
+      form.contact-form#contact-form(action="#" role="form")
+        .contact-inputs
+          .name-info
+            input.contact-input#first-name(name="firstname" type="text" placeholder="Имя *" required)
+            input.contact-input#last-name(name="lastname" type="text" placeholder="Фамилия *" required="required")
+          .country-and-email-info
+            input.contact-input#country(name="country" type="text" placeholder="Страна")
+            input.contact-input#email(name="email" type="text" placeholder="Ваш email-адрес *" required="required")
+          .subject-and-message
+            input.contact-input.subject-input#subject(name="subject" type="text" placeholder="Тема сообщения *" required="required")
+            textarea.contact-input.message-input#message(name="message" placeholder="Ваше сообщение *" rows="3" required="required")
+        .submit-container
+          .agreement-container
+            .agreement-checkbox-container
+              input.agreement-checkbox#agree(name="agree" type="checkbox")
+            p.agreement-text Отправляя форму, я даю согласие на обработку персональных данных в соответствии с <a href="#">Политикой конфиденциальности</a>
+          .submit-button-container
+            button.contact-submit-button(type="submit") Отправить
+    .contact-options-container
+      .contact-options-headline
+        h4 Некогда заполнять форму?
+        h5 Вы можете связаться со мной любым из следующих способов:
+      .contact-options#contact-options
+        .contact-option
+          .contact-options-icon
+            i.fas.fa-phone
+          a.contact-options-text#contact-options-phone-link(href="tel:+972587782776" title="Click to dial from mobile") Tel: +972587782776 (можно по WhatsApp)
+        .contact-option
+          .contact-options-icon
+            i.fas.fa-envelope
+          a.contact-options-text#contact-options-mail-link(href="mailto:henyadesign@gmail.com" title="Send Email") Email: henyadesign@gmail.com
+        .contact-option
+          .contact-options-icon
+            i.fab.fa-facebook-square
+          a.contact-options-text#contact-options-facebook-link(href="fb://page/2036302739931258" title="Go to Facebook page" target="_blank") Facebook: facebook.com/henyadesign
+        .contact-option
+          .contact-options-icon
+            i.fab.fa-instagram
+          a.contact-options-text#contact-options-instagram-link(href="instagram://user?username=henya_design" title="Go to Instagram page" target="_blank") Instagram: instagram.com/henya_design
+        .contact-option
+          .contact-options-icon
+            i.fab.fa-linkedin
+          a.contact-options-text(href="https://www.linkedin.com/in/henyaadler/" title="Go to LinkedIn page" target="_blank") LinkedIn: linkedin.com/in/henyaadler
+      .contact-options-headline
+        h4 Всегда рада ответить на все ваши вопросы!

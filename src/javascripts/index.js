@@ -10,6 +10,9 @@ import toggleFullScreen from './toggleFullScreen';
 import about from './about';
 import testimonials from './testimonials';
 import faq from './faq';
+import partners from './partners';
+import contact from './contact';
+import androidKeyboardFix from './android-keyboard-fix';
 
 home();
 homeAnimation();
@@ -23,3 +26,6 @@ toggleFullScreen();
 about();
 testimonials();
 faq();
+partners();
+contact();
+androidKeyboardFix();

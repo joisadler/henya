@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Henya Adler Design</title>
+    <!-- Jquery and Bootstrap (for client logo slider)-->
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font-Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <!-- Fonts-->
@@ -33,7 +38,7 @@
           <a class="topbar-link" id="topbar-mail-icon" href="#contact" title="Send Email"><i class="fas fa-envelope"></i></a>
           <a class="topbar-link" id="topbar-facebook-icon" href="https://www.facebook.com/henyadesign" title="Go to Facebook page" target="_blank"><i class="fab fa-facebook-square"></i></a>
           <a class="topbar-link" id="topbar-instagram-icon" href="https://www.instagram.com/henya_design/" title="Go to Instagram page" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a class="topbar-link" id="topbar-linkedin-icon" href="https://www.linkedin.com/in/henyaadler/" title="Go to Linkedin page" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a class="topbar-link" id="topbar-linkedin-icon" href="https://www.linkedin.com/in/henyaadler/" title="Go to LinkedIn page" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
       </div>
       <nav class="row home-navbar" id="home-navbar">
@@ -60,7 +65,7 @@
             <a class="hidden-menu-link" href="#faq">Вопросы и ответы</a>
           </li>
           <li class="hidden-menu-link-holder">
-            <a class="hidden-menu-link" href="#organizations">Мои клиенты</a>
+            <a class="hidden-menu-link" href="#partners">Мои клиенты</a>
           </li>
           <li class="hidden-menu-link-holder">
             <a class="hidden-menu-link" href="#contact">Оставить заявку</a>
@@ -86,7 +91,7 @@
             <a class="home-navigation-link" href="#faq">вопросы и ответы</a>
           </li>
           <li class="home-navigation-link-holder">
-            <a class="home-navigation-link" href="#organizations">мои клиенты</a>
+            <a class="home-navigation-link" href="#partners">мои клиенты</a>
           </li>
           <li class="home-navigation-link-holder">
             <a class="home-navigation-link" href="#contact">оставить заявку</a>
@@ -183,7 +188,8 @@
       <header class="section-headline">
         <h3>Примеры работ</h3>
       </header>
-      <div class="slider-container">
+      <!--.slider-container-->
+      <div class="portfolio-slider-container">
         <button class="arrow prev"></button>
         <button class="arrow next"></button>
         <img class="portfolio-image preload" src="../images/portfolio-images/happy-kippah.jpeg">
@@ -193,7 +199,8 @@
         <img class="portfolio-image preload" src="../images/portfolio-images/toldot.jpeg">
         <img class="portfolio-image preload" src="../images/portfolio-images/watoto-kids.jpeg">
         <img class="portfolio-image preload" src="../images/portfolio-images/live-the-life.jpeg">
-        <div class="slider">
+        <!--.slider-->
+        <div class="portfolio-slider">
           <button class="arrow prev"></button>
           <button class="arrow next"></button>
         </div>
@@ -276,14 +283,106 @@
         </article>
       </div>
     </section>
-    <section class="row" id="organizations">
+    <section class="row container" id="partners">
       <header class="section-headline">
         <h3>Мои клиенты</h3>
-      </header><p>Здесь будут расположены логотипы компаний и организаций, которые прибегали к моим услугам.</p></section>
+      </header>
+      <section class="customer-logos slider">
+        <div class="slide">
+          <img src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg">
+        </div>
+        <div class="slide">
+          <img src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg">
+        </div>
+        <div class="slide">
+          <img src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg">
+        </div>
+        <div class="slide">
+          <img src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg">
+        </div>
+        <div class="slide">
+          <img src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg">
+        </div>
+        <div class="slide">
+          <img src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg">
+        </div>
+        <div class="slide">
+          <img src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg">
+        </div>
+        <div class="slide">
+          <img src="https://image.freepik.com/free-vector/retro-label-on-rustic-background_82147503374.jpg">
+        </div>
+      </section>
+    </section>
     <section class="row" id="contact">
       <header class="section-headline">
         <h3>Свяжитесь со мной!</h3>
-      </header><p>Здесь будет располагаться контактная форма и другие способы связи</p></section>
+      </header>
+      <div class="contact-container">
+        <div class="contact-form-container">
+          <div class="contact-form-headline">
+            <h4>Оставьте заявку</h4>
+            <h5>И я свяжусь с вами в ближайшее время</h5>
+          </div>
+          <form class="contact-form" id="contact-form" action="#" role="form">
+            <div class="contact-inputs">
+              <div class="name-info">
+                <input class="contact-input" id="first-name" name="firstname" type="text" placeholder="Имя *" required>
+                <input class="contact-input" id="last-name" name="lastname" type="text" placeholder="Фамилия *" required="required">
+              </div>
+              <div class="country-and-email-info">
+                <input class="contact-input" id="country" name="country" type="text" placeholder="Страна">
+                <input class="contact-input" id="email" name="email" type="text" placeholder="Ваш email-адрес *" required="required">
+              </div>
+              <div class="subject-and-message">
+                <input class="contact-input subject-input" id="subject" name="subject" type="text" placeholder="Тема сообщения *" required="required">
+                <textarea class="contact-input message-input" id="message" name="message" placeholder="Ваше сообщение *" rows="3" required="required"></textarea>
+              </div>
+            </div>
+            <div class="submit-container">
+              <div class="agreement-container">
+                <div class="agreement-checkbox-container">
+                  <input class="agreement-checkbox" id="agree" name="agree" type="checkbox">
+                </div><p class="agreement-text">Отправляя форму, я даю согласие на обработку персональных данных в соответствии с <a href="#">Политикой конфиденциальности</a></p></div>
+              <div class="submit-button-container">
+                <button class="contact-submit-button" type="submit">Отправить</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="contact-options-container">
+          <div class="contact-options-headline">
+            <h4>Некогда заполнять форму?</h4>
+            <h5>Вы можете связаться со мной любым из следующих способов:</h5>
+          </div>
+          <div class="contact-options" id="contact-options">
+            <div class="contact-option">
+              <div class="contact-options-icon"><i class="fas fa-phone"></i></div>
+              <a class="contact-options-text" id="contact-options-phone-link" href="tel:+972587782776" title="Click to dial from mobile">Tel: +972587782776 (можно по WhatsApp)</a>
+            </div>
+            <div class="contact-option">
+              <div class="contact-options-icon"><i class="fas fa-envelope"></i></div>
+              <a class="contact-options-text" id="contact-options-mail-link" href="mailto:henyadesign@gmail.com" title="Send Email">Email: henyadesign@gmail.com</a>
+            </div>
+            <div class="contact-option">
+              <div class="contact-options-icon"><i class="fab fa-facebook-square"></i></div>
+              <a class="contact-options-text" id="contact-options-facebook-link" href="fb://page/2036302739931258" title="Go to Facebook page" target="_blank">Facebook: facebook.com/henyadesign</a>
+            </div>
+            <div class="contact-option">
+              <div class="contact-options-icon"><i class="fab fa-instagram"></i></div>
+              <a class="contact-options-text" id="contact-options-instagram-link" href="instagram://user?username=henya_design" title="Go to Instagram page" target="_blank">Instagram: instagram.com/henya_design</a>
+            </div>
+            <div class="contact-option">
+              <div class="contact-options-icon"><i class="fab fa-linkedin"></i></div>
+              <a class="contact-options-text" href="https://www.linkedin.com/in/henyaadler/" title="Go to LinkedIn page" target="_blank">LinkedIn: linkedin.com/in/henyaadler</a>
+            </div>
+          </div>
+          <div class="contact-options-headline">
+            <h4>Всегда рада ответить на все ваши вопросы!</h4>
+          </div>
+        </div>
+      </div>
+    </section>
     <footer class="row" id="footer">
       <div class="section-headline">
         <h3>Подвал</h3>

@@ -1,13 +1,13 @@
 
 export default () => {
   const portfolio = document.getElementById('portfolio');
-  const slider = document.querySelector('.slider');
+  const slider = document.querySelector('.portfolio-slider');
   const portfolioImages = [...document.querySelectorAll('.portfolio-image')];
   const portfolioImagesUrls = portfolioImages.map(i => i.src);
   const prevButton = portfolio.querySelector('.prev');
   const nextButton = portfolio.querySelector('.next');
-  const prevFullScreenButton = slider.querySelector('.slider > .prev');
-  const nextFullScreenButton = slider.querySelector('.slider > .next');
+  const prevFullScreenButton = slider.querySelector('.portfolio-slider > .prev');
+  const nextFullScreenButton = slider.querySelector('.portfolio-slider > .next');
   let position = 0;
 
   const moveRight = () => {
