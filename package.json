@@ -10,13 +10,13 @@
   "author": "Yossi Adler <joisadler@gmail.com>",
   "license": "ISC",
   "scripts": {
-    "start": "node -r dotenv/config ./node_modules/.bin/babel-node ./bin/www",
+    "start": "NODE_ENV=development node -r dotenv/config ./node_modules/.bin/babel-node ./bin/www",
     "devstart": "nodemon --exec node -r dotenv/config ./node_modules/.bin/babel-node ./bin/www",
     "watch": "webpack --mode development --watch --display-error-details --display-reasons",
     "clear": "del-cli public",
     "dev": "concurrently 'npm run devstart' 'npm run clear' 'npm run watch' --names '💻,🆑,👀' --prefix name ",
     "debug": "DEBUG=express:* npm run dev",
-    "build": "NODE_ENV=production npm run clear && webpack --mode production"
+    "build": "NODE_ENV=development npm run clear && webpack --mode production"
   },
   "main": "./bin/www",
   "dependencies": {
