@@ -1,4 +1,4 @@
-.page {
+html, body {
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
@@ -8,6 +8,25 @@
   font-family: "Cormorant Infant", serif;
   font-size: 16px;
   color: $white;
+}
+
+.noscript {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  height: 4.5vh;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.noscript p {
+  margin: 0;
+  color: #FFF;
+  font-size: 2.5vmin;
 }
 
 .full-screen {
@@ -26,7 +45,6 @@
   width: 100%;
   padding: 0;
   margin: 0;
-  //border-bottom: 1px solid $white;
 }
 
 h1, h3 {
