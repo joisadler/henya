@@ -12,7 +12,8 @@ const config = {
     main: './src/javascripts/main.js',
     analytics: './src/javascripts/analytics.js',
     styles: './src/stylesheets/main.scss',
-    fontloader: './src/javascripts/fontloader.js'
+    fontloader: './src/javascripts/fontloader.js',
+    vhfix: './src/javascripts/vh-fix.js'
   },
   output: {
     path: path.join(__dirname, 'public'),
