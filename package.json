@@ -16,7 +16,7 @@
     "clear": "del-cli public",
     "dev": "concurrently 'npm run devstart' 'npm run clear' 'npm run watch' --names '💻,🆑,👀' --prefix name ",
     "debug": "DEBUG=express:* npm run dev",
-    "build": "NODE_ENV=development npm run clear && webpack --mode production"
+    "build": "NODE_ENV=production npm run clear && webpack --mode production"
   },
   "main": "./bin/www",
   "dependencies": {
