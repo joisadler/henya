@@ -1,15 +1,15 @@
 .topbar {
   display: none;
 
-  @media (min-width: $tablet) {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    width: 100%;
-    height: 4.5vh;
-    background-color: $violet-dark;
-  }
+  // @media (min-width: $tablet) {
+  //   display: flex;
+  //   flex-direction: row;
+  //   flex-wrap: nowrap;
+  //   justify-content: space-between;
+  //   width: 100%;
+  //   height: 4.5vh;
+  //   background-color: $violet-dark;
+  // }
 }
 
 .topbar-contacts {
