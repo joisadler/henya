@@ -55,7 +55,7 @@ const onListening = () => {
   debug(`Listening on ${bind}`);
 };
 
-console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
+// console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
