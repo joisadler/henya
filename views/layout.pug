@@ -8,16 +8,27 @@ html(lang='ru', dir='ltr')
     meta(name='viewport', content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
     meta(name='description', content='Устали от поисков удачного дизайна? Теперь вы можете расслабиться! Отныне ваши заботы я беру на себя.')
     meta(name='robots', content='index, follow')
-    //- Apple Web App Meta
+    //- Apple Progressive Web App Meta
+    meta(name='mobile-web-app-capable', content='yes')
     meta(name='apple-mobile-web-app-capable', content='yes')
-    meta(name='apple-mobile-web-app-status-bar-style', content='black')
     meta(name='format-detection', content='telephone=no')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='application-name', content='HenyaDesign')
+    meta(name='apple-mobile-web-app-title', content='HenyaDesign')
+    meta(name='theme-color', content='#0A002D')
+    meta(name='msapplication-navbutton-color', content='#0A002D')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black-translucent')
+    meta(name='msapplication-starturl', content='/')
+    link(rel='icon', href='images/app-icon.png')
+    link(rel='apple-touch-icon', href='images/app-icon.png')
     //- Facebook Open Graph
     meta(property='og:image', content='images/facebook/og-image.png')
     meta(property='og:site_name', content=`${title}`)
     meta(property='og:type', content='website')
     //- Favicon
     link(rel='shortcut icon', href='images/favicons/favicon.ico', type='image/x-icon')
+    //- Progressive Web App manifest
+    <link rel="manifest" href="manifest.json">
     //- Background image preloading
     link(rel='preload', as='image', href='../images/main-background-640-1136.png', media='max-width: 767px')
     link(rel='preload', as='image', href='../images/main-background-768-1024.png', media='(min-width: 768) and (max-width: 1279)')

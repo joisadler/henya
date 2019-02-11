@@ -1,0 +1,15 @@
+{
+  "name": "Henya Adler Design",
+  "short_name": "HenyaDesign",
+  "description": "Graphic Designer Portfolio",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0A002D",
+  "icons": [
+    {
+      "src": "images/app-icon.png"
+    }
+  ],
+  "background_color": "#0A002D"
+}
