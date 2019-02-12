@@ -2,8 +2,8 @@ section.row#portfolio
   header.section-headline
     h3 Примеры работ
   .portfolio-slider-container
-    button.arrow.prev
-    button.arrow.next
+    button.arrow.prev(aria-label='previous')
+    button.arrow.next(aria-label='next')
     //- preload portfolio images
     img.portfolio-image.preload(src='../images/portfolio-images/happy-kippah.jpeg', alt='Happy Kippah')
     img.portfolio-image.preload(src='../images/portfolio-images/sarawigs.jpeg', alt='Sara Wigs')
@@ -13,5 +13,5 @@ section.row#portfolio
     img.portfolio-image.preload(src='../images/portfolio-images/watoto-kids.jpeg', alt='Watoto Kids')
     img.portfolio-image.preload(src='../images/portfolio-images/live-the-life.jpeg', alt='Live the Life')
     .portfolio-slider
-      button.arrow.prev
-      button.arrow.next
+      button.arrow.prev(aria-label='previous')
+      button.arrow.next(aria-label='next')
