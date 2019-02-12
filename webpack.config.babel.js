@@ -94,7 +94,8 @@ const config = {
       {
         from: './src/images',
         to: './images'
-      }
+      },
+      // { from: './manifest.json', to: './manifest.json' },
     ]),
   ],
 };
