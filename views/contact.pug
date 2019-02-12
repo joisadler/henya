@@ -9,18 +9,18 @@ section.row#contact
       form.contact-form#contact-form(action='#', role='form')
         .contact-inputs
           .name-info
-            input.contact-input#first-name(name='firstname', type='text', placeholder='Имя *', required)
-            input.contact-input#last-name(name='lastname', type='text', placeholder='Фамилия *', required)
+            input.contact-input#first-name(name='firstname', aria-label='First name', type='text', placeholder='Имя *', required)
+            input.contact-input#last-name(name='lastname', aria-label='Last name', type='text', placeholder='Фамилия *', required)
           .country-and-email-info
-            input.contact-input#country(name='country', type='text', placeholder='Страна')
-            input.contact-input#email(name='email', type='text', placeholder='Ваш email-адрес *', required)
+            input.contact-input#country(name='country', aria-label='Country', type='text', placeholder='Страна')
+            input.contact-input#email(name='email', aria-label='Email', type='text', placeholder='Ваш email-адрес *', required)
           .subject-and-message
-            input.contact-input.subject-input#subject(name='subject', type='text', placeholder='Тема сообщения *', required)
-            textarea.contact-input.message-input#message(name='message', placeholder='Ваше сообщение *', rows='3', required)
+            input.contact-input.subject-input#subject(name='subject', aria-label='Subject', type='text', placeholder='Тема сообщения *', required)
+            textarea.contact-input.message-input#message(name='message', aria-label='Message', placeholder='Ваше сообщение *', rows='3', required)
         .submit-container
           .agreement-container
             .agreement-checkbox-container
-              input.agreement-checkbox#agree(name='agree', type='checkbox')
+              input.agreement-checkbox#agree(name='agree', aria-label='Agree', type='checkbox')
             p.agreement-text Отправляя форму, я даю согласие на обработку персональных данных в соответствии с <a href='https://www.freeprivacypolicy.com/privacy/view/44b4bd4f9e1c33b171b04a90dd32c99c',, target='_blank', rel='noopener'>Политикой конфиденциальности</a>
           .submit-button-container
             button.contact-submit-button(type='submit', aria-label='Send') Отправить
