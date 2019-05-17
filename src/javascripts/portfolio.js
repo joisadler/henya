@@ -3,7 +3,7 @@ export default () => {
   const portfolio = document.getElementById('portfolio');
   const slider = document.querySelector('.portfolio-slider');
   const portfolioImages = [...document.querySelectorAll('.portfolio-image')];
-  const portfolioImagesUrls = portfolioImages.map(i => i.src);
+  const portfolioImagesUrls = portfolioImages.map(i => i.getAttribute('data-src'));
   const prevButton = portfolio.querySelector('.prev');
   const nextButton = portfolio.querySelector('.next');
   const prevFullScreenButton = slider.querySelector('.portfolio-slider > .prev');
@@ -47,7 +47,7 @@ export default () => {
   if (!(/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
     document.addEventListener('keydown', (event) => {
       if (document.isFullscreen()) {
-        const key = event.key;
+        const key = event;
         switch (key) {
           case 'ArrowLeft':
             moveLeft();
