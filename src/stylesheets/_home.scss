@@ -329,6 +329,26 @@
   }
 }
 
+// @for $i from 1 through length($social-links-list) {
+//   .home-#{nth($social-links-list, $i)}-link {
+//     @if nth($social-links-list, $i) == mail {
+//       background-color: $white;
+//     }
+//     background-image: url('../images/#{nth($social-links-list, $i)}-#{map-get($social-links-image-sizes-list, $desktops)}.png');
+//     background-size: contain;
+
+//     @each $key, $value in $social-links-image-sizes-list {
+//       @media #{$key} {
+//         background: url('../images/#{nth($social-links-list, $i)}-#{$value}.png');
+//         @if nth($social-links-list, $i) == mail {
+//           background-color: $white;
+//         }
+//         background-size: contain;
+//       }
+//     }
+//   }
+// }
+
 @for $i from 1 through length($social-links-list) {
   .home-#{nth($social-links-list, $i)}-link {
     @if nth($social-links-list, $i) == mail {
@@ -337,20 +357,20 @@
     background-image: url('../images/#{nth($social-links-list, $i)}-#{map-get($social-links-image-sizes-list, $desktops)}.png');
     background-size: contain;
 
-    @each $key, $value in $social-links-image-sizes-list {
-      @media #{$key} {
-        background: url('../images/#{nth($social-links-list, $i)}-#{$value}.png');
-        @if nth($social-links-list, $i) == mail {
-          background-color: $white;
-        }
-        background-size: contain;
-      }
-    }
+    // @each $key, $value in $social-links-image-sizes-list {
+    //   @media #{$key} {
+    //     background: url('../images/#{nth($social-links-list, $i)}-#{$value}.png');
+    //     @if nth($social-links-list, $i) == mail {
+    //       background-color: $white;
+    //     }
+    //     background-size: contain;
+    //   }
+    // }
   }
 }
 
 .home-whatsapp-link {
-  background-image: url('../images/whatsapp-round-64.png');
+  background-image: url('../images/whatsapp-round.png');
 
   @media (min-width: $tablet) {
     display: none;
