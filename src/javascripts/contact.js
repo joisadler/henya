@@ -17,6 +17,7 @@ export default () => {
         data: $form.serialize()
       });// .done(response => console.log(response));
       textarea.value = text;
+      alert('Your message has been sent successfully!');
     }
   };
 
