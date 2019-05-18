@@ -9,6 +9,7 @@ export default () => {
   const prevFullScreenButton = slider.querySelector('.portfolio-slider > .prev');
   const nextFullScreenButton = slider.querySelector('.portfolio-slider > .next');
   let position = 0;
+  let paused = false;
 
   const moveRight = () => {
     position += 1;
@@ -23,17 +24,45 @@ export default () => {
   };
 
   slider.style.backgroundImage = `url(${portfolioImagesUrls[position]})`;
+  setTimeout(() => {
+    portfolioImages.forEach(i => i.setAttribute('src', i.getAttribute('data-src')));
+    setInterval(() => {
+      if (paused) return;
+      moveRight();
+    }, 2500);
+  }, 2500);
 
-  prevButton.addEventListener('click', moveLeft);
-  nextButton.addEventListener('click', moveRight);
+  prevButton.addEventListener('click', () => {
+    paused = true;
+    moveLeft();
+    setTimeout(() => {
+      paused = false;
+    }, 5000);
+  });
+  nextButton.addEventListener('click', () => {
+    paused = true;
+    moveRight();
+    setTimeout(() => {
+      paused = false;
+    }, 5000);
+  });
+  // nextButton.addEventListener('click', moveRight);
 
   prevFullScreenButton.addEventListener('click', (e) => {
     e.stopPropagation();
+    paused = true;
     moveLeft();
+    setTimeout(() => {
+      paused = false;
+    }, 5000);
   });
   nextFullScreenButton.addEventListener('click', (e) => {
     e.stopPropagation();
+    paused = true;
     moveRight();
+    setTimeout(() => {
+      paused = false;
+    }, 5000);
   });
 
   if (typeof document.isFullscreen === 'undefined') {
@@ -44,38 +73,53 @@ export default () => {
       (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen));
   }
 
-  if (!(/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
-    document.addEventListener('keydown', (event) => {
-      if (document.isFullscreen()) {
-        const key = event;
-        switch (key) {
-          case 'ArrowLeft':
-            moveLeft();
-            break;
-          case 'ArrowRight':
-            moveRight();
-            break;
-          case 'ArrowUp':
-            moveLeft();
-            break;
-          case 'ArrowDown':
-            moveRight();
-            break;
-          case 'Escape':
-            if (document.cancelFullScreen) {
-              document.cancelFullScreen();
-            } else if (document.mozCancelFullScreen) {
-              document.mozCancelFullScreen();
-            } else if (document.webkitCancelFullScreen) {
-              document.webkitCancelFullScreen();
-            }
-            break;
-          default:
-            break;
-        }
+  document.addEventListener('keydown', (event) => {
+    if (document.isFullscreen()) {
+      // eslint-disable-next-line prefer-destructuring
+      const key = event.key;
+      switch (key) {
+        case 'ArrowLeft':
+          paused = true;
+          moveLeft();
+          setTimeout(() => {
+            paused = false;
+          }, 5000);
+          break;
+        case 'ArrowRight':
+          paused = true;
+          moveRight();
+          setTimeout(() => {
+            paused = false;
+          }, 5000);
+          break;
+        case 'ArrowUp':
+          paused = true;
+          moveLeft();
+          setTimeout(() => {
+            paused = false;
+          }, 5000);
+          break;
+        case 'ArrowDown':
+          paused = true;
+          moveRight();
+          setTimeout(() => {
+            paused = false;
+          }, 5000);
+          break;
+        case 'Escape':
+          if (document.cancelFullScreen) {
+            document.cancelFullScreen();
+          } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+          } else if (document.webkitCancelFullScreen) {
+            document.webkitCancelFullScreen();
+          }
+          break;
+        default:
+          break;
       }
-    });
-  }
+    }
+  });
 
   slider.addEventListener('click', (e) => {
     const s = e.target;
