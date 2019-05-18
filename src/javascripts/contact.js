@@ -2,11 +2,13 @@ export default () => {
   const $form = $('#contact-form');
   const $checkbox = $('#agree');
   const $button = $('.contact-submit-button');
+  const textarea = document.getElementById('message');
 
   const submitHandler = (e) => {
     e.preventDefault();
 
     if ($checkbox.is(':checked')) {
+      textarea.value = textarea.value.replace(/\r?\n/g, '<br/>');
       $.ajax({
         url: '/contact',
         type: 'POST',

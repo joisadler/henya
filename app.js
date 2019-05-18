@@ -8,6 +8,7 @@ import compression from 'compression';
 import helmet from 'helmet';
 import methodOverride from 'method-override';
 import indexRouter from './routes/index';
+import contactRouter from './routes/contact';
 
 const app = express();
 
@@ -34,6 +35,7 @@ const shouldCompress = (req, res) => {
 app.use(compression({ filter: shouldCompress }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter());
+app.use('/contact', contactRouter());
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
