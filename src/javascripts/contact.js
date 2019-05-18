@@ -3,17 +3,20 @@ export default () => {
   const $checkbox = $('#agree');
   const $button = $('.contact-submit-button');
   const textarea = document.getElementById('message');
+  let text = '';
 
   const submitHandler = (e) => {
     e.preventDefault();
 
     if ($checkbox.is(':checked')) {
+      text = textarea.value;
       textarea.value = textarea.value.replace(/\r?\n/g, '<br/>');
       $.ajax({
         url: '/contact',
         type: 'POST',
         data: $form.serialize()
       });// .done(response => console.log(response));
+      textarea.value = text;
     }
   };
 
